@@ -120,3 +120,4 @@
 !/vnext/vendor/three-0.187.0/three.module.js
 !/.gitattributes
 !/tests/public-smoke.cjs
+!/DEPLOYMENT.json

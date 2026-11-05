@@ -16,12 +16,18 @@ const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
   const response=await fetch(new URL(name,url));assert.equal(response.status,200,name);
   assert.equal(sha(Buffer.from(await response.arrayBuffer())),digest,name);
  }));
- const report={url,version:manifest.version,httpHashes:files.length,pageErrors:[],failedRequests:[]};
+ const report={url,version:manifest.version,httpHashes:files.length,pageErrors:[],failedRequests:[],cancelledMediaRequests:[]};
  const browser=await chromium.launch({headless:true,channel:'chrome'});
  try{
   report.browser=browser.version();const page=await browser.newPage({viewport:{width:1440,height:900}});
   page.on('pageerror',e=>report.pageErrors.push(e.message));
-  page.on('requestfailed',request=>report.failedRequests.push(request.url()));
+  page.on('requestfailed',request=>{
+   const failure={url:request.url(),type:request.resourceType(),error:request.failure()?.errorText};
+   // Chromium cancels redundant media/range requests when old room videos are disposed.
+   // Native playback must still advance below; actual transport/decoder failures fail the test.
+   if(failure.type==='media'&&failure.error==='net::ERR_ABORTED')report.cancelledMediaRequests.push(failure);
+   else report.failedRequests.push(failure);
+  });
   await page.goto(url);await page.locator('#loading').waitFor({state:'hidden',timeout:30000});
   await page.screenshot({path:out+'/title.png'});
   await page.locator('#enter').click();
