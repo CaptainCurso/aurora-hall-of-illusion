@@ -1,0 +1,7 @@
+{
+  "release": "v0.9.1",
+  "audience": "public",
+  "manifestSha256": "e314e82f07eb231d9bc75005b1e749e4129fe60787c0f46645fe0263cd12ca55",
+  "runtimeBytesUnchanged": true,
+  "authorization": "Project owner explicitly requested public GitHub publication on 2026-11-05."
+}
