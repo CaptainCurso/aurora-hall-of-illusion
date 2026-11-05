@@ -1,0 +1,12 @@
+{
+  "name": "aurora-hall-of-illusion",
+  "version": "0.9.1",
+  "private": true,
+  "type": "module",
+  "description": "Aurora-7 first-person browser game; offline static runtime",
+  "scripts": {
+    "start": "python3.11 serve.py",
+    "verify": "python3.11 verify_release.py",
+    "pages": "python3.11 publish_pages.py"
+  }
+}

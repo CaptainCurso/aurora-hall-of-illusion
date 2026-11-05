@@ -1,0 +1,7 @@
+{
+  "build": "v0.9.1",
+  "manifestSha256": "e314e82f07eb231d9bc75005b1e749e4129fe60787c0f46645fe0263cd12ca55",
+  "private": true,
+  "promotedAt": "2026-11-05T20:11:43.738516+00:00",
+  "authorization": "User requested LAN play and explicitly approved sharing the game and portrait on the LAN. Exact reviewed immutable release promotion approved; staging/source/masters excluded."
+}
