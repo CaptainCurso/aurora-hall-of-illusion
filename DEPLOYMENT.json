@@ -1,13 +1,13 @@
 {
   "date": "2026-11-05",
-  "release": "v0.11.1",
-  "site": "https://captaincurso.github.io/aurora-hall-of-illusion/?v=0.11.1",
+  "release": "v0.12.1",
+  "site": "https://captaincurso.github.io/aurora-hall-of-illusion/?v=0.12.1",
   "repository": "https://github.com/CaptainCurso/aurora-hall-of-illusion",
-  "manifestSha256": "2949e5772f2114430a4d6184ea3fe6122199d88b99289ca78fbd5550b724fbff",
-  "sourceCommit": "66e5e60019d09dd683646382b437aaf71197515f",
-  "pagesCommit": "67afac45dffbf31fd16f64b8d8176d2c6d7f8544",
+  "manifestSha256": "028689fdbfcdb60a8ce164d42b348cd1beae60bceaf14f7d8fda0699a0e979dd",
+  "sourceCommit": "645d204258317e997d2ff913e1dbbd66e4683892",
+  "pagesCommit": "3149817c5719397bb2c6a85466c76902ff8a7d36",
   "githubPagesStatus": "built",
-  "workflow": "https://github.com/CaptainCurso/aurora-hall-of-illusion/actions/runs/42149209565",
+  "workflow": "https://github.com/CaptainCurso/aurora-hall-of-illusion/actions/runs/42156527696",
   "workflowConclusion": "success",
   "httpsEnforced": true,
   "browser": "156.0.8078.81",
@@ -22,21 +22,41 @@
   "pauseHeldMediaClocks": true,
   "nativeControllerApiAvailable": true,
   "nativeControllerPollSlots": 8,
-  "controllerFunctionalEvidence": "Isolated standard Gamepad API simulation; physical hardware and HID behavior not tested.",
   "pageErrors": [],
   "failedRequests": [],
-  "cancelledMediaRequests": [],
+  "cancelledMediaRequests": [
+    {
+      "url": "https://captaincurso.github.io/aurora-hall-of-illusion/assets/video/culture-moon-grooming.mp4",
+      "type": "media",
+      "error": "net::ERR_ABORTED"
+    }
+  ],
+  "lanTransport": {
+    "rangeStatus": 206,
+    "contentRange": "bytes 0-1023/3205790",
+    "rangeBytes": 1024,
+    "etag304": 304,
+    "rootCache": "no-cache",
+    "versionedCache": "public, max-age=31536000, immutable",
+    "manifestNoStore": "no-store",
+    "privateExclusions": "PASS",
+    "result": "PASS"
+  },
   "localNetworkVerification": {
     "runtimeFiles": 78,
     "matchingManifest": true,
     "nativePlaybackAndPause": "PASS",
-    "privateFileExclusions": "PASS"
+    "privateFileExclusions": "PASS",
+    "newRangeCacheServerRestarted": true
   },
+  "performanceEvidence": "Scoped host and synthetic4xCPU/5Mbps measurements; see VERIFICATION.md. Less hidden graphics work and improved measured music startup, not physical laptop proof.",
   "result": "PASS",
   "auditoryListeningClaim": false,
-  "physicalControllerClaim": false,
+  "actualLaptopVerified": false,
   "userRetryObserved": false,
-  "userConsent": "Existing complete-game public GitHub and LAN consent, plus explicit request for opening progression, larger interaction fonts and optional Xbox/PlayStation controls.",
+  "remainingObservedLimit": "Initial voice delay/stalled event persisted in artificial constrained cold startup.",
+  "physicalControllerClaim": false,
+  "userConsent": "Existing complete-game public GitHub/LAN consent and request to repair choppy Chrome laptop/LAN playback.",
   "newMedia": false,
   "savedGameKeysChanged": false
 }
