@@ -1,3 +1,4 @@
+import {bufferFilm} from './media.js?v=0.12.1';
 const STORE='aurora7.encore.v1';
 const own=(object,key)=>Object.prototype.hasOwnProperty.call(object,key);
 const element=(tag,className,text)=>{const el=document.createElement(tag);if(className)el.className=className;if(text!==undefined)el.textContent=text;return el;};
@@ -144,8 +145,8 @@ export class VisualNovel{
   const id=this.cues.film,file=this.story.assets.videos?.[id];
   if(this.video?.dataset.asset===id&&!this.video.dataset.failed)return;
   this.stopVideo();if(!id)return;if(!file){this.mediaWarning('Film '+id,id);return;}
-  const video=element('video','');video.dataset.asset=id;video.src=file;video.poster=this.story.assets.images?.[this.cues.background]||'';video.loop=true;video.muted=true;video.playsInline=true;video.preload='auto';video.setAttribute('aria-label','Cultural transmission: '+id);video.onerror=()=>{if(this.video!==video)return;video.dataset.failed='true';this.filmFrame.classList.add('failed');this.mediaWarning('Film '+id,id);};video.addEventListener('loadeddata',()=>{if(this.video!==video)return;this.mediaFailures.delete(id);this.renderWarnings();});this.filmFrame.append(video);this.video=video;
-  if(!this.getSettings().reduced)video.play().catch(()=>{});
+  const video=element('video','');video.dataset.asset=id;video.src=file;video.poster=this.story.assets.images?.[this.cues.background]||'';video.loop=true;video.muted=true;video.playsInline=true;video.preload='auto';video.setAttribute('aria-label','Cultural transmission: '+id);video.onerror=()=>{if(this.video!==video)return;video.dataset.failed='true';this.filmFrame.classList.add('failed');this.mediaWarning('Film '+id,id);};video.addEventListener('loadeddata',()=>{if(this.video!==video)return;this.mediaFailures.delete(id);this.renderWarnings();});bufferFilm(video,()=>this.video===video&&this.isOpen&&!this.paused&&!this.historyOpen&&!this.getSettings().reduced);this.filmFrame.append(video);this.video=video;
+  video.auroraPlayback(!this.getSettings().reduced);
  }
  renderText(){
   const full=this.revealed>=this.characters.length;this.text.textContent=this.characters.slice(0,Math.floor(this.revealed)).join('');this.choices.replaceChildren();
@@ -198,7 +199,7 @@ export class VisualNovel{
  update(dt,{paused,reduced,sound}){
   if(!this.isOpen)return;this.paused=paused;this.root.classList.toggle('vn-reduced',reduced);this.soundButton.textContent='Sound '+(sound?'on':'off');this.trackLabel.textContent=this.chapter?this.director.title:'THREE ILLUSTRATED DRAMAS / ONE UNREHEARSED CODA';
   if(this.node&&!paused&&!this.historyOpen&&this.revealed<this.characters.length){this.revealed=reduced?this.characters.length:Math.min(this.characters.length,this.revealed+dt*42);this.renderText();}
-  if(this.video){if(paused||this.historyOpen||reduced){if(!this.video.paused)this.video.pause();}else if(this.video.paused&&!this.video.dataset.failed)this.video.play().catch(()=>{});}
+  if(this.video){this.video.auroraPlayback(!paused&&!this.historyOpen&&!reduced&&!this.video.dataset.failed);}
  }
  close(){if(!this.isOpen)return;this.persist();this.stopVideo();this.toggleHistory(false);this.isOpen=false;this.root.hidden=true;this.chapter=null;this.node=null;this.onClose?.();this.returnFocus?.focus?.();}
  diagnostics(){return{open:this.isOpen,chapter:this.chapter?.id,node:this.nodeId,flags:this.save.flags,draft:this.chapter?this.save.progress[this.chapter.id]?.draft:null,completed:this.save.completed,historyCount:this.save.history.length,historyOpen:this.historyOpen,revealed:Math.floor(this.revealed),textLength:this.characters?.length||0,cues:this.cues,errors:this.errors,video:this.video?{src:this.video.currentSrc,time:this.video.currentTime,paused:this.video.paused,ready:this.video.readyState}:null};}

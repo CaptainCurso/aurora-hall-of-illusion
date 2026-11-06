@@ -1,3 +1,12 @@
+// Start with ample headroom. Native preload can stop just short of the file end.
+export function bufferFilm(video,canPlay){
+ let wanted=false,pending=false;
+ const ready=()=>Number.isFinite(video.duration)&&video.duration>0&&video.readyState>=3&&video.buffered.length>0&&video.buffered.start(0)<.1&&video.buffered.end(video.buffered.length-1)>=video.duration-Math.min(.35,video.duration*.1);
+ const start=()=>{if(wanted&&canPlay()&&ready()&&video.paused&&!pending){pending=true;video.play().catch(()=>{}).finally(()=>pending=false);}};
+ for(const type of ['progress','loadeddata','canplaythrough','durationchange'])video.addEventListener(type,start);
+ video.auroraBuffered=ready;
+ video.auroraPlayback=wantedNow=>{if(wanted!==wantedNow){wanted=wantedNow;if(wanted)video.preload='auto';else video.pause();}start();};
+}
 export const MEDIA={
  aurora:'../assets/design/aurora-hologram-source.png',vesper:null,ilex:null,
  dance:null,cozy:null,video1:null,poster1:null,video2:null,poster2:null,
@@ -7,8 +16,9 @@ export const MEDIA={
 export async function loadMedia(){try{const r=await fetch('assets/media.json');if(r.ok)Object.assign(MEDIA,await r.json());}catch{}return MEDIA;}
 export class MediaDirector{
  constructor(){this.enabled=false;this.volume=.65;this.track='';this.title='';this.audio=new Map();this.sources=new Set();this.ctx=null;this.analyser=null;this.duck=false;this.voiceAudio=null;this.voiceCaption='';this.voiceNode=null;this.voicePausedForPause=false;this.events=[];}
+ gain(audio,value){value=Math.max(0,Math.min(1,value));if(Math.abs(audio.volume-value)>.0001)audio.volume=value;}
  async activate(enabled=true){this.enabled=enabled;if(!enabled){this.cancelVoice();for(const a of this.audio.values())a.pause();return;}if(enabled){try{this.ctx||=new AudioContext();this.analyser||=this.ctx.createAnalyser();this.analyser.fftSize=256;this.analyser.connect(this.ctx.destination);await this.ctx.resume();}catch{}if(this.track)this.play(this.track,this.title);}}
- play(file,title){this.track=file;this.title=title;if(!file)return;for(const [key,a] of this.audio)if(key!==file)a.pause();let a=this.audio.get(file);if(!a){a=new Audio(file);a.crossOrigin='anonymous';a.loop=true;a.preload='auto';a.className='media-source';a.dataset.auroraRole='music';a.setAttribute('aria-hidden','true');document.body.append(a);this.audio.set(file,a);if(this.ctx&&this.analyser){try{const src=this.ctx.createMediaElementSource(a);src.connect(this.analyser);this.sources.add(file);}catch{}}a.addEventListener('error',()=>{this.events.push({type:'error',file,code:a.error?.code});this.onFailure?.({kind:'music',file});});a.addEventListener('playing',()=>{this.events.push({type:'playing',file});this.onPlaying?.({kind:'music',file});});}if(this.ctx&&this.analyser&&!this.sources.has(file)){try{this.ctx.createMediaElementSource(a).connect(this.analyser);this.sources.add(file);}catch{}}a.volume=this.volume*((this.duck||this.voiceAudio&&!this.voiceAudio.paused)?.24:1);if(a.error)a.load();if(this.enabled)a.play().catch(e=>{this.events.push({type:'blocked',file,message:e.message});if(e.name!=='AbortError')this.onFailure?.({kind:'music',file,reason:e.message});});}
+ play(file,title){this.track=file;this.title=title;if(!file)return;for(const [key,a] of this.audio)if(key!==file)a.pause();let a=this.audio.get(file);if(!a){a=new Audio(file);a.crossOrigin='anonymous';a.loop=true;a.preload='auto';a.className='media-source';a.dataset.auroraRole='music';a.setAttribute('aria-hidden','true');document.body.append(a);this.audio.set(file,a);if(this.ctx&&this.analyser){try{const src=this.ctx.createMediaElementSource(a);src.connect(this.analyser);this.sources.add(file);}catch{}}a.addEventListener('error',()=>{this.events.push({type:'error',file,code:a.error?.code});this.onFailure?.({kind:'music',file});});a.addEventListener('playing',()=>{this.events.push({type:'playing',file});this.onPlaying?.({kind:'music',file});});}if(this.ctx&&this.analyser&&!this.sources.has(file)){try{this.ctx.createMediaElementSource(a).connect(this.analyser);this.sources.add(file);}catch{}}this.gain(a,this.volume*((this.duck||this.voiceAudio&&!this.voiceAudio.paused)?.24:1));if(a.error)a.load();if(this.enabled)a.play().catch(e=>{this.events.push({type:'blocked',file,message:e.message});if(e.name!=='AbortError')this.onFailure?.({kind:'music',file,reason:e.message});});}
  update(dt=0,voiceActive=false){
   const voice=this.voiceAudio;
   if(voice){
@@ -20,7 +30,7 @@ export class MediaDirector{
     if(this.voiceIdle>8)this.failVoice(voice,'playback made no progress for eight active seconds');
    }
   }
-  for(const a of this.audio.values()){const fade=Number.isFinite(a.duration)?Math.min(1,a.currentTime/1.3,Math.max(0,(a.duration-a.currentTime)/1.3)):1;a.volume=this.volume*((this.duck||this.voiceAudio&&!this.voiceAudio.paused)?.23:1)*Math.max(0,fade);}
+  for(const a of this.audio.values()){const fade=Number.isFinite(a.duration)?Math.min(1,a.currentTime/1.3,Math.max(0,(a.duration-a.currentTime)/1.3)):1;this.gain(a,this.volume*((this.duck||this.voiceAudio&&!this.voiceAudio.paused)?.23:1)*Math.max(0,fade));}
  }
  reset(){this.cancelVoice();for(const a of this.audio.values()){a.pause();try{a.currentTime=0;}catch{}}}
  cancelVoice(){const a=this.voiceAudio;this.voiceAudio=null;a?.pause();a?.remove();this.voiceNode?.disconnect();this.voiceNode=null;this.voiceCaption='';this.voicePausedForPause=false;this.voiceIdle=0;this.voiceLastTime=0;}
