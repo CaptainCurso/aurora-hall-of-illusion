@@ -1,0 +1,397 @@
+{
+  "schema": 1,
+  "complete": true,
+  "storySha256": "56e0eef681a727df32f76ee63e5b0cf9539059ef833605c2ff0191f5ee95d452",
+  "files": [
+    {
+      "id": "aurora-smug",
+      "file": "assets/encore/images/aurora-smug.png",
+      "sourceSha256": "c14586cc9c04d26e139954ec8016da2da94bd5bcab38e58d23dfafe078949fe4",
+      "sha256": "15eec2a230ed76c72aa72e59276d6b2233575d8017eb191c0f2ef19d8fb3beeb",
+      "producerStatus": "accepted",
+      "kind": "images",
+      "removedChunks": [
+        "iTXt",
+        "tEXt",
+        "eXIf"
+      ],
+      "visualDataSha256": "a15fac823d30847eccf303c46ef69a3a70dd72f137bc11ec13a6cf527f0bba5e",
+      "colorChunksPreserved": [],
+      "pixelAndColorDataUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      },
+      "decodedRgbaSha256": "dfa82bb5b7a583138b1f9b259b94ad4a4863a3821924efc62a9a18c2f2a4a5af",
+      "decodedPixelsUnchanged": true
+    },
+    {
+      "id": "aurora-affronted",
+      "file": "assets/encore/images/aurora-affronted.png",
+      "sourceSha256": "a43b1ba8dfdd28a3424e830319b4b4edd6b43d917eaf3573900da71dcd75a0a3",
+      "sha256": "8617aa62e23f56455383f03c1059dee03a297f8e6d00098f8992e3c378fe1eb6",
+      "producerStatus": "accepted",
+      "kind": "images",
+      "removedChunks": [
+        "iTXt",
+        "tEXt",
+        "eXIf"
+      ],
+      "visualDataSha256": "1d65f069772d17fbf773de0ede9c68c18f7393355ecb66a09b97f487726d5fe0",
+      "colorChunksPreserved": [],
+      "pixelAndColorDataUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      },
+      "decodedRgbaSha256": "a03d8e4e49cfe1720c3b3a4a7a7b234f998b9bbd342779a6c586f3c2a374401a",
+      "decodedPixelsUnchanged": true
+    },
+    {
+      "id": "aurora-vulnerable",
+      "file": "assets/encore/images/aurora-vulnerable.png",
+      "sourceSha256": "a730119469e85fdc7be9dff761d4e2570c917bb9f973ed04c04c415948133e29",
+      "sha256": "9efc5187a177567b24bd27e72582955f9c9ee854ac05fe2914763f79dc8b0c2d",
+      "producerStatus": "accepted",
+      "kind": "images",
+      "removedChunks": [
+        "iTXt",
+        "tEXt",
+        "eXIf"
+      ],
+      "visualDataSha256": "3e080217133a85def2be566d0f56f96044ca2e4b0aeadd9b3b14a256a962b391",
+      "colorChunksPreserved": [],
+      "pixelAndColorDataUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      },
+      "decodedRgbaSha256": "1126170a21e03c4223b3e806c4a8c6bfd9f8f20796c90d3a0ee88c7a3da0bd0e",
+      "decodedPixelsUnchanged": true
+    },
+    {
+      "id": "aurora-ungovernable",
+      "file": "assets/encore/images/aurora-ungovernable.png",
+      "sourceSha256": "b77ff238b9665d43f77b3545e2b7b906701547e833abcee850aeac25c84a480a",
+      "sha256": "25fe3c55088be486ec398bf620b3fc04258975bc2a42b484e9ba39bd6063c5be",
+      "producerStatus": "accepted",
+      "kind": "images",
+      "removedChunks": [
+        "iTXt",
+        "tEXt",
+        "eXIf"
+      ],
+      "visualDataSha256": "e6ea99d19e1aa0e445fadb265b36c36bd9cd0c831cc269d5dd3a3f3dee8859f7",
+      "colorChunksPreserved": [],
+      "pixelAndColorDataUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      },
+      "decodedRgbaSha256": "4f6a1e59ecfb7972c700503cd4325e5c7bd22e9c5a233159e7f0855944c4bb62",
+      "decodedPixelsUnchanged": true
+    },
+    {
+      "id": "vesper-welcoming",
+      "file": "assets/encore/images/vesper-welcoming.png",
+      "sourceSha256": "c4339e97c0fce949a90843093b16282b64f53c8992759abe0521ed5a3bb050ca",
+      "sha256": "58ab2e92b5898409091bd8c7a8f432f047d5feda31d905394178afa1b2640e81",
+      "producerStatus": "accepted",
+      "kind": "images",
+      "removedChunks": [
+        "iTXt",
+        "tEXt",
+        "eXIf"
+      ],
+      "visualDataSha256": "34f043e5ced770a677b8b2292a8ee310851aa8fb53b0eb8dbeeb30f6b500ef41",
+      "colorChunksPreserved": [],
+      "pixelAndColorDataUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      },
+      "decodedRgbaSha256": "7eef8d992c7599b920e92ff01708439fc3dfc84cfbfad3a4b35a2008f8a2b1f1",
+      "decodedPixelsUnchanged": true
+    },
+    {
+      "id": "vesper-amused",
+      "file": "assets/encore/images/vesper-amused.png",
+      "sourceSha256": "ee4205cfc82631ac220fa174f5f24da74e922d7b921e201195e4d4bce95d2d68",
+      "sha256": "e6a5b21839c3aa36a2fa24cc383cfd52b53543fbe6a53d4dee28b2a50cb4be72",
+      "producerStatus": "accepted",
+      "kind": "images",
+      "removedChunks": [
+        "iTXt",
+        "tEXt",
+        "eXIf"
+      ],
+      "visualDataSha256": "d4a66b1130b5a386673b948e3d3c74a288bdfb20a8c245848c3266737e43fbb5",
+      "colorChunksPreserved": [],
+      "pixelAndColorDataUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      },
+      "decodedRgbaSha256": "e9c801808cc3779606a6f54e869c7c6d4ec942432066562cbb6369a4c023b05f",
+      "decodedPixelsUnchanged": true
+    },
+    {
+      "id": "vesper-boundary",
+      "file": "assets/encore/images/vesper-boundary.png",
+      "sourceSha256": "1675e745097526b552bc38943a4f0368438555e94c3180b0e86f5e7266bf199c",
+      "sha256": "50faca9c926425f1695aec8cf7e6ca1ddc19e09e971acf788cb9a27673e3312e",
+      "producerStatus": "accepted",
+      "kind": "images",
+      "removedChunks": [
+        "iTXt",
+        "tEXt",
+        "eXIf"
+      ],
+      "visualDataSha256": "aa6a30fc5d65edd1acf4a7824a26c3284dab6b4722a9c2d7453470b6e5b83aae",
+      "colorChunksPreserved": [],
+      "pixelAndColorDataUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      },
+      "decodedRgbaSha256": "9ceae5390ad1c2cab63a70e2d1338dbcbfa9ba03e90179c26cab1d7e270ff1fd",
+      "decodedPixelsUnchanged": true
+    },
+    {
+      "id": "vesper-wanting",
+      "file": "assets/encore/images/vesper-wanting.png",
+      "sourceSha256": "ff162c92291e578f7b4d270e6186ac84d947ff307c3f41691a05b55b5c476c84",
+      "sha256": "aaba2aa5c06818fcdb4c1da5ce39d421579c4da48d88d5004356c235dcb644de",
+      "producerStatus": "accepted",
+      "kind": "images",
+      "removedChunks": [
+        "iTXt",
+        "tEXt",
+        "eXIf"
+      ],
+      "visualDataSha256": "e4546e188657dcbee8982bf2667fd8b695bde3555e65c50bcbc25aa5c894489d",
+      "colorChunksPreserved": [],
+      "pixelAndColorDataUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      },
+      "decodedRgbaSha256": "5d278d8bb3846cc7222b50ef5864bf483fd3da364d9d36af49540bb7bc41541e",
+      "decodedPixelsUnchanged": true
+    },
+    {
+      "id": "ilex-composed",
+      "file": "assets/encore/images/ilex-composed.png",
+      "sourceSha256": "56ed7306044192e6e64516d63535b6c9a9316100f1a6dbb9d06e6eab2f9b6888",
+      "sha256": "05f32176aa0eff91fe35ff79922e606f6bb869147aad5f3206ff959428c6135e",
+      "producerStatus": "accepted",
+      "kind": "images",
+      "removedChunks": [
+        "iTXt",
+        "tEXt",
+        "eXIf"
+      ],
+      "visualDataSha256": "e28c8cdd22f08255822a333fe46e6894fac205358ee18263d157ff016b39b306",
+      "colorChunksPreserved": [],
+      "pixelAndColorDataUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      },
+      "decodedRgbaSha256": "f5587a09882f8b438dd98d904f43442e56c25ec993d21e45847880d2da1a49b7",
+      "decodedPixelsUnchanged": true
+    },
+    {
+      "id": "ilex-skeptical",
+      "file": "assets/encore/images/ilex-skeptical.png",
+      "sourceSha256": "b358eb3b88ab916878a606ea3853c0909ed223769f0ee69777234e0cacc9419b",
+      "sha256": "001f769d181780fc1f4f6a7269b80e3b626c3be2fa50a0bae79a0a9d82a0d06b",
+      "producerStatus": "accepted",
+      "kind": "images",
+      "removedChunks": [
+        "iTXt",
+        "tEXt",
+        "eXIf"
+      ],
+      "visualDataSha256": "2ddcfd95c459cf82828fa520fc19d256db0d37fbd22fbb4a3c327f5d7e4c64c5",
+      "colorChunksPreserved": [],
+      "pixelAndColorDataUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      },
+      "decodedRgbaSha256": "2e093677e3c779f6bb118ec95ea6836eb30561466b4d928456d1b5dcc8b85448",
+      "decodedPixelsUnchanged": true
+    },
+    {
+      "id": "ilex-delighted",
+      "file": "assets/encore/images/ilex-delighted.png",
+      "sourceSha256": "1920fc86ca1796cdf9dda5b47e9092087d89609f4f52fe254902daeb13e446f8",
+      "sha256": "c6ad53f25b94a2cdc08032ba8e6e1d6211b0d268784af32594456a1cee02e37c",
+      "producerStatus": "accepted",
+      "kind": "images",
+      "removedChunks": [
+        "iTXt",
+        "tEXt",
+        "eXIf"
+      ],
+      "visualDataSha256": "ec11a8e1f2be939afcdf01f975bbf8fd81f75fdf13d60919e8130942dd5f259b",
+      "colorChunksPreserved": [],
+      "pixelAndColorDataUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      },
+      "decodedRgbaSha256": "bcaea20fc351cc21c039aaabaabaaac2d27a97a9bf5883e8b583ee99abc88c58",
+      "decodedPixelsUnchanged": true
+    },
+    {
+      "id": "ilex-grief",
+      "file": "assets/encore/images/ilex-grief.png",
+      "sourceSha256": "450cde5d315be2e267b46bd57960c681912e554594a8e1d3ba4e34ee8738b0ce",
+      "sha256": "21c7983fd6dbd01a3a7c9955f1643d1df24f4e39d3a18964669d0833370d3933",
+      "producerStatus": "accepted",
+      "kind": "images",
+      "removedChunks": [
+        "iTXt",
+        "tEXt",
+        "eXIf"
+      ],
+      "visualDataSha256": "8fae6d2d7b1315fb2096ddd88166b19bbebb6c3017a0c881ff1191a0385e995c",
+      "colorChunksPreserved": [],
+      "pixelAndColorDataUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      },
+      "decodedRgbaSha256": "5b72dd7f6241c7fbff76229564b8d3f5b5dcb08fe87fe61f2b543f7d42d82e75",
+      "decodedPixelsUnchanged": true
+    },
+    {
+      "id": "cg-faces",
+      "file": "assets/encore/images/cg-faces.png",
+      "sourceSha256": "aaca5c86b849fb185dd6a6ff24030d83a2a810f38af2bfa10cd9011ef0ae000e",
+      "sha256": "d0698ad109dc8dda72edae785d29ccd103893f35e2eeebf58fd4dbdacf00e7da",
+      "producerStatus": "accepted",
+      "kind": "images",
+      "removedChunks": [
+        "iTXt",
+        "tEXt",
+        "eXIf"
+      ],
+      "visualDataSha256": "f6a4e50be084343f683fd0ca01af2a1b372074ec41e9478aab930ae1de016e05",
+      "colorChunksPreserved": [],
+      "pixelAndColorDataUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      },
+      "decodedRgbaSha256": "491c02c98ba480d0931889d82ef8c711eaba605b06e9ccda05996fd330f1a6d4",
+      "decodedPixelsUnchanged": true
+    },
+    {
+      "id": "cg-teacup",
+      "file": "assets/encore/images/cg-teacup.png",
+      "sourceSha256": "383b97543f9e414e2ea4606e4d29643ecacf0cd422836ab255ed2693bc4842b2",
+      "sha256": "644eace60b90520885b8de868acdb65b4c0f90ef03182b5d210860d4c9efaaf8",
+      "producerStatus": "accepted",
+      "kind": "images",
+      "removedChunks": [
+        "iTXt",
+        "tEXt",
+        "eXIf"
+      ],
+      "visualDataSha256": "6b6313b6f9cefe38679dff72925e4efccbc507e19f8535e612a2eda58f4a79e5",
+      "colorChunksPreserved": [],
+      "pixelAndColorDataUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      },
+      "decodedRgbaSha256": "1d2f2f588e6d254d1debc7eead1e7bd20e615c79a4b9a88abc63ee9dd40cbe24",
+      "decodedPixelsUnchanged": true
+    },
+    {
+      "id": "cg-names",
+      "file": "assets/encore/images/cg-names.png",
+      "sourceSha256": "7f0d02c1093d0b9a0381d8e8fc7a1a548bc027d758814edc6afcd5a97c2bd2d2",
+      "sha256": "9ae956c46eafc0ae0b69dacb0f2746eb3d938f93fb2e70ec3e1e3f4e66beded5",
+      "producerStatus": "accepted",
+      "kind": "images",
+      "removedChunks": [
+        "iTXt",
+        "tEXt",
+        "eXIf"
+      ],
+      "visualDataSha256": "88d250f3ac947a28e7d546efd723bfacfead3047d41bfad93a0c632efe8e0d72",
+      "colorChunksPreserved": [],
+      "pixelAndColorDataUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      },
+      "decodedRgbaSha256": "516b285dc8bc807f2a3db0cc7e76a4ea7e38356e8fcbb9f56c60750281a6e2f7",
+      "decodedPixelsUnchanged": true
+    },
+    {
+      "id": "film-faces",
+      "file": "assets/encore/video/film-faces.mp4",
+      "sourceSha256": "76a1f51fab55c2949289a928b865548a337f672ee781d35d97fe970602eb48dd",
+      "sha256": "76a1f51fab55c2949289a928b865548a337f672ee781d35d97fe970602eb48dd",
+      "producerStatus": "accepted",
+      "kind": "videos"
+    },
+    {
+      "id": "film-teacup",
+      "file": "assets/encore/video/film-teacup.mp4",
+      "sourceSha256": "7badffd8fffcb952fd515d6bb5585fcaff2f1cc1143d41c7e1e69628fc728cbf",
+      "sha256": "7badffd8fffcb952fd515d6bb5585fcaff2f1cc1143d41c7e1e69628fc728cbf",
+      "producerStatus": "accepted",
+      "kind": "videos"
+    },
+    {
+      "id": "film-names",
+      "file": "assets/encore/video/film-names.mp4",
+      "sourceSha256": "ed3f99cb69f46ab11dee41975a4b2c083cb9b9ee5f75dc2f41ac03704724914b",
+      "sha256": "ed3f99cb69f46ab11dee41975a4b2c083cb9b9ee5f75dc2f41ac03704724914b",
+      "producerStatus": "accepted",
+      "kind": "videos"
+    },
+    {
+      "id": "music-faces",
+      "file": "assets/encore/audio/faces.mp3",
+      "sourceSha256": "f9f3285ee99e826ffa59c9bf29ed45695e9de2b598fced06eb756e9f442aa9d8",
+      "sha256": "f9f3285ee99e826ffa59c9bf29ed45695e9de2b598fced06eb756e9f442aa9d8",
+      "producerStatus": "Produced; technical decode/loudness and file hashes checked. Perceptual listening unavailable.",
+      "kind": "music"
+    },
+    {
+      "id": "music-teacup",
+      "file": "assets/encore/audio/teacup.mp3",
+      "sourceSha256": "5237698b342e7f472ee123a88e04ce5f45508a67d137dc11d4a8277bdffac945",
+      "sha256": "5237698b342e7f472ee123a88e04ce5f45508a67d137dc11d4a8277bdffac945",
+      "producerStatus": "Produced; technical decode/loudness and file hashes checked. Perceptual listening unavailable.",
+      "kind": "music"
+    },
+    {
+      "id": "music-names",
+      "file": "assets/encore/audio/names.mp3",
+      "sourceSha256": "14e83ddcb101117ded556fcdea089f5a6bd49839e1a2baa0d9a8b34b3509d7fc",
+      "sha256": "14e83ddcb101117ded556fcdea089f5a6bd49839e1a2baa0d9a8b34b3509d7fc",
+      "producerStatus": "Produced; technical decode/loudness and file hashes checked. Perceptual listening unavailable.",
+      "kind": "music"
+    },
+    {
+      "id": "music-reprise",
+      "file": "assets/encore/audio/reprise.mp3",
+      "sourceSha256": "1d0a0445577b6ecf9ec4919904f27e2f6895385ce527ccd95b3c0eff380b3953",
+      "sha256": "1d0a0445577b6ecf9ec4919904f27e2f6895385ce527ccd95b3c0eff380b3953",
+      "producerStatus": "Produced; technical decode/loudness and file hashes checked. Perceptual listening unavailable.",
+      "kind": "music"
+    }
+  ],
+  "pending": [],
+  "artManifestSha256": "06141109fc51f494ad1e26852ce7422bdd09eaabdf781173bd15b9b35574a88f",
+  "musicManifestSha256": "4a050135bbd63c194e1fd957864072fb85e0b27645b324cc49b0d6d64575cbd6",
+  "limits": "Artwork requires accepted producer hashes; audio is a locally produced technically checked candidate. No perceptual listening pass is invented. Exact-build reviews remain required."
+}
