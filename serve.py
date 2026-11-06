@@ -12,6 +12,7 @@ import posixpath
 from urllib.parse import unquote,urlsplit
 import subprocess
 import threading
+from email.utils import parsedate_to_datetime
 
 ROOT = Path(__file__).resolve().parent
 mimetypes.add_type('text/javascript', '.js')
@@ -19,14 +20,116 @@ PUBLIC_FILES = {'index.html', 'style.css', 'novel.css', 'BUILD.json'}
 PUBLIC_DIRS = {'src', 'assets', 'vendor', 'builds', 'vnext'}
 
 class GameHandler(SimpleHTTPRequestHandler):
-    def do_GET(self):
+    protocol_version = 'HTTP/1.1'
+
+    def selected_redirect(self):
+        self._cache_control='no-store';self._etag=None;self._remaining=None
         release=getattr(self.server, 'local_default_release', None)
         if release and urlsplit(self.path).path in ('/', '/index.html'):
             self.send_response(302)
             self.send_header('Location', '/builds/'+release+'/')
+            self.send_header('Content-Length', '0')
             self.end_headers()
+            return True
+        return False
+
+    def do_GET(self):
+        if self.selected_redirect():
             return
         super().do_GET()
+
+    def do_HEAD(self):
+        if self.selected_redirect():
+            return
+        super().do_HEAD()
+
+    def send_head(self):
+        """Serve resumable media and revalidate unversioned release assets by hash."""
+        self._remaining = None
+        self._cache_control = 'no-store'
+        self._etag = None
+        path = Path(self.translate_path(self.path))
+        if not path.is_file():
+            return super().send_head()
+        lan_root = getattr(self.server, 'approved_lan_root', None)
+        digest = None
+        versioned = False
+        if lan_root is not None and path.is_relative_to(lan_root):
+            digest = getattr(self.server, 'approved_lan_hashes', {}).get(path.relative_to(lan_root).as_posix())
+            versioned = unquote(urlsplit(self.path).path).startswith('/builds/'+self.server.approved_lan_version+'/')
+        elif path.is_relative_to(ROOT/'builds'):
+            relative = path.relative_to(ROOT/'builds')
+            if len(relative.parts)>1:
+                version, name = relative.parts[0], Path(*relative.parts[1:]).as_posix()
+                cache = getattr(self.server, 'release_hashes', {})
+                if version not in cache:
+                    manifest = ROOT/'builds'/version/'BUILD.json'
+                    if manifest.is_file():
+                        data=manifest.read_bytes()
+                        cache[version]={**json.loads(data)['files'],'BUILD.json':hashlib.sha256(data).hexdigest()}
+                    else:
+                        cache[version]={}
+                    self.server.release_hashes=cache
+                digest=cache[version].get(name)
+                versioned=True
+        # Entry/manifest always reselect the release. Mutable development files never cache.
+        if digest and path.name not in ('index.html','BUILD.json'):
+            self._etag='"'+digest+'"'
+            self._cache_control='public, max-age=31536000, immutable' if versioned else 'no-cache'
+        if self._etag and any(tag.strip().removeprefix('W/') in ('*',self._etag) for tag in self.headers.get('If-None-Match','').split(',')):
+            self.send_response(304)
+            self.end_headers()
+            return None
+        try:
+            source=path.open('rb')
+        except OSError:
+            self.send_error(404,'File not found')
+            return None
+        stat=path.stat();size=stat.st_size;start=0;end=size-1
+        requested=self.headers.get('Range')
+        if requested and self.headers.get('If-Range'):
+            validator=self.headers['If-Range']
+            valid=bool(self._etag and validator==self._etag)
+            if not valid:
+                try:valid=int(stat.st_mtime)<=parsedate_to_datetime(validator).timestamp()
+                except (ValueError,TypeError,OverflowError):valid=False
+            if not valid:requested=None
+        if requested:
+            match=re.fullmatch(r'bytes=(\d*)-(\d*)',requested.strip())
+            valid=bool(match and (match[1] or match[2]) and len(match[1])<=20 and len(match[2])<=20 and size)
+            if valid:
+                if not match[1]:
+                    suffix=int(match[2]);valid=suffix>0;start=max(0,size-suffix)
+                else:
+                    start=int(match[1]);end=min(size-1,int(match[2])) if match[2] else size-1
+                    valid=start<size and start<=end
+            if not valid:
+                source.close();self.send_response(416)
+                self.send_header('Content-Range','bytes */'+str(size))
+                self.send_header('Content-Length','0');self.end_headers()
+                return None
+        length=end-start+1
+        source.seek(start);self._remaining=length
+        self.send_response(206 if requested else 200)
+        self.send_header('Content-Type',self.guess_type(str(path)))
+        self.send_header('Content-Length',str(length))
+        self.send_header('Accept-Ranges','bytes')
+        self.send_header('Last-Modified',self.date_time_string(stat.st_mtime))
+        if requested:self.send_header('Content-Range',f'bytes {start}-{end}/{size}')
+        self.end_headers()
+        return source
+
+    def copyfile(self, source, outputfile):
+        if self._remaining is None:
+            return super().copyfile(source,outputfile)
+        remaining=self._remaining
+        try:
+            while remaining:
+                data=source.read(min(65536,remaining))
+                if not data:break
+                outputfile.write(data);remaining-=len(data)
+        except (BrokenPipeError,ConnectionResetError):
+            pass  # Normal browser cancellation when a scene replaces its media.
 
     def translate_path(self, path):
         lan_root = getattr(self.server, 'approved_lan_root', None)
@@ -55,12 +158,16 @@ class GameHandler(SimpleHTTPRequestHandler):
         return None
 
     def end_headers(self):
-        self.send_header('Cache-Control', 'no-store')
+        self.send_header('Cache-Control', getattr(self,'_cache_control','no-store'))
+        if getattr(self,'_etag',None):self.send_header('ETag',self._etag)
         self.send_header('X-Content-Type-Options', 'nosniff')
         self.send_header('Content-Security-Policy', "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'")
         super().end_headers()
 
 PRIVATE_NETWORKS = tuple(ipaddress.ip_network(n) for n in ('10.0.0.0/8', '172.16.0.0/12', '192.168.0.0/16'))
+
+class GameServer(ThreadingHTTPServer):
+    request_queue_size = 32
 
 def private_lan(address):
     try:
@@ -117,7 +224,7 @@ if __name__ == '__main__':
     servers = []
     try:
         for address in addresses:
-            server = ThreadingHTTPServer((address, args.port), handler)
+            server = GameServer((address, args.port), handler)
             server.daemon_threads = True
             if address != '127.0.0.1':
                 build_root = (ROOT/'builds'/args.lan_build).resolve()
@@ -135,6 +242,7 @@ if __name__ == '__main__':
                         raise OSError('LAN-approved bytes changed: '+name)
                 allowed.add('BUILD.json')
                 server.approved_lan_files = allowed
+                server.approved_lan_hashes = {**approved['files'],'BUILD.json':hashlib.sha256((build_root/'BUILD.json').read_bytes()).hexdigest()}
                 server.approved_lan_root = build_root
                 server.approved_lan_version = args.lan_build
             if address == '127.0.0.1' and (ROOT/'builds'/args.lan_build).is_dir():

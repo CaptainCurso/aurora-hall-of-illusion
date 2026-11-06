@@ -1,7 +1,7 @@
 {
-  "build": "v0.11.1",
-  "manifestSha256": "2949e5772f2114430a4d6184ea3fe6122199d88b99289ca78fbd5550b724fbff",
+  "build": "v0.12.1",
+  "manifestSha256": "028689fdbfcdb60a8ce164d42b348cd1beae60bceaf14f7d8fda0699a0e979dd",
   "private": false,
-  "promotedAt": "2026-11-06T02:15:02.840198+00:00",
-  "authorization": "User requested opening-hall progression, larger interaction text and optional Xbox/PlayStation controls. Existing authorization covers Git, LAN and public GitHub delivery of the complete game and its assets. Exact-build QA functional PASS and Designer/Aurora desktop approvals obtained. No new media, original assets or saves changed."
+  "promotedAt": "2026-11-06T03:24:48.740690+00:00",
+  "authorization": "User requested repair of choppy Chrome laptop/LAN playback. Existing explicit complete-game GitHub/public and LAN authorization persists; all media/story remain unchanged. Exact-build QA scoped functional/performance PASS and Aurora presentation APPROVE. Actual laptop listening/retry remains unverified."
 }

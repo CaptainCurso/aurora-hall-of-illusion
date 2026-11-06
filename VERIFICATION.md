@@ -1,3 +1,25 @@
+# Verification record — v0.12.1 final film-start correction
+
+Frozen manifest `028689fdbfcdb60a8ce164d42b348cd1beae60bceaf14f7d8fda0699a0e979dd`, 78 files. v0.12.0 remains preserved as a rejected candidate: native Chrome preloaded idol-transit only to 3.841/4.041667s and its near-complete-file gate could wait indefinitely. The corrected gate accepts substantial headroom (duration minus at most 0.35s/10%); playback then fetches the small tail. Posters/first frames remain visible while loading. The change preserves all control gates and media bytes.
+
+Developer headed native Chrome used ordinary UI after the correction: both original hall films advanced roughly 0.16→1.27s and all three Encore films advanced across a 1.1-second window, with no page exceptions. This run was on staging immediately before the final version/import-key freeze; Aurora then verified the exact frozen build in native Chrome: idol-transit started with3.841s buffered, advanced to3.8013s while completing its buffer, and both hall films paused/resumed correctly. Its final native tab was closed before QA took the slot. Performance measurements below remain explicitly attributed to v0.12.0, whose graphics, audio, network and scene-loading changes are unchanged. Independent QA functional/scoped performance PASS on exact v0.12.1; Aurora presentation APPROVE. All 78 hashes matched before/after. QA observed all six films advancing in headed Chrome, including the corrected transit film; delayed movie delivery respected Pause and did not restart a discarded scene. Opening, simulated controller, original physical ending, Encore replay, audio/video transport and quality persistence passed. The exact patch’s constrained hub music advanced6.01s with readyState4 and26.75s buffered; arrival voice still stalled initially before advancing2.92s. Physical laptop listening and retry remain unverified. Final deployment receipt follows.
+
+---
+
+# Verification record — v0.12.0 playback
+
+Frozen manifest: `d2b9b2a71eb59044d3572d387d6f528ccca0ecf3b53f18f1bc957a38557b8e27`, 78 runtime files. All media, story and save keys are unchanged. The active user reported audio or several things choppy in Chrome on a laptop over LAN; the laptop itself is not available to these tests.
+
+Controlled measurements use one isolated Chrome 156.0.8078.81 page, Metal Apple M5 Pro host, 1920×1080 CSS/DPR2, 2-second warmup and six-second samples. The powerful host baseline was already near 60 animation callbacks/s, so no claim of reproducing the laptop's audible problem or improving its actual FPS is made. The baseline did issue about 24,000 WebGL draws per six seconds behind Pause/Encore. The candidate stops that continuous work: zero background draws behind Encore; only finite image-arrival redraws behind Pause/dialogue. Default 3D canvas is 1920×1080 rather than 3072×1728 at this display; High restores the old setting, Light reduces further. DOM text, actual art/media bytes and gameplay remain intact.
+
+A separate artificial 4× CPU/5Mbps/30ms browser condition reproduced delayed media in the old build. In the matched Developer candidate run, hub dance audio advanced to 7.33s/readyState4 with 26.47s buffered, compared with 0/readyState0 in the baseline window. Faces audio advanced 7.76s versus 2.82s. Initial voice still had a delayed/stalled event before playing; short movies may wait for their complete four seconds of data, then loop. The candidate is not a guarantee against all network, output-device or laptop-specific interruptions. Browser media clocks/decoders and AudioContext timestamps are not subjective hearing or physical speaker/underrun verification. Single runs are scoped observations, not a statistical survey.
+
+Native lifecycle checks passed all three graphics modes, original video/music resume, Pause/Reduced Motion, direct Encore without downloading unused hub music, no hidden world renders, and zero redundant volume assignments during a stable sample. HTTP fixture tests passed exact single/suffix/open byte ranges, HEAD, 416, ETag 304, If-Range, persistent connections, 24 parallel partial requests, cache policy and private-file exclusions. Versioned assets are immutable; unversioned selected assets revalidate by hash; entry/build selection and mutable development files stay uncached.
+
+Independent exact-build QA, presentation and final deployment receipts follow when complete. Prior verification remains explicitly historical below.
+
+---
+
 # Verification record — v0.11.1 access and controls
 
 Frozen manifest SHA256: `2949e5772f2114430a4d6184ea3fe6122199d88b99289ca78fbd5550b724fbff`, 78 files, Chrome 156.0.8078.81. Earlier frozen builds are unchanged. Story, media and save keys are unchanged from v0.10.0.
