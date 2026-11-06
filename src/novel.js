@@ -155,9 +155,9 @@ export class VisualNovel{
   this.fitArt();
  }
  fitArt(){
-  if(!this.isOpen||!this.chapter)return;
+  if(!this.isOpen)return;
   const root=this.root.getBoundingClientRect(),top=Math.ceil(this.toolbar.getBoundingClientRect().bottom-root.top+12),bottom=Math.ceil(root.bottom-this.dock.getBoundingClientRect().top+18);
-  this.stage.style.setProperty('--vn-art-top',top+'px');this.stage.style.setProperty('--vn-art-bottom',bottom+'px');
+  this.libraryView.style.top=top+'px';this.caption.style.top=top+'px';if(!this.chapter)return;this.stage.style.setProperty('--vn-art-top',top+'px');this.stage.style.setProperty('--vn-art-bottom',bottom+'px');
  }
  advance(){
   if(!this.isOpen||!this.node||this.historyOpen||this.paused)return;

@@ -1,6 +1,6 @@
 # Public publication
 
-The project owner requested Git check-in and a publicly accessible GitHub location on 2026-11-05, superseding the prior LAN-only distribution instruction for this completed game. Publication includes the completed v0.10.0 Encore release and its maintainable source; v0.9.1 remains preserved. Existing local LAN access and frozen historical builds are preserved.
+The project owner requested Git check-in and a publicly accessible GitHub location on 2026-11-05, superseding the prior LAN-only distribution instruction for this completed game. Publication includes the completed v0.11.1 access/control release and its maintainable source; v0.9.1 and v0.10.0 remain preserved. Existing local LAN access and frozen historical builds are preserved.
 
 Repository: https://github.com/CaptainCurso/aurora-hall-of-illusion
 
