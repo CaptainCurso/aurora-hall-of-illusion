@@ -1,24 +1,39 @@
 {
   "date": "2026-11-05",
-  "site": "https://captaincurso.github.io/aurora-hall-of-illusion/",
+  "site": "https://captaincurso.github.io/aurora-hall-of-illusion/?v=0.10.0",
   "repository": "https://github.com/CaptainCurso/aurora-hall-of-illusion",
-  "release": "v0.9.1",
-  "manifestSha256": "e314e82f07eb231d9bc75005b1e749e4129fe60787c0f46645fe0263cd12ca55",
-  "pagesCommit": "a124ac99e61840fe20509424066bcad2a9ab3e37",
+  "release": "v0.10.0",
+  "manifestSha256": "646052e7f8d9944b5d0c3d25041c8ea6e8138a25d5e0116d0edc753942993f15",
+  "sourceCommit": "490465d22d83fff7e9b52aa25b5ba68cd5bdb402",
+  "pagesCommit": "ae251b79b503e81abe90593cf0678c6ea61506b7",
   "githubPagesStatus": "built",
-  "workflow": "https://github.com/CaptainCurso/aurora-hall-of-illusion/actions/runs/42105001321",
+  "workflow": "https://github.com/CaptainCurso/aurora-hall-of-illusion/actions/runs/42144561433",
   "workflowConclusion": "success",
   "httpsEnforced": true,
-  "browser": "156.0.8078.80",
-  "httpHashes": 50,
+  "browser": "156.0.8078.81",
+  "httpHashes": 77,
   "nativeAudioAndVoiceAdvanced": true,
   "nativeVideoAdvanced": true,
+  "encoreNativeFilmAndMusicChapters": [
+    "faces",
+    "teacup",
+    "names"
+  ],
   "pauseHeldMediaClocks": true,
   "pageErrors": [],
   "failedRequests": [],
   "cancelledMediaRequests": [],
   "result": "PASS",
+  "initialFetchNote": "First strict public fetch received one HTTP503 for reprise.mp3; subsequent individual GET and complete unchanged strict rerun passed with exact hashes.",
+  "lan": {
+    "url": "http://192.168.1.248:8177/",
+    "release": "v0.10.0",
+    "httpHashes": 77,
+    "nativePlaybackAndPause": "PASS",
+    "privateFileExclusions": "PASS"
+  },
   "auditoryListeningClaim": false,
   "userConsent": "Yes, publish the complete game and these assets publicly",
-  "consentScope": "Existing Aurora portrait/projections, four campaign illustrations with undocumented original licenses, and generated derivatives; publicly viewable/downloadable via GitHub and GitHub Pages."
+  "consentScope": "Complete game, existing Aurora portrait/projections, four campaign illustrations with undocumented original licenses, and generated derivatives; publicly viewable/downloadable via GitHub and GitHub Pages.",
+  "privateProductionHistory": "Retained only locally; new public source commit has the prior public main as its sole parent."
 }
