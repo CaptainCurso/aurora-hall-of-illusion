@@ -15,7 +15,7 @@ import threading
 
 ROOT = Path(__file__).resolve().parent
 mimetypes.add_type('text/javascript', '.js')
-PUBLIC_FILES = {'index.html', 'style.css', 'BUILD.json'}
+PUBLIC_FILES = {'index.html', 'style.css', 'novel.css', 'BUILD.json'}
 PUBLIC_DIRS = {'src', 'assets', 'vendor', 'builds', 'vnext'}
 
 class GameHandler(SimpleHTTPRequestHandler):

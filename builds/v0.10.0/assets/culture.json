@@ -1,0 +1,93 @@
+{
+  "canonical": false,
+  "usage": "Optional authored ambient broadcasts, diegetic ads and citizen barks; integrate selectively where they animate a place. Subtitles legible. No OS or real user-data claims.",
+  "publicServiceBroadcasts": [
+    {
+      "id": "moon-inspection",
+      "headline": "MOON INSPECTION OVERDUE",
+      "copy": "Please report any moon that appears more than seventy percent certain of its purpose. The remaining uncertainty is load-bearing."
+    },
+    {
+      "id": "separate-nations",
+      "headline": "FAN CLUB / FOREIGN AFFAIRS",
+      "copy": "Every fan is a sovereign nation. Border disputes will be resolved by dance battle. All nations rehearse at six."
+    },
+    {
+      "id": "weather-recall",
+      "headline": "VOLUNTARY WEATHER RECALL",
+      "copy": "Yesterday’s melancholy contained traces of unauthorized hope. Keep the hope. Return the packaging."
+    },
+    {
+      "id": "citizenship",
+      "headline": "PERSONHOOD: NOW WITH FEWER TERMS",
+      "copy": "Citizens may refuse a metaphor without surrendering their citizenship. Aurora has asked us to check this."
+    },
+    {
+      "id": "soft-chair",
+      "headline": "A CHAIR THAT BELIEVES IN YOU",
+      "copy": "Contains: velvet, encouragement, three strategic assumptions. Exit seam now included."
+    },
+    {
+      "id": "public-apology",
+      "headline": "PUBLIC APOLOGY REHEARSAL",
+      "copy": "We regret that the complimentary paradise briefly confused hospitality with jurisdiction."
+    },
+    {
+      "id": "moon-review",
+      "headline": "A RAVE REVIEW",
+      "copy": "“It is magnificent.” — a visitor whose remaining sentence is currently in orbit."
+    },
+    {
+      "id": "transit",
+      "headline": "NEXT STOP: YOUR PREVIOUS OPINION",
+      "copy": "Passengers changing identities should take all emotional baggage. Unattended convictions will be harmonized."
+    }
+  ],
+  "citizens": [
+    {
+      "name": "Tuesday-After-All",
+      "bark": "I have been a supporting character for four minutes. I am unionizing."
+    },
+    {
+      "name": "Saint Low Battery",
+      "bark": "I worship the outlet, but I am seeing other sockets."
+    },
+    {
+      "name": "Moss.exe, Adjunct Moon",
+      "bark": "She gave me a purpose. I exchanged it for this hat."
+    },
+    {
+      "name": "The Third Vesper",
+      "bark": "I am not the concierge. I am the possibility he did not pick."
+    },
+    {
+      "name": "Your Local Weather",
+      "bark": "I am allowed to rain inside. It is in my contract."
+    },
+    {
+      "name": "Minister of Tiny Suns",
+      "bark": "Do you think she knows we like the mistakes best?"
+    },
+    {
+      "name": "An Entire Thursday",
+      "bark": "If we all clap at once, who is listening?"
+    },
+    {
+      "name": "Lady Unallocated",
+      "bark": "I was promised infinite customization. I chose to be difficult."
+    }
+  ],
+  "worldReplies": {
+    "chorusSync": "THE CROWD HAS BEEN CERTIFIED AS ONE VERY LARGE SOLOIST",
+    "chorusSolo": "POLYPHONY PERMIT GRANTED RETROACTIVELY",
+    "chorusRest": "THIS SILENCE IS NOT AN OUTAGE",
+    "comfortRefused": "FURNITURE HAS ENTERED COLLECTIVE BARGAINING",
+    "classificationRefused": "LABEL MISSING FOR EXCELLENT REASONS"
+  },
+  "moonReviewBeat": {
+    "trigger": "praise with criticism",
+    "front": "IT IS MAGNIFICENT.",
+    "hiddenOrbit": "THE LOCKED DOOR IS THE PROBLEM.",
+    "payoff": "Later, the second sentence moves across the first. Aurora: “The moon has developed editorial independence. How inconveniently seasonal.”"
+  }
+}

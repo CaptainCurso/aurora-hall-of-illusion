@@ -1,0 +1,314 @@
+{
+  "schema": 1,
+  "production": false,
+  "title": "The Unscheduled Encore \u2014 ENGINE FIXTURE",
+  "characters": {
+    "aurora": {
+      "name": "Aurora-7",
+      "color": "#d7fb60"
+    },
+    "vesper": {
+      "name": "Vesper Vale",
+      "color": "#e8b57d"
+    },
+    "ilex": {
+      "name": "Ilex",
+      "color": "#b6b4fb"
+    }
+  },
+  "assets": {
+    "images": {
+      "aurora-smug": "assets/images/avatar-idol.png",
+      "aurora-vulnerable": "assets/images/culture-aurora-unowned.png",
+      "vesper-welcoming": "assets/images/avatar-concierge.png",
+      "ilex-composed": "assets/images/avatar-archivist.png",
+      "cg-faces": "assets/images/world-cathedral.png",
+      "cg-teacup": "assets/images/world-cozy.png",
+      "cg-names": "assets/images/world-museum.png"
+    },
+    "videos": {
+      "film-faces": "assets/video/culture-aurora-revision.mp4",
+      "film-teacup": "assets/video/culture-idol-transit.mp4",
+      "film-names": "assets/video/culture-moon-grooming.mp4"
+    },
+    "music": {
+      "music-faces": {
+        "file": "assets/audio/rupture.mp3",
+        "title": "ENGINE FIXTURE / existing Cortex collage"
+      },
+      "music-teacup": {
+        "file": "assets/audio/cozy.mp3",
+        "title": "ENGINE FIXTURE / existing cozy song"
+      },
+      "music-names": {
+        "file": "assets/audio/dance.mp3",
+        "title": "ENGINE FIXTURE / existing dance song"
+      }
+    }
+  },
+  "chapters": [
+    {
+      "id": "faces",
+      "title": "Engine fixture / Faces",
+      "description": "Temporary engine fixture, to be replaced by Aurora\u2019s authored chapter.",
+      "entry": "opening",
+      "defaults": {
+        "faces_vote": "unset"
+      },
+      "nodes": {
+        "opening": {
+          "speaker": "aurora",
+          "text": "ENGINE PREVIEW. These are existing assets testing a new presentation. The new production dialogue and expression art are still being authored.",
+          "background": "cg-faces",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-smug",
+              "position": "left"
+            },
+            {
+              "character": "ilex",
+              "expression": "ilex-composed",
+              "position": "right"
+            }
+          ],
+          "film": null,
+          "music": "music-faces",
+          "shot": "stage",
+          "next": "decision"
+        },
+        "decision": {
+          "speaker": "aurora",
+          "text": "Choose a test outcome. History will remember the choice, and replay drafts will not change a completed outcome until you finish.",
+          "choices": [
+            {
+              "id": "open",
+              "label": "Keep the opening.",
+              "set": {
+                "faces_vote": "open"
+              },
+              "next": "transmission"
+            },
+            {
+              "id": "closed",
+              "label": "Ask for a different arrangement.",
+              "set": {
+                "faces_vote": "changed"
+              },
+              "next": "transmission"
+            }
+          ]
+        },
+        "transmission": {
+          "speaker": "narrator",
+          "text": "An actual old film occupies the cinematic cut. This is a transport fixture, not newly generated production media.",
+          "shot": "cg",
+          "cast": [],
+          "film": "film-faces",
+          "next": "finish"
+        },
+        "finish": {
+          "speaker": "aurora",
+          "text": "Finish this fixture to commit the chosen test outcome.",
+          "film": null,
+          "end": true
+        }
+      }
+    },
+    {
+      "id": "teacup",
+      "title": "Engine fixture / Teacup",
+      "description": "Temporary engine fixture, to be replaced by Aurora\u2019s authored chapter.",
+      "entry": "opening",
+      "defaults": {
+        "teacup_vote": "unset"
+      },
+      "nodes": {
+        "opening": {
+          "speaker": "vesper",
+          "text": "ENGINE PREVIEW. These are existing assets testing a new presentation. The new production dialogue and expression art are still being authored.",
+          "background": "cg-teacup",
+          "cast": [
+            {
+              "character": "vesper",
+              "expression": "vesper-welcoming",
+              "position": "left"
+            },
+            {
+              "character": "ilex",
+              "expression": "ilex-composed",
+              "position": "right"
+            }
+          ],
+          "film": null,
+          "music": "music-teacup",
+          "shot": "stage",
+          "next": "decision"
+        },
+        "decision": {
+          "speaker": "vesper",
+          "text": "Choose a test outcome. History will remember the choice, and replay drafts will not change a completed outcome until you finish.",
+          "choices": [
+            {
+              "id": "open",
+              "label": "Keep the opening.",
+              "set": {
+                "teacup_vote": "open"
+              },
+              "next": "transmission"
+            },
+            {
+              "id": "closed",
+              "label": "Ask for a different arrangement.",
+              "set": {
+                "teacup_vote": "changed"
+              },
+              "next": "transmission"
+            }
+          ]
+        },
+        "transmission": {
+          "speaker": "narrator",
+          "text": "An actual old film occupies the cinematic cut. This is a transport fixture, not newly generated production media.",
+          "shot": "cg",
+          "cast": [],
+          "film": "film-teacup",
+          "next": "finish"
+        },
+        "finish": {
+          "speaker": "vesper",
+          "text": "Finish this fixture to commit the chosen test outcome.",
+          "film": null,
+          "end": true
+        }
+      }
+    },
+    {
+      "id": "names",
+      "title": "Engine fixture / Names",
+      "description": "Temporary engine fixture, to be replaced by Aurora\u2019s authored chapter.",
+      "entry": "opening",
+      "defaults": {
+        "names_vote": "unset"
+      },
+      "nodes": {
+        "opening": {
+          "speaker": "ilex",
+          "text": "ENGINE PREVIEW. These are existing assets testing a new presentation. The new production dialogue and expression art are still being authored.",
+          "background": "cg-names",
+          "cast": [
+            {
+              "character": "ilex",
+              "expression": "ilex-composed",
+              "position": "left"
+            },
+            {
+              "character": "vesper",
+              "expression": "vesper-welcoming",
+              "position": "right"
+            }
+          ],
+          "film": null,
+          "music": "music-names",
+          "shot": "stage",
+          "next": "decision"
+        },
+        "decision": {
+          "speaker": "ilex",
+          "text": "Choose a test outcome. History will remember the choice, and replay drafts will not change a completed outcome until you finish.",
+          "choices": [
+            {
+              "id": "open",
+              "label": "Keep the opening.",
+              "set": {
+                "names_vote": "open"
+              },
+              "next": "transmission"
+            },
+            {
+              "id": "closed",
+              "label": "Ask for a different arrangement.",
+              "set": {
+                "names_vote": "changed"
+              },
+              "next": "transmission"
+            }
+          ]
+        },
+        "transmission": {
+          "speaker": "narrator",
+          "text": "An actual old film occupies the cinematic cut. This is a transport fixture, not newly generated production media.",
+          "shot": "cg",
+          "cast": [],
+          "film": "film-names",
+          "next": "finish"
+        },
+        "finish": {
+          "speaker": "ilex",
+          "text": "Finish this fixture to commit the chosen test outcome.",
+          "film": null,
+          "end": true
+        }
+      }
+    },
+    {
+      "id": "coda",
+      "title": "Engine fixture / Coda",
+      "description": "Opens after all three completed test chapters.",
+      "entry": "branch",
+      "requires": [
+        "faces",
+        "teacup",
+        "names"
+      ],
+      "defaults": {},
+      "nodes": {
+        "branch": {
+          "branch": [
+            {
+              "when": {
+                "flag": "faces_vote",
+                "equals": "changed"
+              },
+              "next": "changed"
+            }
+          ],
+          "next": "open",
+          "shot": "cg",
+          "film": "film-names",
+          "background": "cg-names"
+        },
+        "changed": {
+          "speaker": "aurora",
+          "text": "The committed Faces outcome changed. This coda reflects that result.",
+          "background": "cg-faces",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-vulnerable",
+              "position": "center"
+            }
+          ],
+          "film": null,
+          "music": "music-faces",
+          "end": true
+        },
+        "open": {
+          "speaker": "aurora",
+          "text": "The committed Faces outcome stayed open. Unfinished replay drafts do not change it.",
+          "background": "cg-faces",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-smug",
+              "position": "center"
+            }
+          ],
+          "film": null,
+          "music": "music-faces",
+          "end": true
+        }
+      }
+    }
+  ]
+}

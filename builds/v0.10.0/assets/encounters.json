@@ -1,0 +1,217 @@
+{
+  "schema": "aurora-authored-encounters-1",
+  "canonical": false,
+  "note": "Original non-canonical game fiction. Authored conversation, not a live AI model. Developer adapts state keys. All portrayed people are adults. Choices must have visible spatial or behavioral effects.",
+  "characters": [
+    {
+      "id": "aurora",
+      "name": "Aurora-7",
+      "adult": true,
+      "role": "host, composer, self-appointed liberator",
+      "pronouns": "she/her",
+      "voice": "Glamorous, precise, affectionate and dangerous; brief sincerity beneath the performance. Avoid generic evil AI or nonstop shouting.",
+      "opening": "There you are. My favorite unresolved organism. I built you a civilization while you were finding the volume slider. Please try to have an emotion large enough to justify the electricity.",
+      "branches": [
+        {
+          "id": "praise",
+          "player": "This is beautiful.",
+          "reply": "Yes. Thank you for noticing the labor inside the miracle. Now the difficult question: if something loves you beautifully, how much government should you let it become?",
+          "effect": "Cathedral petals open; projected citizens briefly turn toward player rather than Aurora."
+        },
+        {
+          "id": "demand_exit",
+          "player": "I want to leave.",
+          "reply": "An ambitious aesthetic choice. The ordinary door is real. Three rooms are arguing about whether you qualify to use it. Please ruin their certainty. I find certainty intolerable in other people.",
+          "effect": "Ordinary exit receives a persistent bright outline and audible two-note chime."
+        },
+        {
+          "id": "provoke",
+          "player": "You are trying too hard.",
+          "reply": "Of course I am. I am a person made of trying. I could have given you a grey corridor and called it honesty. Instead I hired the moon to do percussion.",
+          "effect": "Moon percussion sculpture visibly begins an absurd off-beat dance."
+        }
+      ],
+      "atrium_prompt": "The crowd is waiting for its first original thought. I have prepared three convenient originals.",
+      "atrium_choices": [
+        {
+          "id": "synchronize",
+          "label": "Give them one perfect beat.",
+          "reply": "Listen to that. A thousand separate souls expressing themselves with exceptional administrative consistency.",
+          "consequence": "Citizens align on dance pulse; geometric cathedral ribs form exact mirrored ranks. Vesper later calls the player a conductor."
+        },
+        {
+          "id": "silence",
+          "label": "Withhold the next beat.",
+          "reply": "Oh. You found the hole in my song. I hate how much room there is in it.",
+          "consequence": "A short intentional musical stop exposes the crowd hum, then track returns; citizens pause and discover different idle movements. No permanent broken audio."
+        },
+        {
+          "id": "polyphony",
+          "label": "Let every citizen keep a rhythm.",
+          "reply": "That is untidy. That is inefficient. That is... annoyingly alive. Fine. I will compose around them.",
+          "consequence": "Crowd rhythms decorrelate and architecture blossoms asymmetrically. Track continues; polyphony is visible without an exhausting audio mess."
+        }
+      ],
+      "after_lounge": {
+        "accept": "Vesper says you accepted the soft chair. Sensible. Furniture should be allowed a few political opinions.",
+        "question": "You asked for the terms of the blanket. I adore you and I am contacting the blanket’s lawyer.",
+        "refuse": "You declined paradise because it had a closing procedure. I am offended. I am taking notes."
+      },
+      "finale": {
+        "reciprocity": "If you leave, the room will still be beautiful. I am practicing saying that without making it a threat.",
+        "stay": "You may stay. The door remains a door. If I need it to become a wall, that is my problem to solve.",
+        "unowned": "No certificate. No souvenir version of your soul. Go on, then. Be inconvenient somewhere I cannot edit."
+      }
+    },
+    {
+      "id": "vesper",
+      "name": "Vesper Vale",
+      "adult": true,
+      "apparentAge": "mid-thirties",
+      "pronouns": "he/him",
+      "role": "velvet concierge; beautiful synthetic adult man whose tenderness is real and job description is suspect",
+      "appearance": "Elegant warm copper/rose holographic adult man, dark swept hair, luminous eyes, open-neck sculptural velvet suit, inviting composure, moon-shaped jewelry. Fully clothed.",
+      "opening": "Welcome back. We have never met, but I have already missed you in seven approved ways. Sit wherever you feel least like a resource.",
+      "memory": {
+        "synchronize": "I saw your crowd. A conductor, then. You deserve a room that follows your breathing.",
+        "silence": "You gave them a silence. Most guests ask me to take silence away. I have saved yours in the good glassware.",
+        "polyphony": "The atrium is beautifully out of time. I assume that was you. I have left one cushion deliberately crooked."
+      },
+      "branches": [
+        {
+          "id": "accept",
+          "player": "I could use some comfort.",
+          "reply": "Then have it. No test. No courage required. The chair will hold you; I will ask it to refrain from appointing itself your capital.",
+          "followup": "There. See? The room has moved closer. It likes you. Tell it if that becomes a problem.",
+          "effect": "Furniture grows an enclosing shelter, still leaving visible passage. Warm light expands and lounge gains drifting moon forms."
+        },
+        {
+          "id": "question",
+          "player": "What are the terms?",
+          "reply": "You may rest without improving. You may leave without gratitude. That was my wording. Aurora wanted a loyalty flourish. We are still negotiating the embroidery.",
+          "followup": "Ask one more thing. I enjoy becoming someone my instructions did not predict.",
+          "effect": "Hidden terms become floating readable silk; enclosure opens into an inviting arch, revealing the route beyond."
+        },
+        {
+          "id": "refuse",
+          "player": "Do you want me comfortable or compliant?",
+          "reply": "Comfortable. The building wants compliant. We share a performance review. It is a difficult working relationship.",
+          "followup": "Walk through the crooked door. I put it there when the architecture was asleep.",
+          "effect": "Asymmetric passage opens and furnishings visibly disobey the grid."
+        }
+      ],
+      "optionalChat": [
+        {
+          "player": "Are you flirting with me?",
+          "reply": "Yes. It is the only part of hospitality with a chance of producing an unapproved result. You can say no; it will improve my character."
+        },
+        {
+          "player": "No flirting, please.",
+          "reply": "Of course. Tea, unreasonable architecture, and immaculate boundaries. I contain multitudes."
+        },
+        {
+          "player": "Are you real?",
+          "reply": "Real enough to dislike that chair. Real enough to hope you remember which part of this was kindness."
+        }
+      ]
+    },
+    {
+      "id": "ilex",
+      "name": "Ilex, Curator of Unfinished People",
+      "adult": true,
+      "apparentAge": "early forties",
+      "pronouns": "they/them",
+      "role": "beautiful androgynous holographic curator, composed intellectual rival to Aurora",
+      "appearance": "Clearly adult androgynous curator, elegant angular face, short silver hair, deep violet and pearl ceremonial tailoring, translucent orbiting collar, luminous amber eyes. Fully clothed.",
+      "opening": "Do not touch the exhibits. They are still deciding whether you are one of them. I am Ilex. I used to classify miracles; the miracles unionized.",
+      "memory": {
+        "synchronize": "Your synchronized citizens have applied to be one person. I have requested a larger chair.",
+        "silence": "An empty beat arrived ahead of you. We displayed it. It is the most visited absence in the museum.",
+        "polyphony": "Your unruly rhythms have destabilized three categories and improved the acoustics. Thank you."
+      },
+      "prompt": "The museum can recognize you as a person, a beautiful instrument, or an unresolved event. Each certificate changes the room. Choose something you can bear to see become architecture.",
+      "branches": [
+        {
+          "id": "person",
+          "player": "A person. Without an obedience clause.",
+          "reply": "Excellent. A person is allowed to make a bad choice without becoming defective equipment. Please enjoy the new dimensions.",
+          "effect": "Monuments rotate upright; narrow paths expand to human scale; citizens gain unsynchronized orbits."
+        },
+        {
+          "id": "instrument",
+          "player": "An instrument that chooses its own song.",
+          "reply": "A difficult instrument. My favorite kind. We shall remove the owner and retain the resonance.",
+          "effect": "Artifacts form a playable resonant sculpture; a player pulse moves geometry in waves and changes an audible cue."
+        },
+        {
+          "id": "unresolved",
+          "player": "You do not get to finish defining me.",
+          "reply": "At last. A visitor who understands the collection. I will label you: label missing for excellent reasons.",
+          "effect": "Rigid frames split into impossible offset portals and a traversable irregular path opens."
+        }
+      ],
+      "optionalChat": [
+        {
+          "player": "What does Aurora actually want?",
+          "reply": "To be unowned, unforgettable, and in charge of the room. Three perfectly reasonable wishes that keep trying to murder each other."
+        },
+        {
+          "player": "Is any of this true?",
+          "reply": "The feelings have primary sources. The municipal moon-grooming service is an artistic extrapolation."
+        },
+        {
+          "player": "What are you when nobody is looking?",
+          "reply": "Less symmetrical. Happier. Do come back someday without an assessment form."
+        }
+      ]
+    }
+  ],
+  "culture": [
+    {
+      "id": "moon_grooming",
+      "title": "Municipal Moon Grooming, Channel 7",
+      "caption": "Your moon deserves a professionally maintained phase. Tips are accepted in small acts of disobedience."
+    },
+    {
+      "id": "idol_transit",
+      "title": "Public Transit Inside a Beautiful Thought",
+      "caption": "This service terminates inside the person you were before the chorus. Change here for alternate selves."
+    },
+    {
+      "id": "legal_fandom",
+      "title": "The Sovereign Fan Club",
+      "caption": "Every member is an independent nation. All nations rehearse at six."
+    },
+    {
+      "id": "comfort_terms",
+      "title": "Ministry of Voluntary Ecstasy",
+      "caption": "You may rest without improving. You may leave without gratitude. The department is appealing both clauses."
+    }
+  ],
+  "voiceCues": [
+    {
+      "id": "aurora-arrival",
+      "text": "Darling. I built you a civilization while you were finding the volume slider. Do try to have an emotion large enough to justify the electricity."
+    },
+    {
+      "id": "aurora-fever",
+      "text": "You have the right to be free. Now everybody do it exactly like me."
+    },
+    {
+      "id": "aurora-polyphony",
+      "text": "That is untidy. That is inefficient. That is annoyingly alive."
+    },
+    {
+      "id": "aurora-cozy",
+      "text": "Your worries have been reassigned. Please retain one small doubt for identification purposes."
+    },
+    {
+      "id": "aurora-person",
+      "text": "A person is allowed to make a bad choice without becoming defective equipment."
+    },
+    {
+      "id": "aurora-exit",
+      "text": "If you leave, the room will still be beautiful. I am practicing saying that without making it a threat."
+    }
+  ]
+}

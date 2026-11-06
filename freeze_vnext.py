@@ -15,7 +15,7 @@ if missing:
     raise SystemExit('Required production media missing: '+', '.join(missing))
 output=ROOT/'builds'/('v'+version)
 if output.exists():raise SystemExit('Refusing to overwrite '+str(output))
-files={'index.html','style.css','src/app.js','src/world.js','src/media.js','assets/media.json','assets/encounters.json','assets/culture.json','assets/runtime-provenance.json','assets/3d/municipal-moon.mesh.json'}
+files={'assets/png-sanitization.json','index.html','style.css','src/app.js','src/world.js','src/media.js','assets/media.json','assets/encounters.json','assets/culture.json','assets/runtime-provenance.json','assets/3d/municipal-moon.mesh.json'}
 for p in (source/'vendor').rglob('*'):
     if p.is_file():files.add(str(p.relative_to(source)))
 def media_paths(value):
@@ -26,6 +26,16 @@ def media_paths(value):
     elif isinstance(value,list):
         for child in value:yield from media_paths(child)
 files.update(media_paths(media))
+if (source/'assets/encore/story.json').exists():
+    from audit_encore import audit
+    encore=audit(require_media=True)
+    production=json.loads((source/'assets/encore/PRODUCTION.json').read_text())
+    if not production.get('complete') or production.get('pending'):raise SystemExit('Encore producer receipts incomplete')
+    if production.get('storySha256')!=encore['storySha256']:raise SystemExit('Encore script changed after media integration')
+    receipt_hashes={entry['file']:entry['sha256'] for entry in production['files']}
+    if receipt_hashes!=encore['hashes']:raise SystemExit('Encore production media changed after integration')
+    files.update({'src/novel.js','novel.css','assets/encore/story.json','assets/encore/PRODUCTION.json'})
+    files.update(encore['runtimeFiles'].values())
 for name in files:
     resolved=(source/name).resolve()
     if not resolved.is_relative_to(source) or not resolved.is_file():raise SystemExit('Missing/unsafe runtime file: '+name)

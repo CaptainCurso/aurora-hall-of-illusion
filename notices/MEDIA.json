@@ -33,5 +33,38 @@
     "width": 512,
     "height": 288
   },
-  "rights": "Existing campaign image original licenses undocumented; see ASSET_PROVENANCE.md. Model weights not included."
+  "rights": "Existing campaign image original licenses undocumented; see ASSET_PROVENANCE.md. Model weights not included.",
+  "encore": {
+    "version": "0.10.0",
+    "images": {
+      "model": "FLUX.2 Klein4B4bit",
+      "expressions": 12,
+      "sceneIllustrations": 3,
+      "metadata": "Local-generation paths removed losslessly; creator/rights retained; decoded pixels unchanged"
+    },
+    "films": {
+      "model": "Wan2.2 TI2V5B",
+      "count": 3,
+      "width": 768,
+      "height": 448,
+      "frames": 97,
+      "fps": 24,
+      "durationSeconds": 4.041667,
+      "motion": "Partial choreography accepted; not seamless loops"
+    },
+    "music": {
+      "model": "mlx-community/MiniMax-Music3-8bit",
+      "modelRevision": "10aa4ca578d04c6f5256c1bc22fc8405a09602b5",
+      "generatedTracks": 3,
+      "authoredGranularReprise": 1,
+      "notice": "LICENSE-MiniMax",
+      "durationsSeconds": [
+        90.348844,
+        49.133424,
+        40.402721,
+        80
+      ],
+      "listening": "Technical playback verified; no perceptual hearing claim"
+    }
+  }
 }

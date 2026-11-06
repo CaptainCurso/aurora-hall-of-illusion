@@ -1,27 +1,31 @@
 #!/usr/bin/env python3.11
 """Package an immutable 3D release with native launcher, notices and media receipts."""
 from pathlib import Path
-import hashlib,json,sys,zipfile
+import argparse,hashlib,json,sys,zipfile
 ROOT=Path(__file__).resolve().parent
-version=sys.argv[1] if len(sys.argv)>1 else '0.9.1'
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('version',nargs='?');parser.add_argument('--output',type=Path,help='New output archive path; existing artifacts are never overwritten')
+args=parser.parse_args()
+version=args.version or json.loads((ROOT/'CURRENT_RELEASE.json').read_text())['build'].removeprefix('v')
 build=(ROOT/'builds'/('v'+version)).resolve()
 if not build.is_relative_to(ROOT/'builds'):raise SystemExit('Invalid build')
 manifest=json.loads((build/'BUILD.json').read_text())
 base='Aurora-7-Freedom-After-Dark-v'+version
-output=ROOT/'dist'/(base+'-local.zip');output.parent.mkdir(exist_ok=True)
+output=args.output or ROOT/'dist'/(base+'-local.zip');output.parent.mkdir(parents=True,exist_ok=True)
+if output.exists():raise SystemExit('Refusing to overwrite existing archive '+str(output))
 payload={str(p.relative_to(build)):p.read_bytes() for p in build.rglob('*') if p.is_file()}
 for name in ['serve.py','launch.command']:
     payload[name]=(ROOT/name).read_bytes()
 payload['README.md']=(ROOT/'README.md').read_bytes()
 if (ROOT/'ASSET_PROVENANCE.md').exists():payload['ASSET_PROVENANCE.md']=(ROOT/'ASSET_PROVENANCE.md').read_bytes()
-for name in ['LICENSE-MiniMax','voice-manifest.json','music-manifest.json','rupture-receipt.json','voice-text-verification.json','voice-review-boundaries.json']:
-    source=ROOT/'notices'/name
-    if not source.is_file():source=ROOT/'coordination/production/aurora-audio'/name
-    if source.is_file():payload['notices/'+name]=source.read_bytes()
-for name in ['qa-v0.9.1-3d-media.md','aurora-008-v0.9.1-final.md','designer-007-v0.9.1-carry-forward.md']:
-    source=ROOT/'reviews'/name
-    if source.is_file():payload['reviews/'+name]=source.read_bytes()
-payload['PLAY-ME.txt']=('Private local/LAN 3D game v'+version+'. Requires Python3.11 and current Chrome/WebGL2. Double-click launch.command on Familiar or run ./launch.command in this extracted folder. Open the printed network URL from another LAN device. --local-only restricts this computer. Keep terminal open; Ctrl-C stops only this game. No model/download/account needed to play. No public internet publication authorized. See README.md.\n').encode()
+for source in (ROOT/'notices').rglob('*'):
+    if source.is_file():payload['notices/'+source.relative_to(ROOT/'notices').as_posix()]=source.read_bytes()
+for name in ['PUBLICATION.md','VERIFICATION.md']:
+    if (ROOT/name).is_file():payload[name]=(ROOT/name).read_bytes()
+if (ROOT/'DEPLOYMENT.json').is_file():
+    deployment=json.loads((ROOT/'DEPLOYMENT.json').read_text())
+    if deployment.get('release')=='v'+version:payload['DEPLOYMENT.json']=(ROOT/'DEPLOYMENT.json').read_bytes()
+payload['PLAY-ME.txt']=('Aurora-7 local/LAN 3D and visual-novel game v'+version+'. Requires Python3.11 and current Chrome/WebGL2. Double-click launch.command on Familiar or run ./launch.command in this extracted folder. Open the printed network URL from another LAN device. --local-only restricts this computer. Keep terminal open; Ctrl-C stops only this game. No model/download/account needed to play. Public release and asset provenance are described in README.md; this launcher itself serves only local/private LAN addresses.\n').encode()
 payload['PACKAGE.json']=(json.dumps({'version':version,'files':{n:hashlib.sha256(d).hexdigest() for n,d in sorted(payload.items())}},indent=2)+'\n').encode()
 with zipfile.ZipFile(output,'w',zipfile.ZIP_DEFLATED) as archive:
     for name,data in sorted(payload.items()):

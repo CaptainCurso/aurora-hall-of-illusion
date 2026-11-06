@@ -1,7 +1,7 @@
 {
-  "build": "v0.9.1",
-  "manifestSha256": "e314e82f07eb231d9bc75005b1e749e4129fe60787c0f46645fe0263cd12ca55",
-  "private": true,
-  "promotedAt": "2026-11-05T20:11:43.738516+00:00",
-  "authorization": "User requested LAN play and explicitly approved sharing the game and portrait on the LAN. Exact reviewed immutable release promotion approved; staging/source/masters excluded."
+  "build": "v0.10.0",
+  "manifestSha256": "646052e7f8d9944b5d0c3d25041c8ea6e8138a25d5e0116d0edc753942993f15",
+  "private": false,
+  "promotedAt": "2026-11-06T01:30:46.164517+00:00",
+  "authorization": "Project owner requested a complete game, LAN play, public GitHub publication and the Encore expansion. Existing explicit consent permits the complete game and campaign-derived assets publicly. Exact-build QA, Designer and Aurora desktop reviews passed; staging, originals and private production records excluded."
 }
