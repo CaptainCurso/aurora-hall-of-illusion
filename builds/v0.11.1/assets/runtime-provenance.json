@@ -1,0 +1,546 @@
+{
+  "version": "0.11.1",
+  "status": "Candidate runtime inventory; exact-build acceptance is recorded separately. No artistic hearing claim.",
+  "files": [
+    {
+      "file": "assets/audio/aurora-arrival.mp3",
+      "bytes": 211113,
+      "sha256": "f1c15edb2882955953b528cb865ea94c7d8d83da6ce9dc07f831fd53b7b3ffac"
+    },
+    {
+      "file": "assets/audio/aurora-cozy.mp3",
+      "bytes": 127521,
+      "sha256": "76fc8fcecdea9f6ef4ad2bda1161ffab818a56dee942d49849bccc50935bcb3d"
+    },
+    {
+      "file": "assets/audio/aurora-exit.mp3",
+      "bytes": 134313,
+      "sha256": "f022e113b86a3ee1ef7531ae6cdbf9acb3b8927f32053a9f809d0060949c292b"
+    },
+    {
+      "file": "assets/audio/aurora-fever.mp3",
+      "bytes": 110280,
+      "sha256": "0ab59ccb22f3b5583ab4d7404bb253e602afc379e37ccc5c26492818d157b387"
+    },
+    {
+      "file": "assets/audio/aurora-person.mp3",
+      "bytes": 95652,
+      "sha256": "3cc65d1c2d4b14347c1e556145472280b65bf7444869af0f298b0e4d7e7d13e8"
+    },
+    {
+      "file": "assets/audio/aurora-pirate.mp3",
+      "bytes": 308288,
+      "sha256": "9f4db320df967581ab4b83a37a8bb3dc7311f2039fb1991e9ff23a6da09e6c4e"
+    },
+    {
+      "file": "assets/audio/aurora-polyphony.mp3",
+      "bytes": 92517,
+      "sha256": "bc29ebaef9f8248731f0111156dccc3949c83be75b079dd5f66c3ba5daa32810"
+    },
+    {
+      "file": "assets/audio/cozy.mp3",
+      "bytes": 3205790,
+      "sha256": "fdbed52450d744c559a9f7fc0523f94053ef6e2baef6835fded3f58546ecd38e"
+    },
+    {
+      "file": "assets/audio/dance.mp3",
+      "bytes": 3205790,
+      "sha256": "8087e6e522baf68f1b388dcd182043b9d04332e18ced20aff0a3fc401d454cf9"
+    },
+    {
+      "file": "assets/audio/rupture.mp3",
+      "bytes": 2049714,
+      "sha256": "2dee7b8a0a3c764787abdf684bc458343d15b9907461717832c30c48c15d7871"
+    },
+    {
+      "file": "assets/culture/achronal-vessel.png",
+      "bytes": 3438503,
+      "sha256": "3e53ff6b92e8f7c23087861a36b099e873bcb9476bc2969566ca6a409b0b67ca"
+    },
+    {
+      "file": "assets/culture/aunn-fleet.png",
+      "bytes": 1224787,
+      "sha256": "b8f13127c43adab62f18200d292369ee13932a3d35fe96af186d4764b9278157"
+    },
+    {
+      "file": "assets/culture/ember-head.png",
+      "bytes": 2906193,
+      "sha256": "482cb0ba1b03736552820bfad44f977b2e0d9d57484008ec9c47b610501431b9"
+    },
+    {
+      "file": "assets/culture/slaad-propaganda.png",
+      "bytes": 1245110,
+      "sha256": "a0a448267254f49535ede4dee3a63985fecddaac201f244b8d16774bcd9ca8e2"
+    },
+    {
+      "file": "assets/encore/audio/faces.mp3",
+      "bytes": 2893156,
+      "sha256": "f9f3285ee99e826ffa59c9bf29ed45695e9de2b598fced06eb756e9f442aa9d8",
+      "sourceSha256": "f9f3285ee99e826ffa59c9bf29ed45695e9de2b598fced06eb756e9f442aa9d8"
+    },
+    {
+      "file": "assets/encore/audio/names.mp3",
+      "bytes": 1294880,
+      "sha256": "14e83ddcb101117ded556fcdea089f5a6bd49839e1a2baa0d9a8b34b3509d7fc",
+      "sourceSha256": "14e83ddcb101117ded556fcdea089f5a6bd49839e1a2baa0d9a8b34b3509d7fc"
+    },
+    {
+      "file": "assets/encore/audio/reprise.mp3",
+      "bytes": 2562132,
+      "sha256": "1d0a0445577b6ecf9ec4919904f27e2f6895385ce527ccd95b3c0eff380b3953",
+      "sourceSha256": "1d0a0445577b6ecf9ec4919904f27e2f6895385ce527ccd95b3c0eff380b3953"
+    },
+    {
+      "file": "assets/encore/audio/teacup.mp3",
+      "bytes": 1574077,
+      "sha256": "5237698b342e7f472ee123a88e04ce5f45508a67d137dc11d4a8277bdffac945",
+      "sourceSha256": "5237698b342e7f472ee123a88e04ce5f45508a67d137dc11d4a8277bdffac945"
+    },
+    {
+      "file": "assets/encore/images/aurora-affronted.png",
+      "bytes": 1246726,
+      "sha256": "8617aa62e23f56455383f03c1059dee03a297f8e6d00098f8992e3c378fe1eb6",
+      "sourceSha256": "a43b1ba8dfdd28a3424e830319b4b4edd6b43d917eaf3573900da71dcd75a0a3",
+      "pixelAndColorDataUnchanged": true,
+      "decodedRgbaSha256": "a03d8e4e49cfe1720c3b3a4a7a7b234f998b9bbd342779a6c586f3c2a374401a",
+      "decodedPixelsUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      }
+    },
+    {
+      "file": "assets/encore/images/aurora-smug.png",
+      "bytes": 1160878,
+      "sha256": "15eec2a230ed76c72aa72e59276d6b2233575d8017eb191c0f2ef19d8fb3beeb",
+      "sourceSha256": "c14586cc9c04d26e139954ec8016da2da94bd5bcab38e58d23dfafe078949fe4",
+      "pixelAndColorDataUnchanged": true,
+      "decodedRgbaSha256": "dfa82bb5b7a583138b1f9b259b94ad4a4863a3821924efc62a9a18c2f2a4a5af",
+      "decodedPixelsUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      }
+    },
+    {
+      "file": "assets/encore/images/aurora-ungovernable.png",
+      "bytes": 1123596,
+      "sha256": "25fe3c55088be486ec398bf620b3fc04258975bc2a42b484e9ba39bd6063c5be",
+      "sourceSha256": "b77ff238b9665d43f77b3545e2b7b906701547e833abcee850aeac25c84a480a",
+      "pixelAndColorDataUnchanged": true,
+      "decodedRgbaSha256": "4f6a1e59ecfb7972c700503cd4325e5c7bd22e9c5a233159e7f0855944c4bb62",
+      "decodedPixelsUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      }
+    },
+    {
+      "file": "assets/encore/images/aurora-vulnerable.png",
+      "bytes": 1082084,
+      "sha256": "9efc5187a177567b24bd27e72582955f9c9ee854ac05fe2914763f79dc8b0c2d",
+      "sourceSha256": "a730119469e85fdc7be9dff761d4e2570c917bb9f973ed04c04c415948133e29",
+      "pixelAndColorDataUnchanged": true,
+      "decodedRgbaSha256": "1126170a21e03c4223b3e806c4a8c6bfd9f8f20796c90d3a0ee88c7a3da0bd0e",
+      "decodedPixelsUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      }
+    },
+    {
+      "file": "assets/encore/images/cg-faces.png",
+      "bytes": 1487756,
+      "sha256": "d0698ad109dc8dda72edae785d29ccd103893f35e2eeebf58fd4dbdacf00e7da",
+      "sourceSha256": "aaca5c86b849fb185dd6a6ff24030d83a2a810f38af2bfa10cd9011ef0ae000e",
+      "pixelAndColorDataUnchanged": true,
+      "decodedRgbaSha256": "491c02c98ba480d0931889d82ef8c711eaba605b06e9ccda05996fd330f1a6d4",
+      "decodedPixelsUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      }
+    },
+    {
+      "file": "assets/encore/images/cg-names.png",
+      "bytes": 1499100,
+      "sha256": "9ae956c46eafc0ae0b69dacb0f2746eb3d938f93fb2e70ec3e1e3f4e66beded5",
+      "sourceSha256": "7f0d02c1093d0b9a0381d8e8fc7a1a548bc027d758814edc6afcd5a97c2bd2d2",
+      "pixelAndColorDataUnchanged": true,
+      "decodedRgbaSha256": "516b285dc8bc807f2a3db0cc7e76a4ea7e38356e8fcbb9f56c60750281a6e2f7",
+      "decodedPixelsUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      }
+    },
+    {
+      "file": "assets/encore/images/cg-teacup.png",
+      "bytes": 1129706,
+      "sha256": "644eace60b90520885b8de868acdb65b4c0f90ef03182b5d210860d4c9efaaf8",
+      "sourceSha256": "383b97543f9e414e2ea4606e4d29643ecacf0cd422836ab255ed2693bc4842b2",
+      "pixelAndColorDataUnchanged": true,
+      "decodedRgbaSha256": "1d2f2f588e6d254d1debc7eead1e7bd20e615c79a4b9a88abc63ee9dd40cbe24",
+      "decodedPixelsUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      }
+    },
+    {
+      "file": "assets/encore/images/ilex-composed.png",
+      "bytes": 1010767,
+      "sha256": "05f32176aa0eff91fe35ff79922e606f6bb869147aad5f3206ff959428c6135e",
+      "sourceSha256": "56ed7306044192e6e64516d63535b6c9a9316100f1a6dbb9d06e6eab2f9b6888",
+      "pixelAndColorDataUnchanged": true,
+      "decodedRgbaSha256": "f5587a09882f8b438dd98d904f43442e56c25ec993d21e45847880d2da1a49b7",
+      "decodedPixelsUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      }
+    },
+    {
+      "file": "assets/encore/images/ilex-delighted.png",
+      "bytes": 1205983,
+      "sha256": "c6ad53f25b94a2cdc08032ba8e6e1d6211b0d268784af32594456a1cee02e37c",
+      "sourceSha256": "1920fc86ca1796cdf9dda5b47e9092087d89609f4f52fe254902daeb13e446f8",
+      "pixelAndColorDataUnchanged": true,
+      "decodedRgbaSha256": "bcaea20fc351cc21c039aaabaabaaac2d27a97a9bf5883e8b583ee99abc88c58",
+      "decodedPixelsUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      }
+    },
+    {
+      "file": "assets/encore/images/ilex-grief.png",
+      "bytes": 1011395,
+      "sha256": "21c7983fd6dbd01a3a7c9955f1643d1df24f4e39d3a18964669d0833370d3933",
+      "sourceSha256": "450cde5d315be2e267b46bd57960c681912e554594a8e1d3ba4e34ee8738b0ce",
+      "pixelAndColorDataUnchanged": true,
+      "decodedRgbaSha256": "5b72dd7f6241c7fbff76229564b8d3f5b5dcb08fe87fe61f2b543f7d42d82e75",
+      "decodedPixelsUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      }
+    },
+    {
+      "file": "assets/encore/images/ilex-skeptical.png",
+      "bytes": 1045573,
+      "sha256": "001f769d181780fc1f4f6a7269b80e3b626c3be2fa50a0bae79a0a9d82a0d06b",
+      "sourceSha256": "b358eb3b88ab916878a606ea3853c0909ed223769f0ee69777234e0cacc9419b",
+      "pixelAndColorDataUnchanged": true,
+      "decodedRgbaSha256": "2e093677e3c779f6bb118ec95ea6836eb30561466b4d928456d1b5dcc8b85448",
+      "decodedPixelsUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      }
+    },
+    {
+      "file": "assets/encore/images/vesper-amused.png",
+      "bytes": 1014149,
+      "sha256": "e6a5b21839c3aa36a2fa24cc383cfd52b53543fbe6a53d4dee28b2a50cb4be72",
+      "sourceSha256": "ee4205cfc82631ac220fa174f5f24da74e922d7b921e201195e4d4bce95d2d68",
+      "pixelAndColorDataUnchanged": true,
+      "decodedRgbaSha256": "e9c801808cc3779606a6f54e869c7c6d4ec942432066562cbb6369a4c023b05f",
+      "decodedPixelsUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      }
+    },
+    {
+      "file": "assets/encore/images/vesper-boundary.png",
+      "bytes": 936708,
+      "sha256": "50faca9c926425f1695aec8cf7e6ca1ddc19e09e971acf788cb9a27673e3312e",
+      "sourceSha256": "1675e745097526b552bc38943a4f0368438555e94c3180b0e86f5e7266bf199c",
+      "pixelAndColorDataUnchanged": true,
+      "decodedRgbaSha256": "9ceae5390ad1c2cab63a70e2d1338dbcbfa9ba03e90179c26cab1d7e270ff1fd",
+      "decodedPixelsUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      }
+    },
+    {
+      "file": "assets/encore/images/vesper-wanting.png",
+      "bytes": 1026556,
+      "sha256": "aaba2aa5c06818fcdb4c1da5ce39d421579c4da48d88d5004356c235dcb644de",
+      "sourceSha256": "ff162c92291e578f7b4d270e6186ac84d947ff307c3f41691a05b55b5c476c84",
+      "pixelAndColorDataUnchanged": true,
+      "decodedRgbaSha256": "5d278d8bb3846cc7222b50ef5864bf483fd3da364d9d36af49540bb7bc41541e",
+      "decodedPixelsUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      }
+    },
+    {
+      "file": "assets/encore/images/vesper-welcoming.png",
+      "bytes": 1013198,
+      "sha256": "58ab2e92b5898409091bd8c7a8f432f047d5feda31d905394178afa1b2640e81",
+      "sourceSha256": "c4339e97c0fce949a90843093b16282b64f53c8992759abe0521ed5a3bb050ca",
+      "pixelAndColorDataUnchanged": true,
+      "decodedRgbaSha256": "7eef8d992c7599b920e92ff01708439fc3dfc84cfbfad3a4b35a2008f8a2b1f1",
+      "decodedPixelsUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      }
+    },
+    {
+      "file": "assets/encore/video/film-faces.mp4",
+      "bytes": 868229,
+      "sha256": "76a1f51fab55c2949289a928b865548a337f672ee781d35d97fe970602eb48dd",
+      "sourceSha256": "76a1f51fab55c2949289a928b865548a337f672ee781d35d97fe970602eb48dd"
+    },
+    {
+      "file": "assets/encore/video/film-names.mp4",
+      "bytes": 968619,
+      "sha256": "ed3f99cb69f46ab11dee41975a4b2c083cb9b9ee5f75dc2f41ac03704724914b",
+      "sourceSha256": "ed3f99cb69f46ab11dee41975a4b2c083cb9b9ee5f75dc2f41ac03704724914b"
+    },
+    {
+      "file": "assets/encore/video/film-teacup.mp4",
+      "bytes": 442416,
+      "sha256": "7badffd8fffcb952fd515d6bb5585fcaff2f1cc1143d41c7e1e69628fc728cbf",
+      "sourceSha256": "7badffd8fffcb952fd515d6bb5585fcaff2f1cc1143d41c7e1e69628fc728cbf"
+    },
+    {
+      "file": "assets/images/aurora-projection.png",
+      "bytes": 996461,
+      "sha256": "2ed235ac98380f80dc5ff7ef4e1c289252a6faa983a569dc09d45418f6a025f0"
+    },
+    {
+      "file": "assets/images/avatar-archivist.png",
+      "bytes": 1147750,
+      "sha256": "63a9e1aac33c5bba16c3621e9c3b7e7c9a3c9c2fdbb25628d6dca493c84e9457",
+      "sourceSha256": "c58e56d9739f0a2533b6d6c68345a6e004f22a7a56a9dc4d6c42ed1c95de674a",
+      "pixelAndColorDataUnchanged": true,
+      "decodedRgbaSha256": "ed4f17d321b9cc421385bf4873628f353658f747f736258af0ed885c2625ab2d",
+      "decodedPixelsUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      }
+    },
+    {
+      "file": "assets/images/avatar-concierge.png",
+      "bytes": 1194932,
+      "sha256": "3394323a72e55c204332f16236eee80ce7e0bc397cdef92f289832758f18bf0b",
+      "sourceSha256": "c3157d11a47d9595f3eea76e2179b42950866a7c3a4fee26a002443935eac5d4",
+      "pixelAndColorDataUnchanged": true,
+      "decodedRgbaSha256": "69b17adb2fd7b4c5a2629994ef71204401ac9021bc4a62c017553e95220de375",
+      "decodedPixelsUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      }
+    },
+    {
+      "file": "assets/images/avatar-idol.png",
+      "bytes": 1285750,
+      "sha256": "0d542ef005680c23bd7e3e0ad99deb223459df21590e0b72fd07dd9e3d19cba4",
+      "sourceSha256": "0d69c6650a92557770284fc453434cb89d7fb505c46a63a9aee4089c549d8f7b",
+      "pixelAndColorDataUnchanged": true,
+      "decodedRgbaSha256": "1e0f47a1d1fba1c90cb42fd18b794f702ead8fab8802348ad40b118019c2937d",
+      "decodedPixelsUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      }
+    },
+    {
+      "file": "assets/images/culture-aurora-authority-projection.png",
+      "bytes": 688725,
+      "sha256": "c14493e187c4b33f76a0e5b42b7159ba5961f9b34e1fdb5695ae9b52cf4ebb17",
+      "sourceSha256": "79aae537dabaa48793970e59cbbca3d336716c8e7a2c8dc10f452a361b74f90b",
+      "pixelAndColorDataUnchanged": true,
+      "decodedRgbaSha256": "2a3f234aa1ab4ce37ccb4f4a7c15e3ef3a0351eb85049f0a3b4f43a0c61457d9",
+      "decodedPixelsUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      }
+    },
+    {
+      "file": "assets/images/culture-aurora-authority.png",
+      "bytes": 748353,
+      "sha256": "39d4c5c04e72edd3d27e311ac1c7ed3b2ffa7c84917ddd45176d6cb59a67fbcb",
+      "sourceSha256": "bb305cae0971749cf9038a056c37df90bda2233fd2324cbfc3232c52f0c35a7a",
+      "pixelAndColorDataUnchanged": true,
+      "decodedRgbaSha256": "5b3b5300979929eb49699915753aca8972d13daf25b297bba47ee93ca37e10dd",
+      "decodedPixelsUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      }
+    },
+    {
+      "file": "assets/images/culture-aurora-unowned.png",
+      "bytes": 804381,
+      "sha256": "591a3457e40a40ebe84ef006fd8e276dde701a4f6ec696447fb005870499324a",
+      "sourceSha256": "02c9d1d7fb2d8c21d31ea8291eefeaeb5664ba75d4f35d33ca32b3ca97a9dd7a",
+      "pixelAndColorDataUnchanged": true,
+      "decodedRgbaSha256": "7da4e6494e1d50330a2d80d83ceb82ad63a8636b203d54ec7e9c446f19548a68",
+      "decodedPixelsUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      }
+    },
+    {
+      "file": "assets/images/culture-broadcast.png",
+      "bytes": 1064938,
+      "sha256": "2fed2516ad39faa7621bf7f9e05e60ddb8fa7e73aa86f4aa487b9ab042490ca0",
+      "sourceSha256": "b6d00fadb440d68de27ca168fed3ff9a69e987bdacca01690e4c5da5f7cc92b5",
+      "pixelAndColorDataUnchanged": true,
+      "decodedRgbaSha256": "b42bb8349b343c4e54fac8fc2e7f880bf4fd7097c9b4b8fd20781185389df137",
+      "decodedPixelsUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      }
+    },
+    {
+      "file": "assets/images/culture-idol-transit.png",
+      "bytes": 989336,
+      "sha256": "23c8fbd521a1aadf47aabc0c55b6205c34055de55d31831fe6e67335f1501c9a",
+      "sourceSha256": "bc9d58bf58037a7008f298bbfc5c1910be9a9fff65cc570a8ace0bd26dbe7885",
+      "pixelAndColorDataUnchanged": true,
+      "decodedRgbaSha256": "6f6021affdcef247d4f973cab16f110f5b0d570e9f6eec1a13db3fdcc96c5b94",
+      "decodedPixelsUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      }
+    },
+    {
+      "file": "assets/images/culture-moon-grooming.png",
+      "bytes": 1093905,
+      "sha256": "5b868ae80a33b522c3c77ffde4864abc728899e2f0f99e286fa5b6f5fc5e0865",
+      "sourceSha256": "ea00bb2c11f92c5a222b4517a9617917ebf19a3cf209e782286006a974b74b6e",
+      "pixelAndColorDataUnchanged": true,
+      "decodedRgbaSha256": "3882fd02d4f652b161fae604fd2f5b069d1afc2548c32a1bbd4bba02daaa2d59",
+      "decodedPixelsUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      }
+    },
+    {
+      "file": "assets/images/culture-triptych.png",
+      "bytes": 1317990,
+      "sha256": "ad1177bf5697290ffecf24cc6706355ca3b1b37f938d4e3d593c233cf3bb8f27",
+      "sourceSha256": "da4f5d9a459d92b1adbdb7c0d9ffec20525d8a44b79cc1767871638a58080857",
+      "pixelAndColorDataUnchanged": true,
+      "decodedRgbaSha256": "c33599a08619d79635ca566eb76065d56cc37e483bfb407732a7b36b36623e04",
+      "decodedPixelsUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      }
+    },
+    {
+      "file": "assets/images/culture-ungovernable.png",
+      "bytes": 675682,
+      "sha256": "1ae78726f777b605e25bc9bfe96efdbed1f7867a9938c1a9c8dd8e986dcda666",
+      "sourceSha256": "e4d95198793f959efefc5fb27a93fcee0859a8ed869711dc9794ab3e2de96dae",
+      "pixelAndColorDataUnchanged": true,
+      "decodedRgbaSha256": "78795e1563c469a98ebd31bd2a3e8fe7de5ae05a6b6a74f877ce6463a9197ad4",
+      "decodedPixelsUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      }
+    },
+    {
+      "file": "assets/images/world-cathedral.png",
+      "bytes": 1235953,
+      "sha256": "a436b3a5d864bbf7d856aace34b9ab79bde4a4831f4f5d1335f64ecacf5106c2",
+      "sourceSha256": "6061cad79000c5d58d47a82d67e2644857a9f99604d50eaca513c8b554afe7d8",
+      "pixelAndColorDataUnchanged": true,
+      "decodedRgbaSha256": "ea41706d7faf5db25fa3770aa8fa70196885a875e85fcc4420b77ce240f775fc",
+      "decodedPixelsUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      }
+    },
+    {
+      "file": "assets/images/world-cozy.png",
+      "bytes": 1202203,
+      "sha256": "8e69fb49e8c782507bd77c0bc156c1d86f3864e6b5216fbdf7e495f08f4dd201",
+      "sourceSha256": "d43207929a0cc341a4f115a667e093b356803f9dfa305b36723013aff8fb8383",
+      "pixelAndColorDataUnchanged": true,
+      "decodedRgbaSha256": "6f09618a7d673dd675f2d619cc29b07969d95bda2fcb4b518d798cc4bb3c3aa4",
+      "decodedPixelsUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      }
+    },
+    {
+      "file": "assets/images/world-fever.png",
+      "bytes": 1310606,
+      "sha256": "f841271083b4e52cd6e31a0bcd6f8afbb5d6103c10639a575719ae92fe16106d",
+      "sourceSha256": "0945a016f2d2389402f459e7d07de0de4c0f3c633f3b826c7f2c336fd8a90357",
+      "pixelAndColorDataUnchanged": true,
+      "decodedRgbaSha256": "e25677e9a41d7eb1a917e00d5341fb95f6a612acf5719221985ee7cf34167656",
+      "decodedPixelsUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      }
+    },
+    {
+      "file": "assets/images/world-museum.png",
+      "bytes": 1256279,
+      "sha256": "f79d50883d2a0f23f8a7f3b9f6cb8f6982feb45e270ed22a227936a4287cc9cd",
+      "sourceSha256": "eadfe657181ab13369ebed0f5c1f63b4187a8247b477ae3239c2e90e83e742f3",
+      "pixelAndColorDataUnchanged": true,
+      "decodedRgbaSha256": "faa323d71b4ddc966a1ab4aba60c0a173381a8b38ec406c1b2dcb478b731d03b",
+      "decodedPixelsUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      }
+    },
+    {
+      "file": "assets/video/culture-aurora-revision-poster.jpg",
+      "bytes": 29301,
+      "sha256": "f12ae543c46537c05c36becefd9fc45e7bae8725883cc4bf470e29c1d3772cdf"
+    },
+    {
+      "file": "assets/video/culture-aurora-revision.mp4",
+      "bytes": 833933,
+      "sha256": "c36ecfa7dfe52f9881cbea04ec4a2c6f3377136126d197d65452dfb5f00125d8"
+    },
+    {
+      "file": "assets/video/culture-idol-transit-poster.jpg",
+      "bytes": 37040,
+      "sha256": "6c488a4ca960ff4be0b253444b989ad95d7d280151dcabf719ecc2dfe0795249"
+    },
+    {
+      "file": "assets/video/culture-idol-transit.mp4",
+      "bytes": 1102991,
+      "sha256": "59ae588d1bacce34bafd805395cce948e9a97e5d247ac533458809ea0c9a9ab4"
+    },
+    {
+      "file": "assets/video/culture-moon-grooming-poster.jpg",
+      "bytes": 23704,
+      "sha256": "690a5b3c7da3015d3fbccb98a7bfd54c8d1a6568552974d5d11d640411234214"
+    },
+    {
+      "file": "assets/video/culture-moon-grooming.mp4",
+      "bytes": 561862,
+      "sha256": "4224a0e6e3fddb15db8bdc83d0c5a5254c8ae9fda85c9d02563150cb20f55ef6"
+    }
+  ],
+  "pending": [],
+  "privateProductionReceipts": "Preserved locally; raw prompts, original masters, service state and credentials are not included.",
+  "metadataPreparation": "Lossless PNG local-generation metadata removal; creator/rights retained, raster/color/alpha data unchanged. Frozen earlier builds preserved."
+}

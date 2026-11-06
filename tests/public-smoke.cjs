@@ -33,6 +33,11 @@ const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
    else report.failedRequests.push(failure);
   });
   await page.goto(url);await page.locator('#loading').waitFor({state:'hidden',timeout:30000});
+  if(manifest.files['src/gamepad.js']){
+   report.controllerApi=await page.evaluate(()=>({type:typeof navigator.getGamepads,pollSlots:navigator.getGamepads().length,state:aurora3DDebug().controller}));
+   assert.equal(report.controllerApi.type,'function');
+   assert(!report.controllerApi.state.apiUnavailable&&!report.controllerApi.state.apiBlocked,'Native controller API must be available; physical hardware is tested separately');
+  }
   await page.screenshot({path:out+'/title.png'});
   await page.locator('#enter').click();
   await page.waitForFunction(()=>aurora3DDebug().media.voice?.currentTime>.5&&aurora3DDebug().media.energy>.1,null,{timeout:20000});

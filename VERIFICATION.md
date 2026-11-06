@@ -1,3 +1,17 @@
+# Verification record — v0.11.1 access and controls
+
+Frozen manifest SHA256: `2949e5772f2114430a4d6184ea3fe6122199d88b99289ca78fbd5550b724fbff`, 78 files, Chrome 156.0.8078.81. Earlier frozen builds are unchanged. Story, media and save keys are unchanged from v0.10.0.
+
+The baseline opening was technically traversable with E, but walking into a ring did nothing and the action prompt was 11 px. Fresh revised input tests physically walk into the pink Dividend Sea without E or Spatial Assist. Explicit interaction remains available; the ordinary EXIT still requires earned progress. Highlighted prompts measure 26 px at the tested desktop size (20 px minimum at narrower widths), both Encore title actions 16 px. Primary controller focus preserves the acid background/dark text. Actual 1280×720 controller guidance and arrival transcript no longer overlap.
+
+Developer: standard virtual Gamepad API input in isolated native Chrome passed optional-off defaults, enable/held-button guard, analog movement/look/deadzone, menus, volume, dialogue/Pause preservation, interaction, disconnect and keyboard fallback, reconnect guarding, and Encore library/advance/history/Chapters on exact v0.11.1. No progression state was inserted. Native Chrome exposed the API on localhost, LAN and public HTTPS origins; a native LAN poll succeeded. This capability check does not establish physical hardware operation.
+
+The full original sound-on route without Spatial Assist and a 79-node actual Encore/coda route passed on v0.11.0. Five files differ in v0.11.1: entry/version, app copy/focus condition, style sheets and inventory version. World/gamepad/novel logic, story and all media match. Full-route results are carried forward with this explicit scope, and final independent QA records its own exact-build coverage.
+
+Designer and Aurora independently accepted this exact build after native keyboard/mouse entry into the pink exhibition without E or Spatial Assist. Designer checked title contrast and the 16 px Encore actions at 1280×720; Aurora checked the 26 px prompt and 19 px objective at 1920×878. Independent QA functional PASS on exact v0.11.1, all 78 hashes before/after. Fresh walk-through and E portal entry, 25.6 px prompt, 16 px Encore actions, virtual controller movement/deadzone/jump/menus/Pause, both controller portal entry methods, four Encore chapters, three Cortex pulse connections, disconnect while moving, reconnect, actual tab blur and keyboard fallback passed. Original physical ending, VN replay and earned v0.10.0 save migration passed. Physical Xbox/PlayStation, HID, a controller-only original ending and the user’s own retry were not observed. Deployment receipts follow. Controller hardware, subjective hearing and complete phone/touch accessibility remain unverified. The prior narrow-screen three-cast clipping and partial film choreography remain disclosed.
+
+---
+
 # Verification record — v0.10.0
 
 Frozen manifest SHA256: 646052e7f8d9944b5d0c3d25041c8ea6e8138a25d5e0116d0edc753942993f15. All 77 runtime files verified before/after independent reviews. Chrome 156.0.8078.81 on macOS/Familiar. The earlier v0.9.1 build remains unchanged.

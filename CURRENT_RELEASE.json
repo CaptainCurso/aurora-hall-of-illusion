@@ -1,7 +1,7 @@
 {
-  "build": "v0.10.0",
-  "manifestSha256": "646052e7f8d9944b5d0c3d25041c8ea6e8138a25d5e0116d0edc753942993f15",
+  "build": "v0.11.1",
+  "manifestSha256": "2949e5772f2114430a4d6184ea3fe6122199d88b99289ca78fbd5550b724fbff",
   "private": false,
-  "promotedAt": "2026-11-06T01:30:46.164517+00:00",
-  "authorization": "Project owner requested a complete game, LAN play, public GitHub publication and the Encore expansion. Existing explicit consent permits the complete game and campaign-derived assets publicly. Exact-build QA, Designer and Aurora desktop reviews passed; staging, originals and private production records excluded."
+  "promotedAt": "2026-11-06T02:15:02.840198+00:00",
+  "authorization": "User requested opening-hall progression, larger interaction text and optional Xbox/PlayStation controls. Existing authorization covers Git, LAN and public GitHub delivery of the complete game and its assets. Exact-build QA functional PASS and Designer/Aurora desktop approvals obtained. No new media, original assets or saves changed."
 }

@@ -15,7 +15,7 @@ if missing:
     raise SystemExit('Required production media missing: '+', '.join(missing))
 output=ROOT/'builds'/('v'+version)
 if output.exists():raise SystemExit('Refusing to overwrite '+str(output))
-files={'assets/png-sanitization.json','index.html','style.css','src/app.js','src/world.js','src/media.js','assets/media.json','assets/encounters.json','assets/culture.json','assets/runtime-provenance.json','assets/3d/municipal-moon.mesh.json'}
+files={'src/gamepad.js','assets/png-sanitization.json','index.html','style.css','src/app.js','src/world.js','src/media.js','assets/media.json','assets/encounters.json','assets/culture.json','assets/runtime-provenance.json','assets/3d/municipal-moon.mesh.json'}
 for p in (source/'vendor').rglob('*'):
     if p.is_file():files.add(str(p.relative_to(source)))
 def media_paths(value):

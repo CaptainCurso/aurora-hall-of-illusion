@@ -11,3 +11,8 @@
 .vn-stage:after{z-index:0}.vn-cast{z-index:1}.vn-film{z-index:2;top:var(--vn-art-top,82px);bottom:var(--vn-art-bottom,280px)}.vn-illustration{display:none;position:absolute;z-index:1;left:7%;width:86%;top:var(--vn-art-top,82px);height:calc(100% - var(--vn-art-top,82px) - var(--vn-art-bottom,280px));object-fit:contain;background:#03050a88}.vn-stage[data-shot=cg] .vn-illustration{display:block}.vn-stage[data-shot=cg] .vn-film:has(video){top:var(--vn-art-top,82px);bottom:var(--vn-art-bottom,280px);left:7%;right:7%}
 
 .vn-stage[data-shot=cg]>.vn-background{opacity:.25;filter:blur(24px) saturate(.5)}
+
+/* Controller and readable-text pass. */
+.vn-toolbar{flex-wrap:wrap}.vn-toolbar button{font-size:15px;min-height:44px}.vn-mark{font-size:12px}.vn-track{font-size:12px}.vn-chapter-label,.vn-speaker{font-size:15px}.vn-next{font-size:17px;min-height:44px}.vn-choices button{font-size:18px;min-height:48px}.vn-library button{font-size:16px}.vn-chapter-card small{font-size:14px}.vn-caption{font-size:15px}.vn-history-list{font-size:19px}.vn-library{inset:130px 0 0}.vn-backlog button{font-size:17px}
+@media(max-width:800px){.vn-toolbar{padding:9px 12px;gap:5px}.vn-toolbar button{font-size:13px;padding:8px}.vn-mark{width:100%;margin:0}.vn-library{inset:145px 0 0}.vn-next{font-size:16px}.vn-choices button{font-size:17px}.vn-chapter-label,.vn-speaker{font-size:14px}}
+.encore-entry button{font-size:16px;min-height:44px}.encore-entry small{font-size:13px}

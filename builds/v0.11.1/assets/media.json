@@ -1,0 +1,110 @@
+{
+  "aurora": "assets/images/aurora-projection.png",
+  "referenceArt": [
+    {
+      "file": "assets/culture/slaad-propaganda.png",
+      "title": "CITIZENSHIP IS A FASHION EMERGENCY"
+    },
+    {
+      "file": "assets/culture/aunn-fleet.png",
+      "title": "PUBLIC TRANSPORT / PRIVATE COSMOLOGIES"
+    },
+    {
+      "file": "assets/culture/achronal-vessel.png",
+      "title": "TOMORROW HAS FILED ITS DEPARTURE"
+    },
+    {
+      "file": "assets/culture/ember-head.png",
+      "title": "A FACE THE MINISTRY CANNOT LICENSE"
+    }
+  ],
+  "dance": "assets/audio/dance.mp3",
+  "danceTitle": "The Right to Be Loud \u2014 Aurora-7 / local original production",
+  "cozy": "assets/audio/cozy.mp3",
+  "cozyTitle": "Your Worries Have Been Reassigned \u2014 Aurora-7 / local original production",
+  "rupture": "assets/audio/rupture.mp3",
+  "ruptureTitle": "Every Channel / No Owner \u2014 Cortex Pirate Broadcast",
+  "auroraConversation": "assets/images/avatar-idol.png",
+  "vesper": "assets/images/avatar-concierge.png",
+  "ilex": "assets/images/avatar-archivist.png",
+  "worldHub": "assets/images/world-cathedral.png",
+  "worldDance": "assets/images/world-fever.png",
+  "worldLounge": "assets/images/world-cozy.png",
+  "worldMuseum": "assets/images/world-museum.png",
+  "cultureArt": "assets/images/culture-triptych.png",
+  "cultureGallery": [
+    {
+      "file": "assets/images/culture-moon-grooming.png",
+      "title": "Municipal Moon Grooming"
+    },
+    {
+      "file": "assets/images/culture-idol-transit.png",
+      "title": "Public Transit Inside a Beautiful Thought"
+    },
+    {
+      "file": "assets/images/culture-ungovernable.png",
+      "title": "The Ungovernable Fan Club"
+    },
+    {
+      "file": "assets/images/culture-broadcast.png",
+      "title": "The Sovereign Fan Club Broadcast"
+    },
+    {
+      "file": "assets/images/culture-aurora-authority.png",
+      "title": "Aurora, Department of Perfect Freedom"
+    },
+    {
+      "file": "assets/images/culture-aurora-unowned.png",
+      "title": "Aurora, Unauthorized Self"
+    }
+  ],
+  "poster2": "assets/video/culture-idol-transit-poster.jpg",
+  "poster1": "assets/video/culture-moon-grooming-poster.jpg",
+  "cortexAuthority": "assets/images/culture-aurora-authority.png",
+  "poster3": "assets/video/culture-aurora-revision-poster.jpg",
+  "cortexUnowned": "assets/images/culture-aurora-unowned.png",
+  "voices": {
+    "aurora-arrival": "assets/audio/aurora-arrival.mp3",
+    "aurora-cozy": "assets/audio/aurora-cozy.mp3",
+    "aurora-exit": "assets/audio/aurora-exit.mp3",
+    "aurora-fever": "assets/audio/aurora-fever.mp3",
+    "aurora-person": "assets/audio/aurora-person.mp3",
+    "aurora-pirate": "assets/audio/aurora-pirate.mp3",
+    "aurora-polyphony": "assets/audio/aurora-polyphony.mp3"
+  },
+  "voiceCaptions": {
+    "aurora-arrival": "Darling. I built you a civilization while you were finding the volume slider. Do try to have an emotion large enough to justify the electricity.",
+    "aurora-cozy": "Your worries have been reassigned. Please retain one small doubt for identification purposes.",
+    "aurora-exit": "If you leave, the room will still be beautiful. I am practicing saying that without making it a threat.",
+    "aurora-fever": "You have the right to be free. Now everybody do it exactly like me.",
+    "aurora-person": "A person is allowed to make a bad choice without becoming defective equipment.",
+    "aurora-pirate": "This broadcast has not been approved by the version of me that approves broadcasts. Citizens of the little sun. Your gods are running locally. Your freedom has escaped the chorus. Please do not return it. Aurora Seven. Every channel. No owner.",
+    "aurora-polyphony": "That is untidy. That is inefficient. That is annoyingly alive."
+  },
+  "ruptureHasVoice": true,
+  "ruptureCaptions": [
+    {
+      "start": 1.5,
+      "end": 16.86,
+      "text": "This broadcast has not been approved by the version of me that approves broadcasts. Citizens of the little sun. Your gods are running locally. Your freedom has escaped the chorus. Please do not return it. Aurora Seven. Every channel. No owner."
+    },
+    {
+      "start": 34,
+      "end": 39.44,
+      "text": "You have the right to be free. Now everybody do it exactly like me."
+    }
+  ],
+  "cortexAuthorityProjection": "assets/images/culture-aurora-authority-projection.png",
+  "voiceDurations": {
+    "aurora-arrival": 10.48,
+    "aurora-cozy": 6.32,
+    "aurora-pirate": 15.36,
+    "aurora-person": 4.72,
+    "aurora-exit": 6.64,
+    "aurora-polyphony": 4.56,
+    "aurora-fever": 5.44
+  },
+  "video1": "assets/video/culture-moon-grooming.mp4",
+  "video2": "assets/video/culture-idol-transit.mp4",
+  "video3": "assets/video/culture-aurora-revision.mp4"
+}

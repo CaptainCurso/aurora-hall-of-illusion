@@ -109,7 +109,7 @@ export class Hall {
  canMove(x,z){if(Math.abs(x)>19.5||Math.abs(z)>19.5)return false;for(const b of this.colliders){if(x>b.min.x-.35&&x<b.max.x+.35&&z>b.min.z-.35&&z<b.max.z+.35&&this.position.y-1.6<b.max.y)return false;}return true;}
  look(){this.camera.position.copy(this.position);this.camera.rotation.order='YXZ';this.camera.rotation.y=this.yaw;this.camera.rotation.x=this.pitch;}
  move(dt,input,assist=false){
-  const speed=assist?6.3:5.2,dx=(+input.right)-(+input.left),dz=(+input.back)-(+input.forward);let mx=(dx*Math.cos(this.yaw)+dz*Math.sin(this.yaw))*speed*dt,mz=(-dx*Math.sin(this.yaw)+dz*Math.cos(this.yaw))*speed*dt;if(dx&&dz){mx*=.707;mz*=.707;}
+  const speed=assist?6.3:5.2,dx=(+input.right)-(+input.left),dz=(+input.back)-(+input.forward);let mx=(dx*Math.cos(this.yaw)+dz*Math.sin(this.yaw))*speed*dt,mz=(-dx*Math.sin(this.yaw)+dz*Math.cos(this.yaw))*speed*dt;const length=Math.hypot(dx,dz);if(length>1){mx/=length;mz/=length;}
   const ground=this.floorHeight(this.position.x,this.position.z),targetFloor=this.floorHeight(this.position.x+mx,this.position.z+mz);
   if(targetFloor<=this.position.y-1.7+.5){if(this.canMove(this.position.x+mx,this.position.z))this.position.x+=mx;if(this.canMove(this.position.x,this.position.z+mz))this.position.z+=mz;}
   const y=this.floorHeight(this.position.x,this.position.z)+1.7;if(this.position.y<=y+.08){this.position.y=y;this.velocityY=Math.max(0,this.velocityY);if(input.jump){this.velocityY=6.3;}}
@@ -131,7 +131,7 @@ export class Hall {
   }
   if(active){for(const pulse of this.pulseRings){pulse.age+=dt;pulse.mesh.scale.setScalar(reduced?1.3:1+pulse.age*8);pulse.mesh.position.addScaledVector(pulse.direction,dt*6);pulse.mesh.material.opacity=Math.max(0,.45-pulse.age*.8);}this.pulseRings=this.pulseRings.filter(p=>{if(p.age<.56)return true;this.scene.remove(p.mesh);p.mesh.geometry.dispose();p.mesh.material.dispose();return false;});}
   this.ray.setFromCamera(new T.Vector2(),this.camera);const intersections=this.ray.intersectObjects(this.targets.map(t=>t.object),true);this.currentTarget=null;for(const hit of intersections){if(hit.distance>9)continue;const found=this.targets.find(t=>t.object===hit.object||t.id===hit.object.userData.action);if(found){this.currentTarget=found;break;}}
-  if(!this.currentTarget){const forward=new T.Vector3(0,0,-1).applyQuaternion(this.camera.quaternion);let best=3.7;for(const target of this.targets){const delta=target.position.clone().sub(this.position),distance=delta.length();if(distance<best&&delta.normalize().dot(forward)>.1){best=distance;this.currentTarget=target;}}}
+  if(!this.currentTarget){const forward=new T.Vector3(0,0,-1).applyQuaternion(this.camera.quaternion);let best=Infinity;for(const target of this.targets){const delta=target.position.clone().sub(this.position),distance=delta.length();if(distance<best&&distance<(target.id.startsWith('room:')?7:3.7)&&delta.normalize().dot(forward)>.1){best=distance;this.currentTarget=target;}}}
   this.renderer.setRenderTarget(this.glowTarget);this.renderer.render(this.scene,this.camera);this.renderer.setRenderTarget(null);this.glowMaterial.uniforms.strength.value=reduced?.18:.32;this.renderer.render(this.glowScene,this.glowCamera);
  }
  interact(){if(this.currentTarget)this.onAction?.(this.currentTarget.id);}
