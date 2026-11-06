@@ -1,5 +1,5 @@
 {
-  "version": "0.12.1",
+  "version": "0.13.4",
   "status": "Candidate runtime inventory; exact-build acceptance is recorded separately. No artistic hearing claim.",
   "files": [
     {
@@ -142,6 +142,17 @@
       "sourceSha256": "a730119469e85fdc7be9dff761d4e2570c917bb9f973ed04c04c415948133e29",
       "pixelAndColorDataUnchanged": true,
       "decodedRgbaSha256": "1126170a21e03c4223b3e806c4a8c6bfd9f8f20796c90d3a0ee88c7a3da0bd0e",
+      "decodedPixelsUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      }
+    },
+    {
+      "file": "assets/encore/images/cg-coda.png",
+      "bytes": 1302945,
+      "sha256": "a2de45281dd1f4767dfa095b2ad7c99cc4685bc1fe15164c8027f967d7c9dafa",
+      "sourceSha256": "17409c506dcdc9ea1e58bbbdef6b331f6c69140374f2ccca984420dae1560bf7",
       "decodedPixelsUnchanged": true,
       "attributionPreserved": {
         "creator": "MFLUX",
