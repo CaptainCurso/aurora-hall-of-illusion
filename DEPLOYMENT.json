@@ -1,17 +1,17 @@
 {
   "date": "2026-11-05",
-  "site": "https://captaincurso.github.io/aurora-hall-of-illusion/?v=0.10.0",
+  "release": "v0.11.1",
+  "site": "https://captaincurso.github.io/aurora-hall-of-illusion/?v=0.11.1",
   "repository": "https://github.com/CaptainCurso/aurora-hall-of-illusion",
-  "release": "v0.10.0",
-  "manifestSha256": "646052e7f8d9944b5d0c3d25041c8ea6e8138a25d5e0116d0edc753942993f15",
-  "sourceCommit": "490465d22d83fff7e9b52aa25b5ba68cd5bdb402",
-  "pagesCommit": "ae251b79b503e81abe90593cf0678c6ea61506b7",
+  "manifestSha256": "2949e5772f2114430a4d6184ea3fe6122199d88b99289ca78fbd5550b724fbff",
+  "sourceCommit": "66e5e60019d09dd683646382b437aaf71197515f",
+  "pagesCommit": "67afac45dffbf31fd16f64b8d8176d2c6d7f8544",
   "githubPagesStatus": "built",
-  "workflow": "https://github.com/CaptainCurso/aurora-hall-of-illusion/actions/runs/42144561433",
+  "workflow": "https://github.com/CaptainCurso/aurora-hall-of-illusion/actions/runs/42149209565",
   "workflowConclusion": "success",
   "httpsEnforced": true,
   "browser": "156.0.8078.81",
-  "httpHashes": 77,
+  "httpHashes": 78,
   "nativeAudioAndVoiceAdvanced": true,
   "nativeVideoAdvanced": true,
   "encoreNativeFilmAndMusicChapters": [
@@ -20,20 +20,23 @@
     "names"
   ],
   "pauseHeldMediaClocks": true,
+  "nativeControllerApiAvailable": true,
+  "nativeControllerPollSlots": 8,
+  "controllerFunctionalEvidence": "Isolated standard Gamepad API simulation; physical hardware and HID behavior not tested.",
   "pageErrors": [],
   "failedRequests": [],
   "cancelledMediaRequests": [],
-  "result": "PASS",
-  "initialFetchNote": "First strict public fetch received one HTTP503 for reprise.mp3; subsequent individual GET and complete unchanged strict rerun passed with exact hashes.",
-  "lan": {
-    "url": "http://192.168.1.248:8177/",
-    "release": "v0.10.0",
-    "httpHashes": 77,
+  "localNetworkVerification": {
+    "runtimeFiles": 78,
+    "matchingManifest": true,
     "nativePlaybackAndPause": "PASS",
     "privateFileExclusions": "PASS"
   },
+  "result": "PASS",
   "auditoryListeningClaim": false,
-  "userConsent": "Yes, publish the complete game and these assets publicly",
-  "consentScope": "Complete game, existing Aurora portrait/projections, four campaign illustrations with undocumented original licenses, and generated derivatives; publicly viewable/downloadable via GitHub and GitHub Pages.",
-  "privateProductionHistory": "Retained only locally; new public source commit has the prior public main as its sole parent."
+  "physicalControllerClaim": false,
+  "userRetryObserved": false,
+  "userConsent": "Existing complete-game public GitHub and LAN consent, plus explicit request for opening progression, larger interaction fonts and optional Xbox/PlayStation controls.",
+  "newMedia": false,
+  "savedGameKeysChanged": false
 }
