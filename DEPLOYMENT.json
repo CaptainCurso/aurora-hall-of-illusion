@@ -1,17 +1,18 @@
 {
   "date": "2026-11-05",
-  "release": "v0.12.1",
-  "site": "https://captaincurso.github.io/aurora-hall-of-illusion/?v=0.12.1",
+  "verifiedAt": "2026-11-06T06:12:06.408877+00:00",
+  "release": "v0.13.4",
+  "site": "https://captaincurso.github.io/aurora-hall-of-illusion/?v=0.13.4",
   "repository": "https://github.com/CaptainCurso/aurora-hall-of-illusion",
-  "manifestSha256": "028689fdbfcdb60a8ce164d42b348cd1beae60bceaf14f7d8fda0699a0e979dd",
-  "sourceCommit": "645d204258317e997d2ff913e1dbbd66e4683892",
-  "pagesCommit": "3149817c5719397bb2c6a85466c76902ff8a7d36",
+  "manifestSha256": "31a67f548d10c5c060f3bfa2d8d26023e4016c624fffea6fd07a565df551b2d5",
+  "sourceCommit": "9d9591a5fc0bc268aa560924ffbbe3bb627cef2a",
+  "pagesCommit": "908811cbd6ea8fc77b9ed65f4918fd99c124dc87",
   "githubPagesStatus": "built",
-  "workflow": "https://github.com/CaptainCurso/aurora-hall-of-illusion/actions/runs/42156527696",
+  "workflow": "https://github.com/CaptainCurso/aurora-hall-of-illusion/actions/runs/42172628548",
   "workflowConclusion": "success",
   "httpsEnforced": true,
   "browser": "156.0.8078.81",
-  "httpHashes": 78,
+  "httpHashes": 81,
   "nativeAudioAndVoiceAdvanced": true,
   "nativeVideoAdvanced": true,
   "encoreNativeFilmAndMusicChapters": [
@@ -29,34 +30,70 @@
       "url": "https://captaincurso.github.io/aurora-hall-of-illusion/assets/video/culture-moon-grooming.mp4",
       "type": "media",
       "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://captaincurso.github.io/aurora-hall-of-illusion/assets/video/culture-idol-transit.mp4",
+      "type": "media",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://captaincurso.github.io/aurora-hall-of-illusion/assets/video/culture-idol-transit.mp4",
+      "type": "media",
+      "error": "net::ERR_ABORTED"
     }
   ],
   "lanTransport": {
+    "version": "v0.13.4",
+    "result": "PASS",
+    "manifestSha256": "31a67f548d10c5c060f3bfa2d8d26023e4016c624fffea6fd07a565df551b2d5",
     "rangeStatus": 206,
-    "contentRange": "bytes 0-1023/3205790",
+    "contentRange": "bytes 0-1023/561862",
     "rangeBytes": 1024,
+    "suffixRangeExact": true,
+    "ifRangeExact": true,
     "etag304": 304,
     "rootCache": "no-cache",
     "versionedCache": "public, max-age=31536000, immutable",
     "manifestNoStore": "no-store",
-    "privateExclusions": "PASS",
-    "result": "PASS"
+    "privateExclusions": {
+      "README.md": 404,
+      "coordination/board.md": 404,
+      "assets/polish/runtime/cg-coda.png": 404,
+      ".git/config": 404,
+      "vnext/src/app.js": 404
+    }
   },
   "localNetworkVerification": {
-    "runtimeFiles": 78,
+    "runtimeFiles": 81,
     "matchingManifest": true,
     "nativePlaybackAndPause": "PASS",
-    "privateFileExclusions": "PASS",
-    "newRangeCacheServerRestarted": true
+    "privateFileExclusions": "PASS"
   },
-  "performanceEvidence": "Scoped host and synthetic4xCPU/5Mbps measurements; see VERIFICATION.md. Less hidden graphics work and improved measured music startup, not physical laptop proof.",
   "result": "PASS",
+  "QA": "scoped functional/host playback PASS",
+  "Aurora": "creative APPROVE and native final History PASS",
+  "Designer": "visual ACCEPT with explicit carry-forward scope",
   "auditoryListeningClaim": false,
   "actualLaptopVerified": false,
-  "userRetryObserved": false,
-  "remainingObservedLimit": "Initial voice delay/stalled event persisted in artificial constrained cold startup.",
   "physicalControllerClaim": false,
-  "userConsent": "Existing complete-game public GitHub/LAN consent and request to repair choppy Chrome laptop/LAN playback.",
-  "newMedia": false,
-  "savedGameKeysChanged": false
+  "userRetryObservedForThisRelease": false,
+  "priorUserFeedback": "Much smoother applies to v0.12.1 Chrome laptop/LAN retry.",
+  "performanceEvidence": "Bounded matched synthetic4xCPU/5Mbps hub samples show no observed regression; see VERIFICATION.md.",
+  "remainingObservedLimit": "Initial voiced cue emitted a stalled event before advancing in the artificial constrained cold startup.",
+  "newMedia": "One locally generated coda painting; original media unchanged.",
+  "savedGameKeysChanged": false,
+  "userConsent": "Existing explicit complete-game/public GitHub and LAN consent; authorized artistic-polish delivery continues that route.",
+  "portablePackage": {
+    "filename": "Aurora-7-Freedom-After-Dark-v0.13.4-local.zip",
+    "bytes": 67681961,
+    "sha256": "bf148459d1ece773ccd3b3227f113f42c88a04e226d18f7a26b18584b88fd4f5",
+    "zipCrc": "PASS",
+    "declaredPayloadHashes": "PASS",
+    "launcherMode": "0755",
+    "extractedRuntimeHashes": 81,
+    "nativePlaybackAndPause": "PASS",
+    "pageErrors": [],
+    "failedRequests": []
+  },
+  "independentLanSample": "QA independently verified the live manifest plus exact first/suffix/open/If-Range responses,416 and ETag304; full81file checks are Developer-owned."
 }
