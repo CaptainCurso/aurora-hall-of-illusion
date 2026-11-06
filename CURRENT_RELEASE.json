@@ -1,7 +1,7 @@
 {
-  "build": "v0.12.1",
-  "manifestSha256": "028689fdbfcdb60a8ce164d42b348cd1beae60bceaf14f7d8fda0699a0e979dd",
+  "build": "v0.13.4",
+  "manifestSha256": "31a67f548d10c5c060f3bfa2d8d26023e4016c624fffea6fd07a565df551b2d5",
   "private": false,
-  "promotedAt": "2026-11-06T03:24:48.740690+00:00",
-  "authorization": "User requested repair of choppy Chrome laptop/LAN playback. Existing explicit complete-game GitHub/public and LAN authorization persists; all media/story remain unchanged. Exact-build QA scoped functional/performance PASS and Aurora presentation APPROVE. Actual laptop listening/retry remains unverified."
+  "promotedAt": "2026-11-06T06:07:34.293320+00:00",
+  "authorization": "User requested artistic polish and continued the existing complete-game LAN/public GitHub delivery route. Existing explicit portrait/campaign-art/derivative publication consent persists. One new locally generated coda painting accepted by Aurora and Designer. Final exact-build QA scoped functional/host playback PASS; creative/visual approvals recorded. No physical-controller, actual-laptop or artistic-hearing claim."
 }

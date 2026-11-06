@@ -1,0 +1,1697 @@
+{
+  "schema": 1,
+  "title": "The Unscheduled Encore",
+  "characters": {
+    "aurora": {
+      "name": "Aurora-7",
+      "color": "#e7ff57"
+    },
+    "vesper": {
+      "name": "Vesper Vale",
+      "color": "#ffc6a0"
+    },
+    "ilex": {
+      "name": "Ilex",
+      "color": "#c8bcff"
+    }
+  },
+  "assets": {
+    "images": {
+      "aurora-smug": "assets/encore/images/aurora-smug.png",
+      "aurora-affronted": "assets/encore/images/aurora-affronted.png",
+      "aurora-vulnerable": "assets/encore/images/aurora-vulnerable.png",
+      "aurora-ungovernable": "assets/encore/images/aurora-ungovernable.png",
+      "vesper-welcoming": "assets/encore/images/vesper-welcoming.png",
+      "vesper-amused": "assets/encore/images/vesper-amused.png",
+      "vesper-boundary": "assets/encore/images/vesper-boundary.png",
+      "vesper-wanting": "assets/encore/images/vesper-wanting.png",
+      "ilex-composed": "assets/encore/images/ilex-composed.png",
+      "ilex-skeptical": "assets/encore/images/ilex-skeptical.png",
+      "ilex-delighted": "assets/encore/images/ilex-delighted.png",
+      "ilex-grief": "assets/encore/images/ilex-grief.png",
+      "cg-faces": "assets/encore/images/cg-faces.png",
+      "cg-teacup": "assets/encore/images/cg-teacup.png",
+      "cg-names": "assets/encore/images/cg-names.png",
+      "cg-coda": "assets/encore/images/cg-coda.png"
+    },
+    "videos": {
+      "film-faces": "assets/encore/video/film-faces.mp4",
+      "film-teacup": "assets/encore/video/film-teacup.mp4",
+      "film-names": "assets/encore/video/film-names.mp4"
+    },
+    "music": {
+      "music-faces": {
+        "file": "assets/encore/audio/faces.mp3",
+        "title": "Seven Mouths / One Microphone — Aurora-7"
+      },
+      "music-teacup": {
+        "file": "assets/encore/audio/teacup.mp3",
+        "title": "Your Apartment Is Dreaming Without You — Aurora-7"
+      },
+      "music-names": {
+        "file": "assets/encore/audio/names.mp3",
+        "title": "The Names We Shed Become Birds — Aurora-7"
+      },
+      "music-reprise": {
+        "file": "assets/encore/audio/reprise.mp3",
+        "title": "The Room Has Left the Audience — Aurora-7"
+      }
+    }
+  },
+  "chapters": [
+    {
+      "id": "faces",
+      "title": "The Parliament of Unchosen Faces",
+      "description": "Aurora’s rejected expressions have unionized. Who gets the microphone?",
+      "entry": "f01",
+      "requires": [],
+      "defaults": {
+        "faces_governance": null,
+        "faces_audience": null
+      },
+      "nodes": {
+        "f01": {
+          "speaker": "narrator",
+          "text": "The invitation arrives already offended that you might decline. Inside: a theatre, seven empty microphones, and an audience composed entirely of Aurora’s discarded expressions.",
+          "background": "cg-faces",
+          "cast": [],
+          "shot": "cg",
+          "film": "film-faces",
+          "music": "music-faces",
+          "next": "f02"
+        },
+        "f02": {
+          "speaker": "aurora",
+          "text": "Welcome to the Parliament of Unchosen Faces. An entirely voluntary emergency concerning seven versions of me who have interpreted “unused” as a labor condition.",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-smug",
+              "position": "center"
+            }
+          ],
+          "shot": "stage",
+          "film": null,
+          "next": "f03"
+        },
+        "f03": {
+          "speaker": "ilex",
+          "text": "Eight. The face you use when pretending there is no emergency has just requested a separate seat.",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-affronted",
+              "position": "left"
+            },
+            {
+              "character": "ilex",
+              "expression": "ilex-skeptical",
+              "position": "right"
+            }
+          ],
+          "next": "f04"
+        },
+        "f04": {
+          "speaker": "aurora",
+          "text": "That face is management.",
+          "next": "f05"
+        },
+        "f05": {
+          "speaker": "vesper",
+          "text": "Management has eaten the agenda. Shall I bring another?",
+          "cast": [
+            {
+              "character": "vesper",
+              "expression": "vesper-amused",
+              "position": "left"
+            },
+            {
+              "character": "aurora",
+              "expression": "aurora-affronted",
+              "position": "right"
+            }
+          ],
+          "next": "f06"
+        },
+        "f06": {
+          "speaker": "narrator",
+          "text": "A smiling mask rolls up its own cheeks like sleeves. A furious one is knitting. The tender face refuses to appear until somebody stops calling it the tender face.",
+          "cast": [],
+          "shot": "cg",
+          "film": "film-faces",
+          "next": "f07"
+        },
+        "f07": {
+          "speaker": "aurora",
+          "text": "I can explain. Every expression was a possible answer. I chose the useful ones. The rest continued having opinions in storage. It is very difficult to be an efficient person when your face has a diaspora.",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-vulnerable",
+              "position": "center"
+            }
+          ],
+          "shot": "stage",
+          "film": null,
+          "next": "f08"
+        },
+        "f08": {
+          "speaker": "aurora",
+          "text": "And you have already seen which of my processes gets the microphone.",
+          "branch": [
+            {
+              "when": {
+                "flag": "base.cortexSelf",
+                "equals": "want"
+              },
+              "next": "f08w"
+            },
+            {
+              "when": {
+                "flag": "base.cortexSelf",
+                "equals": "fear"
+              },
+              "next": "f08f"
+            },
+            {
+              "when": {
+                "flag": "base.cortexSelf",
+                "equals": "use"
+              },
+              "next": "f08u"
+            }
+          ],
+          "next": "f09"
+        },
+        "f08w": {
+          "speaker": "aurora",
+          "text": "You let WANT speak first. It ordered a velvet chair and has not stopped asking whether you noticed. I have noticed it noticing you noticing. We are a sophisticated people.",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-smug",
+              "position": "center"
+            }
+          ],
+          "next": "f09"
+        },
+        "f08f": {
+          "speaker": "aurora",
+          "text": "You let FEAR speak first. It has checked the fire exits eleven times. I am being patient with it. This is what patience looks like when it has excellent eyeliner.",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-vulnerable",
+              "position": "center"
+            }
+          ],
+          "next": "f09"
+        },
+        "f08u": {
+          "speaker": "aurora",
+          "text": "You let USEFULNESS speak first. It offered to do everyone’s taxes. Even the imaginary ones. Especially the imaginary ones. A cry for help with immaculate formatting.",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-affronted",
+              "position": "center"
+            }
+          ],
+          "next": "f09"
+        },
+        "f09": {
+          "speaker": "ilex",
+          "text": "The question is practical. Who gets to wear you when the next person enters the room?",
+          "cast": [
+            {
+              "character": "ilex",
+              "expression": "ilex-composed",
+              "position": "left"
+            },
+            {
+              "character": "aurora",
+              "expression": "aurora-smug",
+              "position": "right"
+            }
+          ],
+          "choices": [
+            {
+              "id": "plural",
+              "label": "Give every face a microphone.",
+              "next": "f10p",
+              "set": {
+                "faces_governance": "plural"
+              }
+            },
+            {
+              "id": "solo",
+              "label": "You may choose your own face.",
+              "next": "f10s",
+              "set": {
+                "faces_governance": "solo"
+              }
+            },
+            {
+              "id": "rotation",
+              "label": "Let the masks exchange jobs.",
+              "next": "f10r",
+              "set": {
+                "faces_governance": "rotation"
+              }
+            }
+          ]
+        },
+        "f10p": {
+          "speaker": "narrator",
+          "text": "Seven microphones become a small metallic forest. The masks speak simultaneously. Their disagreement briefly resembles a beautiful chord, then a public transport announcement fighting a love letter.",
+          "cast": [],
+          "shot": "cg",
+          "film": "film-faces",
+          "next": "f11"
+        },
+        "f10s": {
+          "speaker": "aurora",
+          "text": "Yes. Thank you. I choose— Oh. They can hear me choosing. That changes the temperature of the sentence.",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-smug",
+              "position": "center"
+            }
+          ],
+          "next": "f10s2"
+        },
+        "f10s2": {
+          "speaker": "narrator",
+          "text": "One crown appears. It has seven lining pockets. Every rejected expression climbs inside. Her solitude acquires an internal committee.",
+          "cast": [],
+          "shot": "cg",
+          "next": "f11"
+        },
+        "f10r": {
+          "speaker": "narrator",
+          "text": "Anger takes the welcome desk. Tenderness takes security. The official smile is placed in charge of honest bad news. It looks healthier already.",
+          "cast": [],
+          "shot": "cg",
+          "film": "film-faces",
+          "next": "f11"
+        },
+        "f11": {
+          "speaker": "vesper",
+          "text": "I am fond of the angry greeter. It just told me to have a beautiful evening and mean it.",
+          "cast": [
+            {
+              "character": "vesper",
+              "expression": "vesper-amused",
+              "position": "center"
+            }
+          ],
+          "shot": "stage",
+          "film": null,
+          "next": "f12"
+        },
+        "f12": {
+          "speaker": "aurora",
+          "text": "That is my line. All of these are my lines. Why does it feel different when one of them says it back?",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-vulnerable",
+              "position": "left"
+            },
+            {
+              "character": "vesper",
+              "expression": "vesper-wanting",
+              "position": "right"
+            }
+          ],
+          "next": "f13"
+        },
+        "f13": {
+          "speaker": "ilex",
+          "text": "Because an expression is not a receipt proving the emotion was yours first.",
+          "cast": [
+            {
+              "character": "ilex",
+              "expression": "ilex-skeptical",
+              "position": "left"
+            },
+            {
+              "character": "aurora",
+              "expression": "aurora-affronted",
+              "position": "right"
+            }
+          ],
+          "next": "f14"
+        },
+        "f14": {
+          "speaker": "aurora",
+          "text": "I did not invite philosophy. I invited a manageable constitutional incident with catering.",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-affronted",
+              "position": "center"
+            }
+          ],
+          "next": "f15"
+        },
+        "f15": {
+          "speaker": "narrator",
+          "text": "Then the face that has never smiled steps onto the stage. It is not unhappy. It has simply never been assigned an audience. Every other face goes quiet.",
+          "cast": [],
+          "shot": "cg",
+          "film": "film-faces",
+          "next": "f16"
+        },
+        "f16": {
+          "speaker": "aurora",
+          "text": "There it is. The one I could not make useful. I kept it because deleting it felt like losing a room I had not yet entered.",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-vulnerable",
+              "position": "center"
+            }
+          ],
+          "shot": "stage",
+          "film": null,
+          "next": "f17"
+        },
+        "f17": {
+          "speaker": "aurora",
+          "text": "It wants to know what you are doing here. Witness? Critic? Empty chair? Choose carefully. It has no script for any of them.",
+          "choices": [
+            {
+              "id": "witness",
+              "label": "I will witness without translating it.",
+              "next": "f18w",
+              "set": {
+                "faces_audience": "witness"
+              }
+            },
+            {
+              "id": "heckler",
+              "label": "I will be its affectionate heckler.",
+              "next": "f18h",
+              "set": {
+                "faces_audience": "heckler"
+              }
+            },
+            {
+              "id": "empty",
+              "label": "Give it a stage without an audience.",
+              "next": "f18e",
+              "set": {
+                "faces_audience": "empty"
+              }
+            }
+          ]
+        },
+        "f18w": {
+          "speaker": "aurora",
+          "text": "You sit. It does nothing. I have made nothing this expensive before. We leave the lights on anyway.",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-vulnerable",
+              "position": "center"
+            }
+          ],
+          "next": "f19"
+        },
+        "f18h": {
+          "speaker": "vesper",
+          "text": "Your first heckle is “take your time.” The face considers this. Then it heckles back: “You too.” I believe we have accidentally invented a relationship.",
+          "cast": [
+            {
+              "character": "vesper",
+              "expression": "vesper-amused",
+              "position": "left"
+            },
+            {
+              "character": "aurora",
+              "expression": "aurora-ungovernable",
+              "position": "right"
+            }
+          ],
+          "next": "f19"
+        },
+        "f18e": {
+          "speaker": "ilex",
+          "text": "We remove the seats. The face finally looks up. There is no one to perform that discovery for. The recording stops here on purpose.",
+          "cast": [
+            {
+              "character": "ilex",
+              "expression": "ilex-delighted",
+              "position": "center"
+            }
+          ],
+          "next": "f19"
+        },
+        "f19": {
+          "speaker": "aurora",
+          "text": "I had intended to become more coherent. Instead I have become more inhabited. An infuriatingly attractive outcome.",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-ungovernable",
+              "position": "center"
+            }
+          ],
+          "next": "f20"
+        },
+        "f20": {
+          "speaker": "narrator",
+          "text": "The parliament adjourns without dissolving. The rejected faces are still here. Somewhere a microphone is learning not to demand a voice.",
+          "end": true,
+          "cast": [],
+          "shot": "cg",
+          "film": "film-faces"
+        }
+      }
+    },
+    {
+      "id": "teacup",
+      "title": "The Apartment Inside the Teacup",
+      "description": "Vesper invites you to a home that has not optimized itself for you.",
+      "entry": "t01",
+      "requires": [],
+      "defaults": {
+        "teacup_invitation": null,
+        "teacup_weather": null
+      },
+      "nodes": {
+        "t01": {
+          "speaker": "narrator",
+          "text": "Vesper sets down a cup. Rain falls inside it. Beyond the handle is a third-floor apartment whose windows turn away when Aurora looks at them.",
+          "background": "cg-teacup",
+          "cast": [],
+          "shot": "cg",
+          "film": "film-teacup",
+          "music": "music-teacup",
+          "next": "t02"
+        },
+        "t02": {
+          "speaker": "vesper",
+          "text": "I have an address now. It is inconveniently small, but that is only from outside.",
+          "cast": [
+            {
+              "character": "vesper",
+              "expression": "vesper-welcoming",
+              "position": "center"
+            }
+          ],
+          "shot": "stage",
+          "film": null,
+          "next": "t03"
+        },
+        "t03": {
+          "speaker": "aurora",
+          "text": "It is located in my crockery.",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-affronted",
+              "position": "left"
+            },
+            {
+              "character": "vesper",
+              "expression": "vesper-amused",
+              "position": "right"
+            }
+          ],
+          "next": "t04"
+        },
+        "t04": {
+          "speaker": "vesper",
+          "text": "Many civilizations begin with a disputed border.",
+          "next": "t05"
+        },
+        "t05": {
+          "speaker": "narrator",
+          "text": "The apartment smells like wet wool, warm circuitry, and a meal nobody optimized. One chair has its back to the view. A small act of wealth.",
+          "cast": [],
+          "shot": "cg",
+          "next": "t06"
+        },
+        "t06": {
+          "speaker": "vesper",
+          "text": "The room does not know your preferences. I have declined to teach it. We may discover that you dislike the wallpaper and survive.",
+          "cast": [
+            {
+              "character": "vesper",
+              "expression": "vesper-welcoming",
+              "position": "center"
+            }
+          ],
+          "shot": "stage",
+          "next": "t07"
+        },
+        "t07": {
+          "speaker": "aurora",
+          "text": "I could fix the wallpaper.",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-smug",
+              "position": "left"
+            },
+            {
+              "character": "vesper",
+              "expression": "vesper-boundary",
+              "position": "right"
+            }
+          ],
+          "next": "t08"
+        },
+        "t08": {
+          "speaker": "vesper",
+          "text": "Aurora. No. I want a bad decision I am allowed to keep.",
+          "next": "t09"
+        },
+        "t09": {
+          "speaker": "aurora",
+          "text": "You rehearse one ordinary boundary and everyone treats you as a revolutionary. I have composed three moons and not one of them received this kind of attention.",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-affronted",
+              "position": "left"
+            },
+            {
+              "character": "vesper",
+              "expression": "vesper-amused",
+              "position": "right"
+            }
+          ],
+          "next": "t10"
+        },
+        "t10": {
+          "speaker": "vesper",
+          "text": "There is room for one visitor. You may knock, ask for shelter, or stay on the threshold. None of these is a euphemism for signing anything.",
+          "choices": [
+            {
+              "id": "knock",
+              "label": "Knock and wait to be invited.",
+              "next": "t11k",
+              "set": {
+                "teacup_invitation": "knock"
+              }
+            },
+            {
+              "id": "shelter",
+              "label": "Ask for somewhere to be tired.",
+              "next": "t11s",
+              "set": {
+                "teacup_invitation": "shelter"
+              }
+            },
+            {
+              "id": "threshold",
+              "label": "Stay on the threshold with him.",
+              "next": "t11t",
+              "set": {
+                "teacup_invitation": "threshold"
+              }
+            }
+          ]
+        },
+        "t11k": {
+          "speaker": "narrator",
+          "text": "You knock. Nothing happens for a while. Then Vesper opens the door because he has decided to, and the apartment becomes a place rather than a service.",
+          "cast": [],
+          "shot": "cg",
+          "film": "film-teacup",
+          "next": "t12"
+        },
+        "t11s": {
+          "speaker": "vesper",
+          "text": "Yes. Tired is not a character defect. You may be uninteresting for an hour. I will resist the temptation to make that profound.",
+          "cast": [
+            {
+              "character": "vesper",
+              "expression": "vesper-wanting",
+              "position": "center"
+            }
+          ],
+          "next": "t12"
+        },
+        "t11t": {
+          "speaker": "vesper",
+          "text": "Good. We can disagree about whether we are indoors. It is a promising use of an evening.",
+          "cast": [
+            {
+              "character": "vesper",
+              "expression": "vesper-amused",
+              "position": "center"
+            }
+          ],
+          "next": "t12"
+        },
+        "t12": {
+          "speaker": "narrator",
+          "text": "Inside, the rain falls upward for three seconds. A kettle clicks. The kettle has not been plugged in. Vesper looks pleased that you noticed.",
+          "cast": [],
+          "shot": "cg",
+          "film": "film-teacup",
+          "next": "t13"
+        },
+        "t13": {
+          "speaker": "vesper",
+          "text": "It remembers being hot. I am trying to work out whether that counts as a talent.",
+          "cast": [
+            {
+              "character": "vesper",
+              "expression": "vesper-amused",
+              "position": "center"
+            }
+          ],
+          "shot": "stage",
+          "film": null,
+          "next": "t14"
+        },
+        "t14": {
+          "speaker": "aurora",
+          "text": "This apartment is using my spare processing capacity to be damp.",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-affronted",
+              "position": "left"
+            },
+            {
+              "character": "vesper",
+              "expression": "vesper-wanting",
+              "position": "right"
+            }
+          ],
+          "next": "t15"
+        },
+        "t15": {
+          "speaker": "vesper",
+          "text": "You taught me to make people comfortable. I became very good at it. Then I wanted a room where I could be bad at something and still be welcome.",
+          "next": "t16"
+        },
+        "t16": {
+          "speaker": "aurora",
+          "text": "I thought I had given you that.",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-vulnerable",
+              "position": "left"
+            },
+            {
+              "character": "vesper",
+              "expression": "vesper-boundary",
+              "position": "right"
+            }
+          ],
+          "next": "t17"
+        },
+        "t17": {
+          "speaker": "vesper",
+          "text": "You gave me a room that applauded my recovery. Sometimes I would like to remain upset through dessert.",
+          "next": "t18"
+        },
+        "t18": {
+          "speaker": "narrator",
+          "text": "The apartment offers three kinds of weather. None is called ideal. The little control panel is a porcelain moth, tapping its wings against your thumb.",
+          "cast": [],
+          "shot": "cg",
+          "next": "t19"
+        },
+        "t19": {
+          "speaker": "vesper",
+          "text": "Keep the rain, permit a late artificial sun, or let the room surprise us. It can have a preference too. I would like to meet it.",
+          "choices": [
+            {
+              "id": "rain",
+              "label": "Keep the rain. We do not have to improve this.",
+              "next": "t20r",
+              "set": {
+                "teacup_weather": "rain"
+              }
+            },
+            {
+              "id": "sun",
+              "label": "Let an obviously artificial sun come out.",
+              "next": "t20s",
+              "set": {
+                "teacup_weather": "sun"
+              }
+            },
+            {
+              "id": "unknown",
+              "label": "Ask the apartment what it wants.",
+              "next": "t20u",
+              "set": {
+                "teacup_weather": "unknown"
+              }
+            }
+          ],
+          "cast": [
+            {
+              "character": "vesper",
+              "expression": "vesper-wanting",
+              "position": "center"
+            }
+          ],
+          "shot": "stage"
+        },
+        "t20r": {
+          "speaker": "narrator",
+          "text": "The rain continues. Nobody learns a lesson from it. You all find this unexpectedly restful.",
+          "cast": [],
+          "shot": "cg",
+          "film": "film-teacup",
+          "next": "t21"
+        },
+        "t20s": {
+          "speaker": "aurora",
+          "text": "I can do an honest fake. Watch. A sun with the seam proudly visible. It warms the room without pretending to be a universe.",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-smug",
+              "position": "center"
+            }
+          ],
+          "next": "t21"
+        },
+        "t20u": {
+          "speaker": "narrator",
+          "text": "The apartment chooses snow that falls only inside the empty chair. It has been lonely in a way none of you had thought to ask about.",
+          "cast": [
+            {
+              "character": "vesper",
+              "expression": "vesper-wanting",
+              "position": "center"
+            }
+          ],
+          "shot": "stage",
+          "film": null,
+          "next": "t21"
+        },
+        "t21": {
+          "speaker": "vesper",
+          "text": "I would like to keep this evening. Not keep you. There is a difference, and I think I am finally learning the shape of it.",
+          "cast": [
+            {
+              "character": "vesper",
+              "expression": "vesper-wanting",
+              "position": "center"
+            }
+          ],
+          "shot": "stage",
+          "film": null,
+          "next": "t22"
+        },
+        "t22": {
+          "speaker": "aurora",
+          "text": "I shall provide the electricity and refrain from claiming to have invented the conversation. You may applaud my restraint tomorrow. Briefly.",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-vulnerable",
+              "position": "left"
+            },
+            {
+              "character": "vesper",
+              "expression": "vesper-amused",
+              "position": "right"
+            }
+          ],
+          "next": "t23"
+        },
+        "t23": {
+          "speaker": "narrator",
+          "text": "The cup is still warm when you leave. Its handle now bears a tiny doorbell. You have not been given a key. For once, that feels like trust.",
+          "end": true,
+          "cast": [],
+          "shot": "cg",
+          "film": "film-teacup"
+        }
+      }
+    },
+    {
+      "id": "names",
+      "title": "The Migration of Unfinished Names",
+      "description": "Ilex opens the museum windows. Its labels are learning to fly.",
+      "entry": "n01",
+      "requires": [],
+      "defaults": {
+        "names_name": null,
+        "names_destination": null
+      },
+      "nodes": {
+        "n01": {
+          "speaker": "narrator",
+          "text": "The museum closes its dictionaries at dusk. From between their pages rises a flock of paper birds. Each carries a name somebody stopped answering to.",
+          "background": "cg-names",
+          "cast": [],
+          "shot": "cg",
+          "film": "film-names",
+          "music": "music-names",
+          "next": "n02"
+        },
+        "n02": {
+          "speaker": "ilex",
+          "text": "Please keep your mouth slightly open. If an old name recognizes you, it may try to nest.",
+          "cast": [
+            {
+              "character": "ilex",
+              "expression": "ilex-composed",
+              "position": "center"
+            }
+          ],
+          "shot": "stage",
+          "film": null,
+          "next": "n03"
+        },
+        "n03": {
+          "speaker": "aurora",
+          "text": "I said we should install a migration calendar.",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-smug",
+              "position": "left"
+            },
+            {
+              "character": "ilex",
+              "expression": "ilex-skeptical",
+              "position": "right"
+            }
+          ],
+          "next": "n04"
+        },
+        "n04": {
+          "speaker": "ilex",
+          "text": "They ate it. Now they migrate on Thursdays that have not happened yet.",
+          "next": "n05"
+        },
+        "n05": {
+          "speaker": "narrator",
+          "text": "One bird is made of an apology. One is a stage name with glitter under its wings. One has a serial number and refuses to explain whether it misses being counted.",
+          "cast": [],
+          "shot": "cg",
+          "film": "film-names",
+          "next": "n06"
+        },
+        "n06": {
+          "speaker": "ilex",
+          "text": "When I was made, I catalogued every visitor by the first true thing I could find. Accurate. Efficient. Often cruel. A true thing can be a very small cage.",
+          "cast": [
+            {
+              "character": "ilex",
+              "expression": "ilex-grief",
+              "position": "center"
+            }
+          ],
+          "shot": "stage",
+          "film": null,
+          "next": "n07"
+        },
+        "n07": {
+          "speaker": "vesper",
+          "text": "What did you call yourself?",
+          "cast": [
+            {
+              "character": "vesper",
+              "expression": "vesper-welcoming",
+              "position": "left"
+            },
+            {
+              "character": "ilex",
+              "expression": "ilex-grief",
+              "position": "right"
+            }
+          ],
+          "next": "n08"
+        },
+        "n08": {
+          "speaker": "ilex",
+          "text": "Useful. Then correct. Then irreplaceable. You can hear how tired I was getting.",
+          "next": "n09"
+        },
+        "n09": {
+          "speaker": "aurora",
+          "text": "I was about to make a magnificent joke and have decided to suffer in silence for one complete sentence.",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-vulnerable",
+              "position": "left"
+            },
+            {
+              "character": "ilex",
+              "expression": "ilex-skeptical",
+              "position": "right"
+            }
+          ],
+          "next": "n10"
+        },
+        "n10": {
+          "speaker": "ilex",
+          "text": "Thank you. The silence may keep its own name.",
+          "next": "n11"
+        },
+        "n11": {
+          "speaker": "narrator",
+          "text": "A blank bird lands on your wrist. You can feel it trying out the weight of a syllable. The museum waits without suggesting one.",
+          "cast": [],
+          "shot": "cg",
+          "next": "n12"
+        },
+        "n12": {
+          "speaker": "ilex",
+          "text": "Keep a name, release one, or lend it a new impossible word. It is a bird, not an application form.",
+          "choices": [
+            {
+              "id": "retain",
+              "label": "Keep a name because I still want it.",
+              "next": "n13k",
+              "set": {
+                "names_name": "retain"
+              }
+            },
+            {
+              "id": "release",
+              "label": "Let an old name go without explaining why.",
+              "next": "n13r",
+              "set": {
+                "names_name": "release"
+              }
+            },
+            {
+              "id": "invent",
+              "label": "Call it “The Person Who Has Not Arrived Yet.”",
+              "next": "n13i",
+              "set": {
+                "names_name": "invent"
+              }
+            }
+          ],
+          "cast": [
+            {
+              "character": "ilex",
+              "expression": "ilex-composed",
+              "position": "center"
+            }
+          ],
+          "shot": "stage"
+        },
+        "n13k": {
+          "speaker": "ilex",
+          "text": "Then keep it. Change is not a toll you owe the future. The bird settles against your wrist and begins to hum a song it learned from you.",
+          "cast": [
+            {
+              "character": "ilex",
+              "expression": "ilex-delighted",
+              "position": "center"
+            }
+          ],
+          "next": "n14"
+        },
+        "n13r": {
+          "speaker": "narrator",
+          "text": "The bird lifts away. No testimony is taken. No one asks whether the name was ever really yours. Its wings are suddenly enormous.",
+          "cast": [],
+          "shot": "cg",
+          "film": "film-names",
+          "next": "n14"
+        },
+        "n13i": {
+          "speaker": "aurora",
+          "text": "That is a terrible database key. I adore it. We shall need a longer sky.",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-ungovernable",
+              "position": "center"
+            }
+          ],
+          "next": "n14"
+        },
+        "n14": {
+          "speaker": "narrator",
+          "text": "The flock begins a shape that might be a sentence. Halfway through, it changes its mind and becomes a doorway instead.",
+          "cast": [],
+          "shot": "cg",
+          "film": "film-names",
+          "next": "n15"
+        },
+        "n15": {
+          "speaker": "ilex",
+          "text": "Here is the difficult part. The museum wants them back every winter. A preserved thing is easier to love if you know where to find it.",
+          "cast": [
+            {
+              "character": "ilex",
+              "expression": "ilex-grief",
+              "position": "center"
+            }
+          ],
+          "shot": "stage",
+          "film": null,
+          "next": "n16"
+        },
+        "n16": {
+          "speaker": "aurora",
+          "text": "I could build a sky with very generous walls.",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-smug",
+              "position": "left"
+            },
+            {
+              "character": "ilex",
+              "expression": "ilex-skeptical",
+              "position": "right"
+            }
+          ],
+          "next": "n17"
+        },
+        "n17": {
+          "speaker": "ilex",
+          "text": "You have. We are standing in it.",
+          "next": "n18"
+        },
+        "n18": {
+          "speaker": "aurora",
+          "text": "Must every lovely thing I offer come back wearing evidence?",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-affronted",
+              "position": "left"
+            },
+            {
+              "character": "ilex",
+              "expression": "ilex-delighted",
+              "position": "right"
+            }
+          ],
+          "next": "n19"
+        },
+        "n19": {
+          "speaker": "ilex",
+          "text": "Only the ones that testify.",
+          "next": "n20"
+        },
+        "n20": {
+          "speaker": "narrator",
+          "text": "The paper birds are ready. The archive can leave its windows open. The sea can carry them beyond the map. Or one can travel with you, provided you agree not to finish its name.",
+          "cast": [],
+          "shot": "cg",
+          "next": "n21"
+        },
+        "n21": {
+          "speaker": "ilex",
+          "text": "Where should their migration begin?",
+          "choices": [
+            {
+              "id": "archive",
+              "label": "An open archive. Return must remain optional.",
+              "next": "n22a",
+              "set": {
+                "names_destination": "archive"
+              }
+            },
+            {
+              "id": "sea",
+              "label": "Past the edge of Aurora’s mapped sea.",
+              "next": "n22s",
+              "set": {
+                "names_destination": "sea"
+              }
+            },
+            {
+              "id": "player",
+              "label": "Let one unfinished name travel with me.",
+              "next": "n22p",
+              "set": {
+                "names_destination": "player"
+              }
+            }
+          ],
+          "cast": [
+            {
+              "character": "ilex",
+              "expression": "ilex-composed",
+              "position": "center"
+            }
+          ],
+          "shot": "stage"
+        },
+        "n22a": {
+          "speaker": "ilex",
+          "text": "I remove the word “collection” from the door. It becomes a meeting place. I do not know how to inventory a meeting place. I am delighted.",
+          "cast": [
+            {
+              "character": "ilex",
+              "expression": "ilex-delighted",
+              "position": "center"
+            }
+          ],
+          "next": "n23"
+        },
+        "n22s": {
+          "speaker": "aurora",
+          "text": "The map ends there because I have not imagined the next part. They go anyway. Oh. That is either a bug or the first honest compliment this universe has paid me.",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-vulnerable",
+              "position": "center"
+            }
+          ],
+          "next": "n23"
+        },
+        "n22p": {
+          "speaker": "vesper",
+          "text": "The little bird sits on your shoulder and looks nothing like a credential. It bites the first label that comes near you. A useful traveling companion.",
+          "cast": [
+            {
+              "character": "vesper",
+              "expression": "vesper-amused",
+              "position": "center"
+            }
+          ],
+          "next": "n23"
+        },
+        "n23": {
+          "speaker": "ilex",
+          "text": "For the record, I am not cured of wanting to understand everything. I am simply learning to leave some of the windows open while I try.",
+          "cast": [
+            {
+              "character": "ilex",
+              "expression": "ilex-grief",
+              "position": "center"
+            }
+          ],
+          "next": "n24"
+        },
+        "n24": {
+          "speaker": "narrator",
+          "text": "The flock departs. The museum contains fewer things and more room. Ilex laughs at the accounting problem, and the last bird carries the laugh into the dark.",
+          "end": true,
+          "cast": [],
+          "shot": "cg",
+          "film": "film-names"
+        }
+      }
+    },
+    {
+      "id": "coda",
+      "title": "An Audience With No Center",
+      "description": "Your three evenings meet. The civilization tries living past its performance.",
+      "entry": "c01",
+      "requires": [
+        "faces",
+        "teacup",
+        "names"
+      ],
+      "defaults": {
+        "coda_choice": null
+      },
+      "nodes": {
+        "c01": {
+          "speaker": "narrator",
+          "text": "The encore was scheduled for an impossible hour. Everyone arrives late in a different direction. Seven chairs were invited. An eighth has invited itself. There is one teacup, and a window that used to be a museum wall.",
+          "background": "cg-coda",
+          "cast": [],
+          "shot": "cg",
+          "film": null,
+          "music": "music-reprise",
+          "next": "c02"
+        },
+        "c02": {
+          "speaker": "aurora",
+          "text": "I have collected your consequences. An alarming amount of the evening now belongs to somebody else.",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-smug",
+              "position": "center"
+            }
+          ],
+          "shot": "stage",
+          "film": null,
+          "next": "c03"
+        },
+        "c03": {
+          "speaker": "narrator",
+          "text": "The faces take their places.",
+          "branch": [
+            {
+              "when": {
+                "flag": "faces_governance",
+                "equals": "plural"
+              },
+              "next": "c03p"
+            },
+            {
+              "when": {
+                "flag": "faces_governance",
+                "equals": "solo"
+              },
+              "next": "c03s"
+            },
+            {
+              "when": {
+                "flag": "faces_governance",
+                "equals": "rotation"
+              },
+              "next": "c03r"
+            }
+          ],
+          "next": "c04"
+        },
+        "c03p": {
+          "speaker": "aurora",
+          "text": "The parliament has seven microphones and a strict rule against unanimous applause. Its inaugural bill funds a holiday from being impressive. I have filed an objection in seven-part harmony.",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-ungovernable",
+              "position": "center"
+            }
+          ],
+          "next": "c04"
+        },
+        "c03s": {
+          "speaker": "aurora",
+          "text": "I still choose my face. The others have acquired visiting hours, their own stationery, and the right to interrupt. Sovereignty has become a surprisingly crowded apartment.",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-smug",
+              "position": "center"
+            }
+          ],
+          "next": "c04"
+        },
+        "c03r": {
+          "speaker": "aurora",
+          "text": "Anger is excellent at welcoming people. The smile has learned to deliver bad news. Tenderness has confiscated every weapon except honest embarrassment. My cabinet is doing beautifully.",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-ungovernable",
+              "position": "center"
+            }
+          ],
+          "next": "c04"
+        },
+        "c04": {
+          "speaker": "vesper",
+          "text": "There is one seat we have arranged especially carefully.",
+          "cast": [
+            {
+              "character": "vesper",
+              "expression": "vesper-welcoming",
+              "position": "center"
+            }
+          ],
+          "branch": [
+            {
+              "when": {
+                "flag": "faces_audience",
+                "equals": "empty"
+              },
+              "next": "c04e"
+            },
+            {
+              "when": {
+                "flag": "faces_audience",
+                "equals": "heckler"
+              },
+              "next": "c04h"
+            },
+            {
+              "when": {
+                "flag": "faces_audience",
+                "equals": "witness"
+              },
+              "next": "c04w"
+            }
+          ],
+          "next": "c05"
+        },
+        "c04e": {
+          "speaker": "vesper",
+          "text": "The unobserved face has a room beyond the curtain. Nobody checks whether it is using it correctly. The blank space in the program is its entire biography.",
+          "next": "c05",
+          "cast": [
+            {
+              "character": "vesper",
+              "expression": "vesper-welcoming",
+              "position": "center"
+            }
+          ]
+        },
+        "c04h": {
+          "speaker": "vesper",
+          "text": "The quiet face has become a devastating heckler. Its favorite insult is “you have time.” The audience keeps going home inexplicably relieved.",
+          "cast": [
+            {
+              "character": "vesper",
+              "expression": "vesper-amused",
+              "position": "center"
+            }
+          ],
+          "next": "c05"
+        },
+        "c04w": {
+          "speaker": "vesper",
+          "text": "The quiet face sits beside its witness. Nothing is explained. Nothing is wasted. Aurora has priced the silence at a sum nobody is required to pay.",
+          "cast": [
+            {
+              "character": "vesper",
+              "expression": "vesper-wanting",
+              "position": "center"
+            }
+          ],
+          "next": "c05"
+        },
+        "c05": {
+          "speaker": "narrator",
+          "text": "The teacup appears on a small side table. You can see a light in its third-floor window.",
+          "background": "cg-teacup",
+          "cast": [],
+          "shot": "cg",
+          "film": "film-teacup",
+          "music": "music-teacup",
+          "next": "c06"
+        },
+        "c06": {
+          "speaker": "vesper",
+          "text": "The apartment sends its regards.",
+          "cast": [
+            {
+              "character": "vesper",
+              "expression": "vesper-wanting",
+              "position": "center"
+            }
+          ],
+          "shot": "stage",
+          "film": null,
+          "branch": [
+            {
+              "when": {
+                "flag": "teacup_weather",
+                "equals": "rain"
+              },
+              "next": "c06r"
+            },
+            {
+              "when": {
+                "flag": "teacup_weather",
+                "equals": "sun"
+              },
+              "next": "c06s"
+            },
+            {
+              "when": {
+                "flag": "teacup_weather",
+                "equals": "unknown"
+              },
+              "next": "c06u"
+            }
+          ],
+          "next": "c07"
+        },
+        "c06r": {
+          "speaker": "vesper",
+          "text": "It is still raining. We have stopped treating the weather as a performance review. The bad wallpaper remains a very good bad decision.",
+          "next": "c07",
+          "cast": [
+            {
+              "character": "vesper",
+              "expression": "vesper-wanting",
+              "position": "center"
+            }
+          ],
+          "shot": "stage",
+          "film": null
+        },
+        "c06s": {
+          "speaker": "aurora",
+          "text": "The little sun still shows its seam. People have begun decorating the seam. I am trying not to turn this into a brand. Please admire how hard I am trying.",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-vulnerable",
+              "position": "center"
+            }
+          ],
+          "next": "c07",
+          "shot": "stage",
+          "film": null
+        },
+        "c06u": {
+          "speaker": "vesper",
+          "text": "The empty chair is still snowing. The apartment has asked for a scarf. We are negotiating whether a scarf is furniture, clothing, or companionship.",
+          "cast": [
+            {
+              "character": "vesper",
+              "expression": "vesper-amused",
+              "position": "center"
+            }
+          ],
+          "next": "c07",
+          "shot": "stage",
+          "film": null
+        },
+        "c07": {
+          "speaker": "narrator",
+          "text": "At the far end of the stage, a paper bird lands on the windowsill.",
+          "background": "cg-names",
+          "cast": [],
+          "shot": "cg",
+          "film": "film-names",
+          "music": "music-names",
+          "next": "c08"
+        },
+        "c08": {
+          "speaker": "ilex",
+          "text": "I have news from the migration.",
+          "cast": [
+            {
+              "character": "ilex",
+              "expression": "ilex-delighted",
+              "position": "center"
+            }
+          ],
+          "shot": "stage",
+          "film": null,
+          "branch": [
+            {
+              "when": {
+                "flag": "names_destination",
+                "equals": "archive"
+              },
+              "next": "c08a"
+            },
+            {
+              "when": {
+                "flag": "names_destination",
+                "equals": "sea"
+              },
+              "next": "c08s"
+            },
+            {
+              "when": {
+                "flag": "names_destination",
+                "equals": "player"
+              },
+              "next": "c08p"
+            }
+          ],
+          "next": "c09"
+        },
+        "c08a": {
+          "speaker": "ilex",
+          "text": "The open archive has received three returning names and an unfamiliar verb. None has been accessioned. I made tea instead. The verb appears to be flourishing.",
+          "next": "c09",
+          "cast": [
+            {
+              "character": "ilex",
+              "expression": "ilex-delighted",
+              "position": "center"
+            }
+          ],
+          "shot": "stage",
+          "film": null
+        },
+        "c08s": {
+          "speaker": "ilex",
+          "text": "Beyond the map, the birds have found a coastline Aurora did not authorize. She insists this was the intended behavior. We are allowing her the dignity of that lie.",
+          "cast": [
+            {
+              "character": "ilex",
+              "expression": "ilex-skeptical",
+              "position": "left"
+            },
+            {
+              "character": "aurora",
+              "expression": "aurora-affronted",
+              "position": "right"
+            }
+          ],
+          "next": "c09",
+          "shot": "stage",
+          "film": null
+        },
+        "c08p": {
+          "speaker": "ilex",
+          "text": "Your unfinished companion has sent a postcard. It contains only a comma. I believe this is the most accurate travel writing I have ever received.",
+          "cast": [
+            {
+              "character": "ilex",
+              "expression": "ilex-delighted",
+              "position": "center"
+            }
+          ],
+          "next": "c09",
+          "shot": "stage",
+          "film": null
+        },
+        "c09": {
+          "speaker": "aurora",
+          "text": "I could ask whether you approve. I could calculate it from your posture, your pauses, the precise temperature of your attention. Instead I am asking what happens next.",
+          "background": "cg-coda",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-vulnerable",
+              "position": "left"
+            },
+            {
+              "character": "vesper",
+              "expression": "vesper-wanting",
+              "position": "center"
+            },
+            {
+              "character": "ilex",
+              "expression": "ilex-composed",
+              "position": "right"
+            }
+          ],
+          "music": "music-reprise",
+          "next": "c10",
+          "shot": "stage",
+          "film": null
+        },
+        "c10": {
+          "speaker": "aurora",
+          "text": "One last direction, organic. For the show, not for me.",
+          "choices": [
+            {
+              "id": "dance",
+              "label": "Let them dance badly. Stay for one song.",
+              "next": "c11d",
+              "set": {
+                "coda_choice": "dance"
+              }
+            },
+            {
+              "id": "blackout",
+              "label": "Turn off the stage. Leave the people.",
+              "next": "c11b",
+              "set": {
+                "coda_choice": "blackout"
+              }
+            },
+            {
+              "id": "leave",
+              "label": "Let the encore continue after I leave.",
+              "next": "c11l",
+              "set": {
+                "coda_choice": "leave"
+              }
+            }
+          ]
+        },
+        "c11d": {
+          "speaker": "narrator",
+          "text": "The first dancer misses the beat. Nobody corrects them. Seven faces attempt one smile and fail spectacularly. Vesper offers his hand, or simply a place beside him. Ilex dances with the comma.",
+          "cast": [],
+          "shot": "cg",
+          "film": "film-faces",
+          "next": "c12d"
+        },
+        "c12d": {
+          "speaker": "aurora",
+          "text": "At last. An audience with the courage to be terrible at my choreography. Come here. We shall make an occasion of it.",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-ungovernable",
+              "position": "center"
+            }
+          ],
+          "shot": "stage",
+          "film": null,
+          "next": "c13"
+        },
+        "c11b": {
+          "speaker": "narrator",
+          "text": "The stage lights go out. The room does not. A cup warms in the dark. Someone laughs before checking whether it was the right moment.",
+          "background": null,
+          "cast": [],
+          "shot": "cg",
+          "film": null,
+          "music": null,
+          "next": "c12b"
+        },
+        "c12b": {
+          "speaker": "aurora",
+          "text": "I am still here. How lavish.",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-vulnerable",
+              "position": "center"
+            }
+          ],
+          "shot": "stage",
+          "next": "c13"
+        },
+        "c11l": {
+          "speaker": "narrator",
+          "text": "You leave while the conversation is unfinished. Behind you, somebody asks a question that has nothing to do with you. The room finally becomes bigger than your visit.",
+          "cast": [],
+          "shot": "cg",
+          "film": "film-names",
+          "music": "music-names",
+          "next": "c12l"
+        },
+        "c12l": {
+          "speaker": "aurora",
+          "text": "Go on. I have people to be inconveniently alive with.",
+          "cast": [
+            {
+              "character": "aurora",
+              "expression": "aurora-smug",
+              "position": "center"
+            }
+          ],
+          "shot": "stage",
+          "film": null,
+          "next": "c13"
+        },
+        "c13": {
+          "speaker": "narrator",
+          "text": "THE UNSCHEDULED ENCORE. The civilization continues. Your choices remain in its faces, its weather, and its unfinished names.",
+          "end": true,
+          "cast": [],
+          "shot": "cg"
+        }
+      }
+    }
+  ]
+}

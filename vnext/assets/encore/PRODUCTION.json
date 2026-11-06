@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "complete": true,
-  "storySha256": "56e0eef681a727df32f76ee63e5b0cf9539059ef833605c2ff0191f5ee95d452",
+  "storySha256": "162c978acd31a18e77b118d59ef904edcb3ab47ebb8d4a7a4a149651d3adb39a",
   "files": [
     {
       "id": "aurora-smug",
@@ -388,6 +388,20 @@
       "sha256": "1d0a0445577b6ecf9ec4919904f27e2f6895385ce527ccd95b3c0eff380b3953",
       "producerStatus": "Produced; technical decode/loudness and file hashes checked. Perceptual listening unavailable.",
       "kind": "music"
+    },
+    {
+      "id": "cg-coda",
+      "file": "assets/encore/images/cg-coda.png",
+      "sourceSha256": "17409c506dcdc9ea1e58bbbdef6b331f6c69140374f2ccca984420dae1560bf7",
+      "sha256": "a2de45281dd1f4767dfa095b2ad7c99cc4685bc1fe15164c8027f967d7c9dafa",
+      "producerStatus": "accepted",
+      "kind": "images",
+      "decodedPixelsUnchanged": true,
+      "attributionPreserved": {
+        "creator": "MFLUX",
+        "rights": "AI Generated Content"
+      },
+      "production": "Locally generated coda convergence tableau. Eight empty chairs; authored opening explicitly acknowledges an eighth uninvited chair. Original generation takes and private receipts retained locally."
     }
   ],
   "pending": [],

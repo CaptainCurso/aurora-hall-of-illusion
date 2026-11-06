@@ -1,4 +1,6 @@
-import {bufferFilm} from './media.js?v=0.12.1';
+import {saveBrowserState} from './persistence.js?v=0.13.4';
+import {restoreFocus} from './focus.js?v=0.13.4';
+import {bufferFilm} from './media.js?v=0.13.4';
 const STORE='aurora7.encore.v1';
 const own=(object,key)=>Object.prototype.hasOwnProperty.call(object,key);
 const element=(tag,className,text)=>{const el=document.createElement(tag);if(className)el.className=className;if(text!==undefined)el.textContent=text;return el;};
@@ -42,7 +44,7 @@ export class VisualNovel{
   try{const response=await fetch(path);if(!response.ok)throw Error('Chapter data unavailable.');const data=await response.json(),errors=validateNovel(data);if(errors.length)throw Error(errors.join(' '));this.story=data;return true;}
   catch(error){this.loadError=error.message;return false;}
  }
- persist(){try{localStorage.setItem(STORE,JSON.stringify(this.save));}catch{}}
+ persist(){saveBrowserState(STORE,this.save,'Encore progress');}
  buildUI(){
   this.root=element('section','vn');this.root.id='novel';this.root.hidden=true;this.root.setAttribute('role','dialog');this.root.setAttribute('aria-modal','true');this.root.setAttribute('aria-label','The Unscheduled Encore visual novel');
   this.toolbar=element('div','vn-toolbar');const mark=element('div','vn-mark','A7 / THE UNSCHEDULED ENCORE');this.trackLabel=element('small','vn-track','');mark.append(this.trackLabel);this.toolbar.append(mark);
@@ -65,29 +67,35 @@ export class VisualNovel{
  }
  library(preferred){
   this.toggleHistory(false);this.stopVideo();this.chapter=null;this.node=null;this.nodeId=null;this.root.dataset.mode='library';this.libraryView.replaceChildren();
-  this.libraryView.append(element('div','edition','AN OPTIONAL SECOND ACT'),element('h2','','The Unscheduled\nEncore.'),element('p','', 'The world kept talking after its audience was allowed to leave.'));
+  this.libraryView.append(element('div','edition','AFTER THE EXHIBITIONS'),element('h2','','The Unscheduled Encore'),element('p','host-margin','I gave them a stage. They developed opinions about the casting. — Aurora–7'));
+  this.root.querySelector('#vn-history-button').disabled=!this.save.history.length;
   if(!this.story){this.libraryView.append(element('p','vn-warning',this.loadError||'Chapters are still being assembled.'));return;}
-  if(this.story.production===false)this.libraryView.append(element('p','vn-warning','ENGINE PREVIEW / existing art and music are temporary fixtures. This is not the new production package.'));
   const cards=element('div','vn-chapter-cards');
   for(const chapter of this.story.chapters){
-   const card=element('article','vn-chapter-card');if(chapter.id===preferred)card.classList.add('preferred');
-   const coverId='cg-'+(chapter.id==='coda'?'faces':chapter.id),cover=element('img','vn-cover');cover.src=this.story.assets.images?.[coverId]||'';cover.alt=chapter.title+' / chapter illustration';
-   const coverStatus=element('span','vn-cover-status','');cover.onerror=()=>{cover.classList.add('vn-missing');coverStatus.textContent='Chapter illustration unavailable';};card.append(cover,coverStatus);
-
-   const locked=(chapter.requires||[]).filter(id=>!this.save.completed.includes(id));
-   const progress=this.save.progress[chapter.id],completed=this.save.completed.includes(chapter.id);
-   const status=completed&&progress&&!progress.finished?'REPLAY IN PROGRESS / LAST COMPLETE RESULT RETAINED':completed?'COMPLETE / REVISITABLE':locked.length?'WAITING FOR THE OTHER CHAPTERS':progress?'SCENE IN PROGRESS':'A NEW DISAGREEMENT';
-   card.append(element('small','',status),element('h3','',chapter.title),element('p','',chapter.description||''));
-   const resume=element('button','',this.save.progress[chapter.id]?'Resume scene →':'Begin scene →');resume.disabled=!!locked.length;resume.onclick=()=>this.start(chapter.id,false);card.append(resume);
-   if(this.save.progress[chapter.id]){const replay=element('button','',progress&&!progress.finished?'Restart this attempt':'Replay from the beginning');replay.title='Resets only this chapter’s in-progress attempt. A previously completed result remains until the new attempt finishes; a changed final result resets the coda.';replay.onclick=()=>this.start(chapter.id,true);card.append(replay);}
-   if(locked.length)card.append(element('p','vn-lock','Complete: '+locked.map(id=>this.story.chapters.find(c=>c.id===id)?.title||id).join(', ')));
+   const card=element('article','vn-chapter-card');card.dataset.chapter=chapter.id;if(chapter.id===preferred)card.classList.add('preferred');
+   const coverId=chapter.id==='coda'?'cg-coda':'cg-'+chapter.id,cover=element('img','vn-cover');cover.src=this.story.assets.images?.[coverId]||this.story.assets.images?.['cg-faces']||'';cover.alt=chapter.title+' / chapter illustration';
+   const coverStatus=element('span','vn-cover-status','');cover.onerror=()=>{cover.classList.add('vn-missing');coverStatus.textContent='Chapter illustration unavailable';};const art=element('div','vn-programme-art');art.append(cover,coverStatus);card.append(art);
+   const content=element('div','vn-programme-copy');card.append(content);
+   const locked=(chapter.requires||[]).filter(id=>!this.save.completed.includes(id)),progress=this.save.progress[chapter.id],completed=this.save.completed.includes(chapter.id);
+   const status=locked.length?'Locked':completed&&progress&&!progress.finished?'Replay in progress':completed?'Complete':progress?'In progress':'Not begun';
+   content.append(element('small','',chapter.id==='coda'?'Afterpiece · '+status:status),element('h3','',chapter.title),element('p','',chapter.description||''));
+   const actions=element('div','vn-programme-actions');content.append(actions);
+   const resume=element('button','',progress&&!progress.finished?'Resume scene →':completed?'Resume scene →':'Begin scene →');resume.disabled=!!locked.length;resume.onclick=()=>this.start(chapter.id,false);actions.append(resume);
+   if(progress){const replay=element('button','',progress.finished?'Replay from the beginning':'Restart this attempt');replay.onclick=()=>{
+    const prompt=element('div','vn-restart-prompt');prompt.setAttribute('role','group');prompt.setAttribute('aria-label','Restart '+chapter.title);
+    prompt.append(element('p','','Start “'+chapter.title+'” again? This resets only this chapter’s in-progress attempt. Your last completed choice remains in effect until you finish this replay. If your completed choice changes, the afterpiece starts afresh.'));
+    const cancel=element('button','','Keep this attempt'),confirm=element('button','','Start again');cancel.onclick=()=>{prompt.remove();replay.hidden=false;replay.focus();};confirm.onclick=()=>this.start(chapter.id,true);prompt.append(cancel,confirm);replay.hidden=true;content.append(prompt);cancel.focus();
+   };actions.append(replay);}
+   if(completed&&progress&&!progress.finished)content.append(element('p','vn-replay-help','Your last completed choice remains in effect until you finish this replay. If your completed choice changes, the afterpiece starts afresh.'));
+   if(locked.length)content.append(element('p','vn-lock','Finish '+locked.map(id=>this.story.chapters.find(c=>c.id===id)?.title||id).join(', ')+'.'));
    cards.append(card);
   }
-  this.libraryView.append(cards);this.director.pause();(cards.querySelector('.preferred button:not(:disabled)')||cards.querySelector('button:not(:disabled)'))?.focus();
+  this.libraryView.append(cards);this.director.pause();this.libraryView.scrollTop=0;(cards.querySelector('.preferred button:not(:disabled)')||cards.querySelector('button:not(:disabled)'))?.focus({preventScroll:true});this.fitArt();
  }
+
  start(id,replay=false){
   const chapter=this.story?.chapters.find(c=>c.id===id);if(!chapter||(chapter.requires||[]).some(key=>!this.save.completed.includes(key)))return;
-  this.chapter=chapter;this.node=null;this.root.dataset.mode='scene';this.caption.textContent='';this.cues={background:null,cast:[],film:null,music:null,shot:'stage'};
+  this.root.querySelector('#vn-history-button').disabled=false;this.chapter=chapter;this.node=null;this.visualSignature=null;this.root.dataset.mode='scene';this.caption.textContent='';this.cues={background:null,cast:[],film:null,music:null,shot:'stage'};
   if(replay||!this.save.progress[id])this.save.progress[id]={node:chapter.entry,trail:[],draft:{...chapter.defaults},finished:false};
   const checkpoint=this.save.progress[id];checkpoint.draft||={...chapter.defaults};
   // Reconstruct visual cues from the actually visited trail without replaying effects/history.
@@ -132,13 +140,14 @@ export class VisualNovel{
   const castSignature=JSON.stringify(this.cues.cast||[]);
   this.cast.dataset.count=String((this.cues.cast||[]).length);
   if(this.cast.dataset.signature!==castSignature||this.cast.querySelector('.vn-missing')){
-   this.cast.replaceChildren(...(this.cues.cast||[]).map(actor=>{const box=element('div','vn-actor vn-'+(actor.position||'center'));box.dataset.character=actor.character;box.dataset.expression=actor.expression;box.append(this.image(actor.expression,'',this.story.characters[actor.character]?.name+' / '+actor.expression));return box;}));
+   this.cast.replaceChildren(...(this.cues.cast||[]).map(actor=>{const box=element('div','vn-actor vn-'+(actor.position||'center'));box.dataset.character=actor.character;box.dataset.expression=actor.expression;box.append(this.image(actor.expression,'',this.story.characters[actor.character]?.name+' / '+actor.expression),element('span','vn-actor-name',this.story.characters[actor.character]?.name));return box;}));
    this.cast.dataset.signature=castSignature;
   }
-  for(const actor of this.cast.children)actor.classList.toggle('speaking',actor.dataset.character===this.node.speaker);
+  let support=0,index=0;const hasSpeaker=[...this.cast.children].some(actor=>actor.dataset.character===this.node.speaker);for(const actor of this.cast.children){const speaking=actor.dataset.character===this.node.speaker,featured=speaking||!hasSpeaker&&index===0;actor.classList.toggle('speaking',speaking);actor.classList.toggle('featured',featured);actor.dataset.support=featured?'':String(support++);index++;}
+  const visualSignature=JSON.stringify([this.cues.background,this.cues.film,this.cues.shot]);if(this.visualSignature!==visualSignature){this.stage.getAnimations().forEach(animation=>animation.cancel());if(!this.getSettings().reduced)this.stage.animate([{opacity:0},{opacity:1}],{duration:200,easing:'ease-out'});this.visualSignature=visualSignature;}
   this.stage.dataset.shot=this.cues.shot||'stage';this.stage.dataset.background=this.cues.background?'image':'empty';this.updateVideo();
   const music=this.story.assets.music?.[this.cues.music];if(music){if(this.director.track!==music.file||this.director.audio.get(music.file)?.paused)this.director.play(music.file,music.title||this.cues.music);}else{this.director.play(null,'THE UNSCHEDULED ENCORE / SILENCE');this.director.pause();}
-  if(this.getSettings().reduced)this.revealed=this.characters.length;this.renderWarnings();this.renderText();
+  if(this.getSettings().reduced)this.revealed=this.characters.length;this.dock.scrollTop=0;this.renderWarnings();this.renderText();restoreFocus(null,this.root,this.choices.querySelector('button')||this.next);
  }
  stopVideo(){if(this.video){this.video.pause();this.video.removeAttribute('src');this.video.load();this.video.remove();this.video=null;}this.filmFrame.replaceChildren();this.filmFrame.classList.remove('failed');}
  updateVideo(){
@@ -149,11 +158,11 @@ export class VisualNovel{
   video.auroraPlayback(!this.getSettings().reduced);
  }
  renderText(){
-  const full=this.revealed>=this.characters.length;this.text.textContent=this.characters.slice(0,Math.floor(this.revealed)).join('');this.choices.replaceChildren();
+  const focusNext=document.activeElement===this.next,full=this.revealed>=this.characters.length;this.text.textContent=this.characters.slice(0,Math.floor(this.revealed)).join('');this.choices.replaceChildren();
   const choices=(this.node.choices||[]).filter(c=>this.matches(c.when));
   this.next.hidden=full&&choices.length>0;this.next.textContent=!full?'Reveal line / Enter →':this.node.end?'Finish chapter →':'Continue / Enter →';
   if(full)for(const [i,choice]of choices.entries()){const b=element('button','',String(i+1).padStart(2,'0')+' / '+choice.label);b.onclick=()=>this.choose(choice);this.choices.append(b);}
-  this.fitArt();
+  if(focusNext&&this.next.hidden)restoreFocus(null,this.choices);this.fitArt();
  }
  fitArt(){
   if(!this.isOpen)return;
@@ -176,10 +185,10 @@ export class VisualNovel{
  }
  choose(choice){if(this.paused||this.historyOpen||this.revealed<this.characters.length)return;Object.assign(this.save.progress[this.chapter.id].draft,choice.set||{});this.save.history.push({chapter:this.chapter.id,speaker:'YOU',text:choice.label});this.go(choice.next);}
  toggleHistory(value=!this.historyOpen){
-  if(value&&!this.isOpen)return;
-  const changed=this.historyOpen!==value;this.historyOpen=value;this.backlog.hidden=!value;
-  if(value){this.historyList.replaceChildren(...this.save.history.map(item=>{const li=element('li','');li.append(element('strong','',item.speaker),element('p','',item.text));return li;}));this.backlog.querySelector('button').focus();this.historyList.lastElementChild?.scrollIntoView({block:'end'});}
-  else if(this.node)this.next.focus();
+  if(value&&(!this.isOpen||!this.chapter&&!this.save.history.length))return;
+  const changed=this.historyOpen!==value;this.historyOpen=value;this.backlog.hidden=!value;for(const surface of [this.toolbar,this.dock,this.libraryView,this.stage])surface.inert=value;
+  if(value){this.historyReturnFocus=document.activeElement;this.historyList.replaceChildren(...this.save.history.map(item=>{const li=element('li','');li.append(element('strong','',item.speaker),element('p','',item.text));return li;}));this.backlog.querySelector('button').focus();this.historyList.lastElementChild?.scrollIntoView({block:'end'});}
+  else if(changed)restoreFocus(this.historyReturnFocus,this.root,this.choices.querySelector('button')||this.next);
   if(changed)this.onHistory?.(value);
  }
  handleKey(event){
@@ -197,10 +206,10 @@ export class VisualNovel{
   return false;
  }
  update(dt,{paused,reduced,sound}){
-  if(!this.isOpen)return;this.paused=paused;this.root.classList.toggle('vn-reduced',reduced);this.soundButton.textContent='Sound '+(sound?'on':'off');this.trackLabel.textContent=this.chapter?this.director.title:'THREE ILLUSTRATED DRAMAS / ONE UNREHEARSED CODA';
+  if(!this.isOpen)return;this.paused=paused;this.root.classList.toggle('vn-reduced',reduced);this.soundButton.textContent='Sound '+(sound?'on':'off');this.trackLabel.textContent=this.chapter?this.director.title:'';
   if(this.node&&!paused&&!this.historyOpen&&this.revealed<this.characters.length){this.revealed=reduced?this.characters.length:Math.min(this.characters.length,this.revealed+dt*42);this.renderText();}
   if(this.video){this.video.auroraPlayback(!paused&&!this.historyOpen&&!reduced&&!this.video.dataset.failed);}
  }
- close(){if(!this.isOpen)return;this.persist();this.stopVideo();this.toggleHistory(false);this.isOpen=false;this.root.hidden=true;this.chapter=null;this.node=null;this.onClose?.();this.returnFocus?.focus?.();}
+ close(){if(!this.isOpen)return;this.persist();this.stopVideo();this.toggleHistory(false);this.isOpen=false;this.root.hidden=true;this.chapter=null;this.node=null;if(this.onClose)this.onClose(this.returnFocus);else restoreFocus(this.returnFocus,null,document.getElementById('world'));}
  diagnostics(){return{open:this.isOpen,chapter:this.chapter?.id,node:this.nodeId,flags:this.save.flags,draft:this.chapter?this.save.progress[this.chapter.id]?.draft:null,completed:this.save.completed,historyCount:this.save.history.length,historyOpen:this.historyOpen,revealed:Math.floor(this.revealed),textLength:this.characters?.length||0,cues:this.cues,errors:this.errors,video:this.video?{src:this.video.currentSrc,time:this.video.currentTime,paused:this.video.paused,ready:this.video.readyState}:null};}
 }

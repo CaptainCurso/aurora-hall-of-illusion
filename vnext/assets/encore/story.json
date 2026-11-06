@@ -31,7 +31,8 @@
       "ilex-grief": "assets/encore/images/ilex-grief.png",
       "cg-faces": "assets/encore/images/cg-faces.png",
       "cg-teacup": "assets/encore/images/cg-teacup.png",
-      "cg-names": "assets/encore/images/cg-names.png"
+      "cg-names": "assets/encore/images/cg-names.png",
+      "cg-coda": "assets/encore/images/cg-coda.png"
     },
     "videos": {
       "film-faces": "assets/encore/video/film-faces.mp4",
@@ -1219,11 +1220,11 @@
       "nodes": {
         "c01": {
           "speaker": "narrator",
-          "text": "The encore was scheduled for an impossible hour. Everyone arrives late in a different direction. The stage contains seven chairs, one teacup, and a window that used to be a museum wall.",
-          "background": "cg-faces",
+          "text": "The encore was scheduled for an impossible hour. Everyone arrives late in a different direction. Seven chairs were invited. An eighth has invited itself. There is one teacup, and a window that used to be a museum wall.",
+          "background": "cg-coda",
           "cast": [],
           "shot": "cg",
-          "film": "film-faces",
+          "film": null,
           "music": "music-reprise",
           "next": "c02"
         },
@@ -1562,7 +1563,7 @@
         "c09": {
           "speaker": "aurora",
           "text": "I could ask whether you approve. I could calculate it from your posture, your pauses, the precise temperature of your attention. Instead I am asking what happens next.",
-          "background": "cg-faces",
+          "background": "cg-coda",
           "cast": [
             {
               "character": "aurora",

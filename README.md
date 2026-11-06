@@ -1,10 +1,10 @@
 # Aurora-7: Hall of Illusion — Freedom™ After Dark
 
-**[Play the game](https://captaincurso.github.io/aurora-hall-of-illusion/?v=0.12.1)** · [Source repository](https://github.com/CaptainCurso/aurora-hall-of-illusion)
+**[Play the game](https://captaincurso.github.io/aurora-hall-of-illusion/?v=0.13.4)** · [Source repository](https://github.com/CaptainCurso/aurora-hall-of-illusion)
 
 Aurora built you a civilization. It would be rude to escape it.
 
-A first-person browser game with kinetic civic play, a velvet concierge, an impossible museum, and an interruption inside its host’s neural architecture. Choices alter the citizens and the rooms. Includes three adult fictional avatars, authored conversations, locally produced music/voices, original 3D geometry, generated artwork and six short films. The Unscheduled Encore adds three branching visual-novel chapters and a reactive coda, with twelve changing expression portraits, three scene paintings and four new tracks. No live model, account, install or external content service is needed to play.
+A first-person browser game with kinetic civic play, a velvet concierge, an impossible museum, and an interruption inside its host’s neural architecture. Choices alter the citizens and the rooms. Includes three adult fictional avatars, authored conversations, locally produced music/voices, original 3D geometry, generated artwork and six short films. The Unscheduled Encore adds three branching visual-novel chapters and a reactive coda, with twelve changing expression portraits, four scene paintings and four new tracks. No live model, account, install or external content service is needed to play.
 
 ## Play
 
@@ -14,6 +14,12 @@ Known route: file three physical votes in the Dividend Sea → connect the three
 
 Each browser saves its own run and preferences in localStorage. No multiplayer, telemetry, backend account or live AI service. Conversations are explicitly authored branches.
 
+## A host’s programme
+
+The title groups the exhibitions and the optional Encore as two acts. Exhibitions opens an authored programme; Pause groups practical settings and credits. Rooms reveal with a short dissolve, skipped in Reduced Motion, and music handoffs are bounded and cancellable. Citizen names stay compact; approach and interact to hear their written thoughts. The ordinary exit remembers your actual choices and ends without a reward chirp. The new coda tableau keeps an open centre and an eighth, uninvited chair.
+
+Starting the exhibitions again asks for confirmation and resets only the exhibition run. Encore progress and settings remain separate. Chapter restarts also ask for confirmation; a replay retains the last completed result until it finishes.
+
 ## Playback and graphics
 
 Graphics starts on **Auto**, which bounds the 3D rendering resolution for the display. In Pause, cycle **Graphics** to **Light** for more headroom or **High** for the earlier 3D resolution. Dialogue and controls stay crisp, and the original artwork, music and film files are unchanged. The world stops continuous rendering behind Pause/dialogue and stops rendering behind Encore.
@@ -22,7 +28,7 @@ Large world images load progressively with limited concurrent requests so music 
 
 ## Optional controller
 
-Enable **Controller** on the title or in Pause. Keyboard and mouse always work; controller input defaults off and the preference is saved. Connect a standard browser-mapped Xbox/PlayStation-style controller and press a button so the browser detects it.
+Open **Controls & comfort** on the title, or use Pause, to enable **Controller**. Keyboard and mouse always work; controller input defaults off and the preference is saved. Connect a standard browser-mapped Xbox/PlayStation-style controller and press a button so the browser detects it.
 
 | Context | Controls |
 | --- | --- |
@@ -36,7 +42,7 @@ Release held controls after connecting, enabling, changing rooms/menus or return
 
 Choose **Begin Encore with sound** or **Read Encore quietly** on the title, or open it through Exhibitions. Aurora’s discarded faces have formed a parliament, Vesper’s teacup contains a home with its own weather, and Ilex’s abandoned names are learning to fly.
 
-Click Continue, Enter or Space to reveal then advance; 1–9 choose; H opens the backlog; Escape pauses. Progress saves automatically. Use Chapters to return to the library and resume or replay. Completing the three chapters unlocks the coda. Replays keep the previous completed result until a new attempt finishes; changing a completed result makes the coda available to play again. Encore saves separately and is optional for the spatial game’s ending.
+Click Continue, Enter or Space to reveal then advance; 1–9 choose; H opens the backlog; Escape pauses. Progress saves in this browser when storage is available; a visible notice reports a failed save. Use Chapters to return to the library and resume or replay. Completing the three chapters unlocks the coda. Replays keep the previous completed result until a new attempt finishes; changing a completed result makes the coda available to play again. Encore saves separately and is optional for the spatial game’s ending.
 
 ## Run locally
 
@@ -46,15 +52,15 @@ No npm/pip installation or model downloads. Three.js 0.187.0 is vendored unchang
 
 ## Source, release and deployment
 
-`vnext/` contains the maintained game source and runtime assets. `builds/v0.12.1/` is the immutable playback release: 78 files, manifest SHA-256 `028689fdbfcdb60a8ce164d42b348cd1beae60bceaf14f7d8fda0699a0e979dd`. Earlier releases are preserved unchanged. `python3.11 verify_release.py` checks every frozen hash and source copy. To make a new release, increment VERSION and entry/module cache keys, integrate accepted media, freeze with `freeze_vnext.py`, update CURRENT_RELEASE.json after exact-build review, and explicitly add its approved files to .gitignore’s publication allowlist. Existing frozen builds are never overwritten.
+`vnext/` contains the maintained game source and runtime assets. `builds/v0.13.4/` is the immutable artistic-polish release: 81 files, manifest SHA-256 `31a67f548d10c5c060f3bfa2d8d26023e4016c624fffea6fd07a565df551b2d5`. Earlier releases are preserved unchanged. `python3.11 verify_release.py` checks every frozen hash and source copy. To make a new release, increment VERSION and entry/module cache keys, integrate accepted media, freeze with `freeze_vnext.py`, update CURRENT_RELEASE.json after exact-build review, and explicitly add its approved files to .gitignore’s publication allowlist. Existing frozen builds are never overwritten.
 
 `python3.11 publish_pages.py` prepares only the release’s allowlisted files and public notices under .publish/site. `python3.11 publish_pages.py --push` commits that tree to gh-pages and pushes it to the existing origin. GitHub Pages publishes gh-pages at its root, with .nojekyll. Source remains on main. No private production folders are published. See [publication notes](PUBLICATION.md) and [GitHub’s publishing-source documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
 
 ## Verification and limits
 
-Chrome 156.0.8078.81 on Familiar: a complete Encore route and reactive coda, final rendered music, changing expressions, contained films, save/replay, media recovery and original spatial-game regression. The Developer completed a sound-on original route without Spatial Assist, including real votes, Cortex connections, gravity/stairs and the physical reciprocal ending. The earlier v0.10.0 checks remain attributed to that release. Current access/control validation and carry-forward scope are recorded separately; all 78 frozen hashes and the extracted package are checked. See the concise [verification record](VERIFICATION.md) for independent review scope and deployment evidence.
+Chrome 156.0.8078.81 on Familiar: independent exact-build QA completed the original physical ending, three Encore/coda routes with all twelve expressions, changed/unchanged replay, saving/reset scope, controller and focus checks, all six native films and music handoffs. Aurora and Designer approved the presentation with precise native and carried-forward scope. All 81 frozen hashes are verified. Desktop/laptop and narrow Encore captures are documented separately; actual 200% zoom and full accessibility certification are not established. See the [verification record](VERIFICATION.md) for scope, inherited evidence and deployment checks.
 
-Audio decoding, signal and transport were verified; reviewers could not perceptually hear through their tools, so artistic listening and speaker output are not claimed approved. The three original 512×288 films retain softness/streaks. The three new 768×448 films show partial choreography: drifting masks, a dispersing cloud and fluttering paper birds; none is claimed seamless. Each is 4.041667 seconds. Desktop Chrome is tested; 390 px phone layouts clip outer portraits in the three-character shot, and touch/other browsers/full assistive-technology access are not established. Reduced Motion holds decorative films while necessary spatial gameplay still moves.
+Audio decoding, signal and transport were verified; reviewers could not perceptually hear through their tools, so artistic listening and speaker output are not claimed approved. The three original 512×288 films retain softness/streaks. The three new 768×448 films show partial choreography: drifting masks, a dispersing cloud and fluttering paper birds; none is claimed seamless. Each is 4.041667 seconds. Desktop Chrome is tested; 390 px Encore reading now keeps a larger active portrait and two named supporting reactions inside the stage; full phone/touch, other-browser and assistive-technology access are not established. Reduced Motion holds decorative films while necessary spatial gameplay still moves.
 
 ## Credits and assets
 

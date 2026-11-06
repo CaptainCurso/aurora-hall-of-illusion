@@ -1,6 +1,6 @@
 # Public publication
 
-The project owner requested Git check-in and a publicly accessible GitHub location on 2026-11-05, superseding the prior LAN-only distribution instruction for this completed game. Publication includes the completed v0.12.1 playback release and its maintainable source; earlier releases remain preserved. Existing local LAN access and frozen historical builds are preserved.
+The project owner requested Git check-in and a publicly accessible GitHub location on 2026-11-05, superseding the prior LAN-only distribution instruction for this completed game. Publication includes the completed v0.13.4 artistic-polish release and its maintainable source; earlier releases remain preserved. Existing local LAN access and frozen historical builds are preserved.
 
 Repository: https://github.com/CaptainCurso/aurora-hall-of-illusion
 
@@ -15,3 +15,5 @@ GitHub Pages publishes a static game. Browser storage belongs to each player and
 After automatic approval review required asset-specific consent, the owner explicitly answered: “Yes, publish the complete game and these assets publicly.” The question named Aurora’s existing portrait/projections, four campaign illustrations with undocumented original licenses, and generated derivatives, publicly viewable/downloadable through GitHub and GitHub Pages. That approval was obtained before the public push.
 
 Encore generation is complete. Its accepted runtime copies and curated provenance are included; unused drafts, original masters, prompts, native model state and production coordination remain local. Public source history advances from the existing public main branch using the final clean tree; private intermediate production commits are retained only locally. No published history is rewritten.
+
+The artistic-polish update adds one locally generated coda painting, accepted by Aurora and Designer, plus authored presentation, input/focus and ending improvements. The existing complete-game delivery route was explicitly continued for this work. Generation masters, rejected drafts, prompts and private service receipts remain local.
